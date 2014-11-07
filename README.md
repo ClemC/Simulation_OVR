@@ -1,9 +1,9 @@
-Simulation_Stage_2014
+Immersive-3D visualization for astronomical data
 =====================
 
 OpenGL 3.3 visualization of stars with Oculus Rift mode.
 
-Project developped during my internship in the Observatoire Astronomique de Strasbourg.
+Research and Development Project for the Observatoire Astronomique de Strasbourg.
 Tested on Linux but should work on other plateforms too with little to no changes.
 
 This project is in no means a model to follow if you're developping an OpenGL application, but is rather a proof-of-concept and demonstration
