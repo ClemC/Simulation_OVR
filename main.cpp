@@ -34,13 +34,12 @@ int main(int argc, char** argv)
             return 0;
         }
 
-// Read file Here
+// Read file and put it in file.data_
         std::string filename = vm["read"].as<std::string>();
         int dimension = 7;
         File file(File(filename, dimension));
         file.exists_test();
-        file.parseText();
-//exit(123);
+        file.parseText(); // recover data in file.data_
 
         Scene scene("Simulation", WINDOW_WIDTH, WINDOW_HEIGHT,
                     vm.count("oculus"),

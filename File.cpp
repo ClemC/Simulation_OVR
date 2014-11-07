@@ -1,12 +1,56 @@
 #include "File.h"
 #include <boost/regex.hpp>
 
+/**
+ * File class Version 2.0.
+ * Put data in double** File::data_. Use File::printData() to print them.
+ * Recognize n dimension.
+ * Uses the Regular Expression "([^\\s]+)". => It is possible to read something like that : 'a b      c d     e'.
+ * Automatically detects the dimension (n) by reading the 3rd line.
+ * If a line is empty, it is ignored.
+ * If a line has not the same number of columns, it is ignored.
+ * @brief File::File
+ */
 File::File()
 {
 }
 
 File::File(std::string filename, int dimension):filename_(filename), dimension_(dimension)
 {
+}
+
+/**
+ * Parse text files using regex. Skip if line dimension is 0 (only blank).
+ * Stores data in_data.
+ * @brief File::parseText
+ */
+void File::parseText(){
+    // Find max number of valid lines in the file
+    std::ifstream inFile0(filename_);
+    totalLines_ = std::count(std::istreambuf_iterator<char>(inFile0),
+                             std::istreambuf_iterator<char>(), '\n');
+    std::regex regex("([^\\s]+)");
+    int i=0;
+    cout << totalLines_ <<"\n";
+    data_ = new double *[totalLines_*2];
+    std::ifstream inFile(filename_);
+    std::string line;
+
+    // check each line and register them in _data.
+    while (std::getline(inFile, line)){
+        i++;
+        if (i==lineDimension_) { //Compute dimension.
+            dimension_ = getCount(line, regex);
+            logger->info(logger->get() << "dimension_ is now " << dimension_ << ". It was found in '" << line << "' (line " << lineDimension_
+                         << ").");
+        }
+        if (i>=lineDimension_) {
+            checkIfExceptionInFile(line, regex, &i);
+        }
+    }
+    totalLines_ = i-lineDimension_+1;
+    logger->info(logger->get()<< "Found "<<totalLines_<<" usefull lines in '"<<filename_<<"'.\n");
+    printData();
 }
 
 /**
@@ -28,7 +72,7 @@ void File::exists_test() {
                      filename_ << "' to './build-Simulation-Clang-Debug/'\n");
         exit(-1);
     } else {
-        logger->info(logger->get()<<"File '" << filename_ << "' exists !");
+        logger->info(logger->get()<<"File '" << filename_ << "' found.");
     }
 }
 
@@ -72,12 +116,15 @@ std::sregex_iterator File::checkIfExceptionInFile(std::string text, std::regex r
     auto words_begin = std::sregex_iterator(text.begin(), text.end(), regex);
     auto words_end = std::sregex_iterator();
     int dimLine = std::distance(words_begin, words_end);
+    bool skip = false;
 
     if (dimLine == 0 || dimLine != dimension_) {
-        logger->info(logger->get() << "checkIfExceptionInFile: W: Invalid line length : l"<< *i <<" in '"<<filename_<<"'.");
+        logger->info(logger->get() << "checkIfExceptionInFile: W: Skipping blank or invalid line at l "<< *i << ". dimLine was " << dimLine <<
+                     " but shouldn't be 0 or (dimension_=" << dimension_ << ") in '"<<filename_<<"'.");
+        skip = true;
         (*i)--;
     }
-    registerData(words_begin, words_end, *i - lineDimension_);
+    registerData(words_begin, words_end, *i - lineDimension_, skip);
 
     return words_end;
 }
@@ -89,65 +136,32 @@ std::sregex_iterator File::checkIfExceptionInFile(std::string text, std::regex r
  * @param words_end
  * @param i
  */
-void File::registerData(std::sregex_iterator words_begin, std::sregex_iterator words_end, int i){
+void File::registerData(std::sregex_iterator words_begin, std::sregex_iterator words_end, int i, bool skip){
     int j=0;
-    data_[i] = new double[dimension_];
+    if (!skip) {
+        data_[i] = new double[dimension_];
         for (std::sregex_iterator it = words_begin; it != words_end; ++it) {
             std::smatch match = *it;
             std::string match_str = match.str();
             data_[i][j] = atof(match_str.c_str());
-            cout << data_[i][j] << "\t";
+            //            cout << "(" << i << ", " << j << ") = " << data_[i][j] << "\t";
             j++;
         }
-        cout << "\n";
+    }
+    //        cout << "\n";
 }
 
 /**
- * Print data.
+ * Print data_.
  * @brief File::printData
  */
 void File::printData() {
-//    cout << "(totalLines_, dimension_) = (" << totalLines_ << ", " << dimension_ << ")\n";
-//    int i1=0, j=0;
-//    for (i1=0; i1<=totalLines_ - 1; i1++) {
-//        for (j=0; j<=dimension_ - 1; j++) {
-//            cout << "(" << i1 << ", " << j << ") = " << data_[i1][6] << " ";
-//        }
-//        cout << "\n";
-//    }
-}
-
-/**
- * Parse text files using regex. Skip if line dimension is 0 (only blank).
- * Stores data in_data.
- * @brief File::parseText
- */
-void File::parseText(){
-    // Find max number of valid lines in the file
-    std::ifstream inFile0(filename_);
-    totalLines_ = std::count(std::istreambuf_iterator<char>(inFile0),
-                             std::istreambuf_iterator<char>(), '\n');
-    std::regex regex("([^\\s]+)");
-    int i=0;
-    cout << totalLines_ <<"\n";
-    data_ = new double *[totalLines_*2];
-//    data_ = double [totalLines_][7];
-    std::ifstream inFile(filename_);
-    std::string line;
-
-    // check each line and register them in _data.
-    while (std::getline(inFile, line)){
-        i++;
-        if (i==3) { //Compute dimension.
-            dimension_ = getCount(line, regex); // TODO : setter
-            logger->info(logger->get() << "dimension_ is now " << dimension_ << ". It was found in '" << line << "' (line 3).");
+    logger->info(logger->get() << "Printing (totalLines_, dimension_) = (" << totalLines_ << ", " << dimension_ << ") : ");
+    int i=0, j=0;
+    for (i=0; i<=totalLines_ - 1; i++) {
+        for (j=0; j<=dimension_ - 1; j++) {
+            cout << "(" << i << ", " << j << ") = " << data_[i][j] << "\t";
         }
-        if (i>=3) {
-            checkIfExceptionInFile(line, regex, &i);
-        }
+        cout << "\n";
     }
-    totalLines_ = i;
-    logger->info(logger->get()<< "Found "<<totalLines_<<" lines in '"<<filename_<<"'.\n");
-    printData();
 }
-
