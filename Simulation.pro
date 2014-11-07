@@ -10,7 +10,8 @@ SOURCES += \
     Scene.cpp \
     Shader.cpp \
     Texture.cpp \
-    Utils.cpp
+    Utils.cpp \
+    File.cpp
 
 HEADERS += \
     Include/GL3/gl3.h \
@@ -308,7 +309,8 @@ HEADERS += \
     Include/OVR/OVR/LibOVR/Src/OVR_Win32_SensorDevice.h \
     Include/OVR/3rdParty/EDID/edid.h \
     Include/OVR/3rdParty/TinyXml/tinyxml2.h \
-    LogCpp/Log.h
+    LogCpp/Log.h \
+    File.h
 
 CONFIG += c++11
 CONFIG -= qt

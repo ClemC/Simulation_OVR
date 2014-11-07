@@ -1,5 +1,6 @@
 #include "LogCpp/Log.h"
 #include "Scene.h"
+#include "File.h"
 
 #include <boost/program_options.hpp>
 namespace po = boost::program_options;
@@ -20,6 +21,7 @@ int main(int argc, char** argv)
                 ("size,s", po::value<int>()->default_value(128), "Set the size of the data cube. Must be a power of 2")
                 ("octantSize", po::value<int>()->default_value(8), "Set the size of an octant. Must be a power of 2")
                 ("octantDrawnCount,d", po::value<int>()->default_value(2), "Set the number of octant drawn count. 1 to only draw the octant the camera is currently in, 2 to draw the immediate neighbors, ...")
+                ("read,r", po::value<std::string>()->default_value("./File/star.txt"), "Set the file to read.")
                 ;
 
         po::variables_map vm;
@@ -31,6 +33,14 @@ int main(int argc, char** argv)
             std::cout << desc << std::endl;
             return 0;
         }
+
+// Read file Here
+        std::string filename = vm["read"].as<std::string>();
+        int dimension = 7;
+        File file(File(filename, dimension));
+        file.exists_test();
+        file.parseText();
+//exit(123);
 
         Scene scene("Simulation", WINDOW_WIDTH, WINDOW_HEIGHT,
                     vm.count("oculus"),
