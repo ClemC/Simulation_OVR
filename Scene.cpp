@@ -10,6 +10,8 @@
 #include "Utils.h"
 #include "LogCpp/Log.h"
 
+#include "File.h"
+
 #include <numeric>
 #include <random>
 #include <chrono>
@@ -17,8 +19,10 @@
 std::unique_ptr<Logger> logger(new Logger("log.log", "log.err", true, Severity::error | Severity::info));
 std::unique_ptr<NullOculus> nullOculus(new NullOculus);
 
-Scene::Scene(std::string windowTitle, int windowWidth, int windowHeight, bool oculusRender, bool fullscreen, std::string textureName, unsigned long objectsCount, int size, int octantSize, int  octantsDrawnCount):
-    gObjectsCount_ {objectsCount},
+Scene::Scene(std::string windowTitle, int windowWidth, int windowHeight, bool oculusRender, bool fullscreen,
+             std::string textureName, unsigned long objectsCount, int size, int octantSize,
+             int  octantsDrawnCount, File file):
+    gObjectsCount_ {objectsCount}, // R&D: if reading files, should be set to the number of lines.
     size_ {size},
     //1 to only draw the octant the camera is in, 2 to draw the immediate neighbours, etc. Power of 2
     octantsDrawnCount_ {octantsDrawnCount},
@@ -32,7 +36,8 @@ Scene::Scene(std::string windowTitle, int windowWidth, int windowHeight, bool oc
     oculusRender_ {oculusRender},
     fps_ {0},
     frameCount_ {0},
-    textureName_ {textureName}
+    textureName_ {textureName},
+    file_ {file}
 {
     logger->trace(logger->get() << "Scene constructor");
 
@@ -144,31 +149,54 @@ bool Scene::initGL()
     return true;
 }
 
+/**
+ * Generate the Scene.
+ * Use file star.txt
+ * (x, y, z) are in [0, (128*zoom)].
+ * @brief Scene::initGObjects
+ */
 void Scene::initGObjects()
 {
-    std::default_random_engine generator;
-    std::uniform_int_distribution<> distribution(0, size_ - 1);
-
-    auto startGeneration = std::chrono::high_resolution_clock::now();
+//    std::default_random_engine generator;
+//    std::uniform_int_distribution<> distribution(0, size_ - 1);
+//    auto startGeneration = std::chrono::high_resolution_clock::now();
 
     for(ulong i=1; i <= gObjectsCount_; i++)
     {
-        int x = distribution(generator);
-        int y = distribution(generator);
-        int z = distribution(generator);
+// 1. Print info in console
+        int max = size_ - 1;
+cout << "(xc, yc, zc) = (" << (int)((file_.getData()[i-1][file_.xpos])*(max)) << ", "
+        << (int)((file_.getData()[i-1][file_.ypos])*(max)) << ", "
+        << (int)((file_.getData()[i-1][file_.zpos])*(max)) << ")\t=>\t(mass, age) = ("
+        << file_.getData()[i-1][file_.mass] << ", "
+        << file_.getData()[i-1][file_.age] << ")\n";
 
+// 2. Plot star.txt
+        double zoom = 0.75; // only way to see more data at the same time ? double zoom = 1; // should be 1.
+        int x = (file_.getData()[i-1][file_.xpos])*(max)*(zoom);
+        int y = (file_.getData()[i-1][file_.ypos])*(max)*(zoom);
+        int z = (file_.getData()[i-1][file_.zpos])*(max)*(zoom);
+        double massV = file_.getData()[i-1][file_.mass],
+                ageV = file_.getData()[i-1][file_.age]; // textureBigStar_
+
+// 3. Increase size according to age.
         auto startCrateGeneration = std::chrono::high_resolution_clock::now();
-        gObjects_(x, y, z) = std::shared_ptr<Crate>(new Crate(x, y, z, 1.0, textureName_));
+        std::string texture;
+        if (massV>bigStarLimit_) {
+            texture = textureBigStar_;
+        } else {
+            texture = textureSmallStar_;
+        }
+        gObjects_(x, y, z) = std::shared_ptr<Crate>(new Crate(x, y, z, ageV, texture)); // textureName_
         auto endCrateGeneration = std::chrono::high_resolution_clock::now();
 
         logger->debug(logger->get() << "Generated crate n°" << i << " at position ("
                     << x << ", " << y << ", " << z << ") in "
                     << chrono::duration_cast<std::chrono::milliseconds>(endCrateGeneration - startCrateGeneration).count() << " ms");
     }
-    auto endGeneration = std::chrono::high_resolution_clock::now();
-    auto generationTime = std::chrono::duration_cast<std::chrono::milliseconds>(endGeneration - startGeneration).count();
-
-    logger->info(logger->get() << "Summary: the generation of " << gObjectsCount_ << " graphic objects took " << generationTime << " ms");
+//    auto endGeneration = std::chrono::high_resolution_clock::now();
+//    auto generationTime = std::chrono::duration_cast<std::chrono::milliseconds>(endGeneration - startGeneration).count();
+//    logger->info(logger->get() << "Summary: the generation of " << gObjectsCount_ << " graphic objects took " << generationTime << " ms");
 }
 
 void Scene::mainLoop()

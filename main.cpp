@@ -34,22 +34,32 @@ int main(int argc, char** argv)
             return 0;
         }
 
-// Read file and put it in file.data_
+        // 1. Read file and put it in file.data_
         std::string filename = vm["read"].as<std::string>();
-        int dimension = 7;
-        File file(File(filename, dimension));
+        File file(( File(filename) ));
         file.exists_test();
         file.parseText(); // recover data in file.data_
 
-        Scene scene("Simulation", WINDOW_WIDTH, WINDOW_HEIGHT,
+        // 2. Inject data_ into Scene.cpp:165 : new Crate(x, y, z, 1.0, textureName_)
+        Scene scene("Immersive-3D visualization for astronomical data", WINDOW_WIDTH, WINDOW_HEIGHT,
                     vm.count("oculus"),
                     vm.count("fullscreen"),
                     vm["texture"].as<std::string>(),
-                vm["number"].as<unsigned long>(),
+                file.getTotalLines(), // TODO : polymorphisme for constructor of Scene: if there is no file in argument, use 'vm["number"].as<unsigned long>()' instead of 'file.totalLines_'.
                 vm["size"].as<int>(),
                 vm["octantSize"].as<int>(),
-                vm["octantDrawnCount"].as<int>()
+                vm["octantDrawnCount"].as<int>(),
+                file
                 );
+        //        Scene scene("Immersive-3D visualization for astronomical data", WINDOW_WIDTH, WINDOW_HEIGHT,
+        //                    vm.count("oculus"),
+        //                    vm.count("fullscreen"),
+        //                    vm["texture"].as<std::string>(),
+        //                vm["number"].as<unsigned long>(),
+        //                vm["size"].as<int>(),
+        //                vm["octantSize"].as<int>(),
+        //                vm["octantDrawnCount"].as<int>()
+        //                );
         scene.mainLoop();
     }
     catch(exception& e) {

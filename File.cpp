@@ -15,9 +15,30 @@ File::File()
 {
 }
 
-File::File(std::string filename, int dimension):filename_(filename), dimension_(dimension)
+File::File(std::string filename):filename_(filename)
 {
 }
+
+/**
+ * Getter of data_
+ * @brief File::getData
+ * @return
+ */
+double** File::getData() {
+    return data_;
+}
+
+/**
+ * Getter of totalLines_
+ * @brief File::getTotalLines_
+ */
+int File::getTotalLines() {
+    return totalLines_;
+}
+
+
+
+
 
 /**
  * Parse text files using regex. Skip if line dimension is 0 (only blank).
@@ -50,7 +71,7 @@ void File::parseText(){
     }
     totalLines_ = i-lineDimension_+1;
     logger->info(logger->get()<< "Found "<<totalLines_<<" usefull lines in '"<<filename_<<"'.\n");
-    printData();
+    //    printData();
 }
 
 /**
@@ -68,8 +89,9 @@ void File::exists_test() {
         isFile=false;
     }
     if (!isFile) {
-        logger->info(logger->get() << "File '" << filename_ << "' not found. Please Copy '" <<
-                     filename_ << "' to './build-Simulation-Clang-Debug/'\n");
+        logger->info(logger->get() << "ERROR : File '" << filename_ << "' not found. Please Copy '" <<
+            filename_ << "' to '../build-Simulation-Clang-Debug/' and" <<
+            "'./Shaders/*' to '../build-Simulation-Clang-Debug/' and './Textures/*' to '../build-Simulation-Clang-Debug/'\n");
         exit(-1);
     } else {
         logger->info(logger->get()<<"File '" << filename_ << "' found.");
@@ -152,7 +174,7 @@ void File::registerData(std::sregex_iterator words_begin, std::sregex_iterator w
 }
 
 /**
- * Print data_.
+ * Print all data stored in data_.
  * @brief File::printData
  */
 void File::printData() {

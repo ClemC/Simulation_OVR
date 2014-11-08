@@ -9,8 +9,22 @@
 class File
 {
 public:
+    // constructor
     File();
-    File(std::string filename, int dimension);
+    File(std::string filename);
+
+    // static
+    int mass = 1;    // column with mass
+    int xpos = 2;       // column with x
+    int ypos = 3;       // column with y
+    int zpos = 4;       // column with z
+    int age = 5;     // column with age
+
+    // accessor
+    int getTotalLines();
+    double** getData();
+
+    // method
     void parseText();
     void exists_test();
     int getCount(std::string text, std::regex regex);
@@ -20,10 +34,12 @@ public:
     void printData();
 
 private:
+    // static
+    int lineDimension_ = 3; // this is to automatically detect the dimension of the file.
+
     std::string filename_;
     int dimension_;
     int totalLines_;
-    int lineDimension_ = 3; // this is to automatically detect the dimension of the file.
     double** data_;
 };
 

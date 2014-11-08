@@ -21,6 +21,8 @@
 #include "SDL2/SDL.h"
 #include "Include/Octree/octree.h"
 
+#include "File.h"
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -44,7 +46,9 @@ class Scene
 
 public:
 
-    Scene(std::string windowTitle, int windowWidth, int windowHeight, bool oculusRender, bool fullscreen, std::string textureName, unsigned long objectsCount, int size, int octantSize, int  octantsDrawnCount);
+    Scene(std::string windowTitle, int windowWidth, int windowHeight, bool oculusRender,
+          bool fullscreen, std::string textureName, unsigned long objectsCount,
+          int size, int octantSize, int  octantsDrawnCount, File file);
     ~Scene();
 
     /**
@@ -187,6 +191,14 @@ private:
     unsigned long long frameCount_;
 
     std::string textureName_;
+    std::string textureBigStar_ = "Textures/star/bigStar.jpg",
+    textureSmallStar_ = "Textures/star/smallStar.jpg";
+    double bigStarLimit_ = 5000.0;
+
+    /**
+     * @brief file_ File from File.cpp
+     */
+    File file_;
 };
 
 
