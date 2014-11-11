@@ -10,7 +10,7 @@ int main(int argc, char** argv)
     logger->debug(logger->get() << "Command line arguments: " << argc-1);
 
     try {
-//128 2 8
+        //128 2 8
         po::options_description desc("Allowed options");
         desc.add_options()
                 ("help,h", "Produce help message")
@@ -21,7 +21,7 @@ int main(int argc, char** argv)
                 ("size,s", po::value<int>()->default_value(128), "Set the size of the data cube. Must be a power of 2")
                 ("octantSize", po::value<int>()->default_value(8), "Set the size of an octant. Must be a power of 2")
                 ("octantDrawnCount,d", po::value<int>()->default_value(2), "Set the number of octant drawn count. 1 to only draw the octant the camera is currently in, 2 to draw the immediate neighbors, ...")
-                ("read,r", po::value<std::string>()->default_value("./File/star.txt"), "Set the file to read.")
+                ("read,r", po::value<std::string>()->default_value("./File/star.txt"), "Set the file to read.") // set "./File/star.txt" or "" here.
                 ;
 
         po::variables_map vm;
@@ -33,33 +33,16 @@ int main(int argc, char** argv)
             std::cout << desc << std::endl;
             return 0;
         }
-
-        // 1. Read file and put it in file.data_
-        std::string filename = vm["read"].as<std::string>();
-        File file(( File(filename) ));
-        file.exists_test();
-        file.parseText(); // recover data in file.data_
-
-        // 2. Inject data_ into Scene.cpp:165 : new Crate(x, y, z, 1.0, textureName_)
         Scene scene("Immersive-3D visualization for astronomical data", WINDOW_WIDTH, WINDOW_HEIGHT,
                     vm.count("oculus"),
                     vm.count("fullscreen"),
                     vm["texture"].as<std::string>(),
-                file.getTotalLines(), // TODO : polymorphisme for constructor of Scene: if there is no file in argument, use 'vm["number"].as<unsigned long>()' instead of 'file.totalLines_'.
+                vm["number"].as<unsigned long>(),
                 vm["size"].as<int>(),
                 vm["octantSize"].as<int>(),
                 vm["octantDrawnCount"].as<int>(),
-                file
+                vm["read"].as<std::string>()
                 );
-        //        Scene scene("Immersive-3D visualization for astronomical data", WINDOW_WIDTH, WINDOW_HEIGHT,
-        //                    vm.count("oculus"),
-        //                    vm.count("fullscreen"),
-        //                    vm["texture"].as<std::string>(),
-        //                vm["number"].as<unsigned long>(),
-        //                vm["size"].as<int>(),
-        //                vm["octantSize"].as<int>(),
-        //                vm["octantDrawnCount"].as<int>()
-        //                );
         scene.mainLoop();
     }
     catch(exception& e) {
