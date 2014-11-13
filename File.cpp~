@@ -1,7 +1,6 @@
 #include "File.h"
 
 // Enable Google Test when value is 1
-// Without value 0, the project doesn't build
 #define ENABLE_GTEST 0
 
 #if ENABLE_GTEST
