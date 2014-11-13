@@ -8,5 +8,6 @@ How to run the tests
 
 ## Run the project tests
 
+- enable test in File.cpp by changing ENABLE_GTEST in 1
 - make (in /Tests)
 - ./File_unittest (in /Tests)
