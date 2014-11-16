@@ -22,6 +22,7 @@ public:
 
     // accessor
     int getTotalLines();
+    double getAge();
     double** getData();
 
     // method
@@ -37,7 +38,9 @@ private:
     // static
     int lineDimension_ = 3; // this is to automatically detect the dimension of the file.
 
+    // fields
     std::string filename_;
+    double age_;
     int dimension_;
     int totalLines_;
     double** data_;

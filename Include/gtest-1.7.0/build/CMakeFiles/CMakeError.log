@@ -51,3 +51,630 @@ make[1]: quittant le répertoire « /home/clement-ensiie/Documents/gtest-1.7.0/b
 make: *** [cmTryCompileExec2131803833/fast] Erreur 2
 
 
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1434130428/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1434130428.dir/build.make CMakeFiles/cmTryCompileExec1434130428.dir/build
+make[1]: Entering directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1434130428.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec1434130428.dir/CheckSymbolExists.c.o   -c /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec1434130428
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1434130428.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec1434130428.dir/CheckSymbolExists.c.o  -o cmTryCompileExec1434130428 -rdynamic 
+CMakeFiles/cmTryCompileExec1434130428.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0xa): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTryCompileExec1434130428.dir/build.make:88: recipe for target 'cmTryCompileExec1434130428' failed
+make[1]: *** [cmTryCompileExec1434130428] Error 1
+make[1]: Leaving directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+Makefile:114: recipe for target 'cmTryCompileExec1434130428/fast' failed
+make: *** [cmTryCompileExec1434130428/fast] Error 2
+
+File /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec903126386/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec903126386.dir/build.make CMakeFiles/cmTryCompileExec903126386.dir/build
+make[1]: Entering directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec903126386.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec903126386.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec903126386
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec903126386.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec903126386.dir/CheckFunctionExists.c.o  -o cmTryCompileExec903126386 -rdynamic -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTryCompileExec903126386.dir/build.make:88: recipe for target 'cmTryCompileExec903126386' failed
+make[1]: *** [cmTryCompileExec903126386] Error 1
+make[1]: Leaving directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+Makefile:114: recipe for target 'cmTryCompileExec903126386/fast' failed
+make: *** [cmTryCompileExec903126386/fast] Error 2
+
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1378739637/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1378739637.dir/build.make CMakeFiles/cmTryCompileExec1378739637.dir/build
+make[1]: Entering directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1378739637.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec1378739637.dir/CheckSymbolExists.c.o   -c /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec1378739637
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1378739637.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec1378739637.dir/CheckSymbolExists.c.o  -o cmTryCompileExec1378739637 -rdynamic 
+CMakeFiles/cmTryCompileExec1378739637.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0xa): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTryCompileExec1378739637.dir/build.make:88: recipe for target 'cmTryCompileExec1378739637' failed
+make[1]: *** [cmTryCompileExec1378739637] Error 1
+make[1]: Leaving directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+Makefile:114: recipe for target 'cmTryCompileExec1378739637/fast' failed
+make: *** [cmTryCompileExec1378739637/fast] Error 2
+
+File /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1920636367/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1920636367.dir/build.make CMakeFiles/cmTryCompileExec1920636367.dir/build
+make[1]: Entering directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1920636367.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec1920636367.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec1920636367
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1920636367.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec1920636367.dir/CheckFunctionExists.c.o  -o cmTryCompileExec1920636367 -rdynamic -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTryCompileExec1920636367.dir/build.make:88: recipe for target 'cmTryCompileExec1920636367' failed
+make[1]: *** [cmTryCompileExec1920636367] Error 1
+make[1]: Leaving directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+Makefile:114: recipe for target 'cmTryCompileExec1920636367/fast' failed
+make: *** [cmTryCompileExec1920636367/fast] Error 2
+
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3727741676/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3727741676.dir/build.make CMakeFiles/cmTryCompileExec3727741676.dir/build
+make[1]: Entering directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3727741676.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec3727741676.dir/CheckSymbolExists.c.o   -c /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec3727741676
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3727741676.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec3727741676.dir/CheckSymbolExists.c.o  -o cmTryCompileExec3727741676 -rdynamic 
+CMakeFiles/cmTryCompileExec3727741676.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0xa): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTryCompileExec3727741676.dir/build.make:88: recipe for target 'cmTryCompileExec3727741676' failed
+make[1]: *** [cmTryCompileExec3727741676] Error 1
+make[1]: Leaving directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+Makefile:114: recipe for target 'cmTryCompileExec3727741676/fast' failed
+make: *** [cmTryCompileExec3727741676/fast] Error 2
+
+File /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3645516135/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3645516135.dir/build.make CMakeFiles/cmTryCompileExec3645516135.dir/build
+make[1]: Entering directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3645516135.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec3645516135.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec3645516135
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3645516135.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec3645516135.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3645516135 -rdynamic -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTryCompileExec3645516135.dir/build.make:88: recipe for target 'cmTryCompileExec3645516135' failed
+make[1]: *** [cmTryCompileExec3645516135] Error 1
+make[1]: Leaving directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+Makefile:114: recipe for target 'cmTryCompileExec3645516135/fast' failed
+make: *** [cmTryCompileExec3645516135/fast] Error 2
+
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2223544512/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2223544512.dir/build.make CMakeFiles/cmTryCompileExec2223544512.dir/build
+make[1]: Entering directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2223544512.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec2223544512.dir/CheckSymbolExists.c.o   -c /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec2223544512
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2223544512.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec2223544512.dir/CheckSymbolExists.c.o  -o cmTryCompileExec2223544512 -rdynamic 
+CMakeFiles/cmTryCompileExec2223544512.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0xa): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTryCompileExec2223544512.dir/build.make:88: recipe for target 'cmTryCompileExec2223544512' failed
+make[1]: Leaving directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+make[1]: *** [cmTryCompileExec2223544512] Error 1
+Makefile:114: recipe for target 'cmTryCompileExec2223544512/fast' failed
+make: *** [cmTryCompileExec2223544512/fast] Error 2
+
+File /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2253905639/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2253905639.dir/build.make CMakeFiles/cmTryCompileExec2253905639.dir/build
+make[1]: Entering directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2253905639.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec2253905639.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec2253905639
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2253905639.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec2253905639.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2253905639 -rdynamic -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTryCompileExec2253905639.dir/build.make:88: recipe for target 'cmTryCompileExec2253905639' failed
+make[1]: Leaving directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+make[1]: *** [cmTryCompileExec2253905639] Error 1
+Makefile:114: recipe for target 'cmTryCompileExec2253905639/fast' failed
+make: *** [cmTryCompileExec2253905639/fast] Error 2
+
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3159770606/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3159770606.dir/build.make CMakeFiles/cmTryCompileExec3159770606.dir/build
+make[1]: Entering directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3159770606.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec3159770606.dir/CheckSymbolExists.c.o   -c /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec3159770606
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3159770606.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec3159770606.dir/CheckSymbolExists.c.o  -o cmTryCompileExec3159770606 -rdynamic 
+CMakeFiles/cmTryCompileExec3159770606.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0xa): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTryCompileExec3159770606.dir/build.make:88: recipe for target 'cmTryCompileExec3159770606' failed
+make[1]: Leaving directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+make[1]: *** [cmTryCompileExec3159770606] Error 1
+Makefile:114: recipe for target 'cmTryCompileExec3159770606/fast' failed
+make: *** [cmTryCompileExec3159770606/fast] Error 2
+
+File /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec666832766/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec666832766.dir/build.make CMakeFiles/cmTryCompileExec666832766.dir/build
+make[1]: Entering directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec666832766.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec666832766.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec666832766
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec666832766.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec666832766.dir/CheckFunctionExists.c.o  -o cmTryCompileExec666832766 -rdynamic -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTryCompileExec666832766.dir/build.make:88: recipe for target 'cmTryCompileExec666832766' failed
+make[1]: Leaving directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+make[1]: *** [cmTryCompileExec666832766] Error 1
+Makefile:114: recipe for target 'cmTryCompileExec666832766/fast' failed
+make: *** [cmTryCompileExec666832766/fast] Error 2
+
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2794381821/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2794381821.dir/build.make CMakeFiles/cmTryCompileExec2794381821.dir/build
+make[1]: Entering directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2794381821.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec2794381821.dir/CheckSymbolExists.c.o   -c /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec2794381821
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2794381821.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec2794381821.dir/CheckSymbolExists.c.o  -o cmTryCompileExec2794381821 -rdynamic 
+CMakeFiles/cmTryCompileExec2794381821.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0xa): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTryCompileExec2794381821.dir/build.make:88: recipe for target 'cmTryCompileExec2794381821' failed
+make[1]: Leaving directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+make[1]: *** [cmTryCompileExec2794381821] Error 1
+Makefile:114: recipe for target 'cmTryCompileExec2794381821/fast' failed
+make: *** [cmTryCompileExec2794381821/fast] Error 2
+
+File /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2650933700/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2650933700.dir/build.make CMakeFiles/cmTryCompileExec2650933700.dir/build
+make[1]: Entering directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2650933700.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec2650933700.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec2650933700
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2650933700.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec2650933700.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2650933700 -rdynamic -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTryCompileExec2650933700.dir/build.make:88: recipe for target 'cmTryCompileExec2650933700' failed
+make[1]: Leaving directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+make[1]: *** [cmTryCompileExec2650933700] Error 1
+Makefile:114: recipe for target 'cmTryCompileExec2650933700/fast' failed
+make: *** [cmTryCompileExec2650933700/fast] Error 2
+
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec704079439/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec704079439.dir/build.make CMakeFiles/cmTryCompileExec704079439.dir/build
+make[1]: Entering directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec704079439.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec704079439.dir/CheckSymbolExists.c.o   -c /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec704079439
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec704079439.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec704079439.dir/CheckSymbolExists.c.o  -o cmTryCompileExec704079439 -rdynamic 
+CMakeFiles/cmTryCompileExec704079439.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0xa): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTryCompileExec704079439.dir/build.make:88: recipe for target 'cmTryCompileExec704079439' failed
+make[1]: Leaving directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+make[1]: *** [cmTryCompileExec704079439] Error 1
+Makefile:114: recipe for target 'cmTryCompileExec704079439/fast' failed
+make: *** [cmTryCompileExec704079439/fast] Error 2
+
+File /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1896542189/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1896542189.dir/build.make CMakeFiles/cmTryCompileExec1896542189.dir/build
+make[1]: Entering directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1896542189.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec1896542189.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec1896542189
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1896542189.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec1896542189.dir/CheckFunctionExists.c.o  -o cmTryCompileExec1896542189 -rdynamic -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTryCompileExec1896542189.dir/build.make:88: recipe for target 'cmTryCompileExec1896542189' failed
+make[1]: Leaving directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+make[1]: *** [cmTryCompileExec1896542189] Error 1
+Makefile:114: recipe for target 'cmTryCompileExec1896542189/fast' failed
+make: *** [cmTryCompileExec1896542189/fast] Error 2
+
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec834135763/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec834135763.dir/build.make CMakeFiles/cmTryCompileExec834135763.dir/build
+make[1]: Entering directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec834135763.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec834135763.dir/CheckSymbolExists.c.o   -c /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec834135763
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec834135763.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec834135763.dir/CheckSymbolExists.c.o  -o cmTryCompileExec834135763 -rdynamic 
+CMakeFiles/cmTryCompileExec834135763.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0xa): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTryCompileExec834135763.dir/build.make:88: recipe for target 'cmTryCompileExec834135763' failed
+make[1]: Leaving directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+make[1]: *** [cmTryCompileExec834135763] Error 1
+Makefile:114: recipe for target 'cmTryCompileExec834135763/fast' failed
+make: *** [cmTryCompileExec834135763/fast] Error 2
+
+File /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec242835076/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec242835076.dir/build.make CMakeFiles/cmTryCompileExec242835076.dir/build
+make[1]: Entering directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec242835076.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec242835076.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec242835076
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec242835076.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec242835076.dir/CheckFunctionExists.c.o  -o cmTryCompileExec242835076 -rdynamic -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTryCompileExec242835076.dir/build.make:88: recipe for target 'cmTryCompileExec242835076' failed
+make[1]: *** [cmTryCompileExec242835076] Error 1
+make[1]: Leaving directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+Makefile:114: recipe for target 'cmTryCompileExec242835076/fast' failed
+make: *** [cmTryCompileExec242835076/fast] Error 2
+
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1626197284/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1626197284.dir/build.make CMakeFiles/cmTryCompileExec1626197284.dir/build
+make[1]: Entering directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1626197284.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec1626197284.dir/CheckSymbolExists.c.o   -c /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec1626197284
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1626197284.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec1626197284.dir/CheckSymbolExists.c.o  -o cmTryCompileExec1626197284 -rdynamic 
+CMakeFiles/cmTryCompileExec1626197284.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0xa): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTryCompileExec1626197284.dir/build.make:88: recipe for target 'cmTryCompileExec1626197284' failed
+make[1]: *** [cmTryCompileExec1626197284] Error 1
+make[1]: Leaving directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+Makefile:114: recipe for target 'cmTryCompileExec1626197284/fast' failed
+make: *** [cmTryCompileExec1626197284/fast] Error 2
+
+File /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1442663334/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1442663334.dir/build.make CMakeFiles/cmTryCompileExec1442663334.dir/build
+make[1]: Entering directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1442663334.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec1442663334.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec1442663334
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1442663334.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec1442663334.dir/CheckFunctionExists.c.o  -o cmTryCompileExec1442663334 -rdynamic -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTryCompileExec1442663334.dir/build.make:88: recipe for target 'cmTryCompileExec1442663334' failed
+make[1]: *** [cmTryCompileExec1442663334] Error 1
+make[1]: Leaving directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+Makefile:114: recipe for target 'cmTryCompileExec1442663334/fast' failed
+make: *** [cmTryCompileExec1442663334/fast] Error 2
+
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1500180610/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1500180610.dir/build.make CMakeFiles/cmTryCompileExec1500180610.dir/build
+make[1]: Entering directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1500180610.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec1500180610.dir/CheckSymbolExists.c.o   -c /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec1500180610
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1500180610.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec1500180610.dir/CheckSymbolExists.c.o  -o cmTryCompileExec1500180610 -rdynamic 
+CMakeFiles/cmTryCompileExec1500180610.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0xa): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTryCompileExec1500180610.dir/build.make:88: recipe for target 'cmTryCompileExec1500180610' failed
+make[1]: Leaving directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+make[1]: *** [cmTryCompileExec1500180610] Error 1
+Makefile:114: recipe for target 'cmTryCompileExec1500180610/fast' failed
+make: *** [cmTryCompileExec1500180610/fast] Error 2
+
+File /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2709338675/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2709338675.dir/build.make CMakeFiles/cmTryCompileExec2709338675.dir/build
+make[1]: Entering directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2709338675.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec2709338675.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec2709338675
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2709338675.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec2709338675.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2709338675 -rdynamic -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTryCompileExec2709338675.dir/build.make:88: recipe for target 'cmTryCompileExec2709338675' failed
+make[1]: *** [cmTryCompileExec2709338675] Error 1
+make[1]: Leaving directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+Makefile:114: recipe for target 'cmTryCompileExec2709338675/fast' failed
+make: *** [cmTryCompileExec2709338675/fast] Error 2
+
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3990815660/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3990815660.dir/build.make CMakeFiles/cmTryCompileExec3990815660.dir/build
+make[1]: Entering directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3990815660.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec3990815660.dir/CheckSymbolExists.c.o   -c /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec3990815660
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3990815660.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec3990815660.dir/CheckSymbolExists.c.o  -o cmTryCompileExec3990815660 -rdynamic 
+CMakeFiles/cmTryCompileExec3990815660.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0xa): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTryCompileExec3990815660.dir/build.make:88: recipe for target 'cmTryCompileExec3990815660' failed
+make[1]: Leaving directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+make[1]: *** [cmTryCompileExec3990815660] Error 1
+Makefile:114: recipe for target 'cmTryCompileExec3990815660/fast' failed
+make: *** [cmTryCompileExec3990815660/fast] Error 2
+
+File /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3292450237/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3292450237.dir/build.make CMakeFiles/cmTryCompileExec3292450237.dir/build
+make[1]: Entering directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3292450237.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec3292450237.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec3292450237
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3292450237.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec3292450237.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3292450237 -rdynamic -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTryCompileExec3292450237.dir/build.make:88: recipe for target 'cmTryCompileExec3292450237' failed
+make[1]: Leaving directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+make[1]: *** [cmTryCompileExec3292450237] Error 1
+Makefile:114: recipe for target 'cmTryCompileExec3292450237/fast' failed
+make: *** [cmTryCompileExec3292450237/fast] Error 2
+
+

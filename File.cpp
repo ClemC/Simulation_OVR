@@ -2,7 +2,7 @@
 
 // Enable Google Test when value is 1
 // Without value 0, the project doesn't build
-#define ENABLE_GTEST 0
+//#define ENABLE_GTEST 1
 
 #if ENABLE_GTEST
     std::unique_ptr<Logger> logger(new Logger("log.log", "log.err", false, Severity::error | Severity::info));
@@ -12,7 +12,7 @@
  * File class Version 2.0.
  * Put data in double** File::data_. Use File::printData() to print them.
  * Recognize n dimension.
- * Uses the Regular Expression "([^\\s]+)". => It is possible to read something like that : 'a b      c d     e'.
+ * Uses the Regular Expression "([^\\s]+)". => Should be possible to read something like : 'a b      c d     e'.
  * Automatically detects the dimension (n) by reading the 3rd line.
  * If a line is empty, it is ignored.
  * If a line has not the same number of columns, it is ignored.
@@ -43,6 +43,13 @@ int File::getTotalLines() {
     return totalLines_;
 }
 
+/**
+ * Getter of age_
+ * @brief File::age_
+ */
+double File::getAge() {
+    return age_;
+}
 
 
 
@@ -80,6 +87,48 @@ void File::parseText(){
     logger->info(logger->get()<< "Found "<<totalLines_<<" usefull lines in '"<<filename_<<"'.\n");
     //    printData();
 }
+//void File::parseText(){
+//    // static
+//    std::regex regex("([^\\s]+)");
+//    std::regex regex2("[-+]?([0-9]*\\.[0-9]+|[0-9]+)");
+
+//    // Find max number of valid lines in the file
+//    std::ifstream inFile0(filename_);
+//    totalLines_ = std::count(std::istreambuf_iterator<char>(inFile0),
+//                             std::istreambuf_iterator<char>(), '\n');
+//    int i=0;
+//    logger->info(logger->get() << "parseText: found " << totalLines_ << " lines.");
+//    data_ = new double *[totalLines_*2];
+//    std::ifstream inFile(filename_);
+//    std::string line;
+
+//    // check each line and register them in _data.
+//    while (std::getline(inFile, line)){
+//        i++;
+//        if (i==1) {// Find the age of the universe
+//            auto itUniverse=split(line, regex2);
+//            auto words_end = std::sregex_iterator();
+//            for (std::sregex_iterator it = itUniverse; it != words_end; ++it) {
+//                std::smatch match = *it;
+//                std::string match_str = match.str();
+//                age_ = atof(match_str.c_str());
+//                logger->info(logger->get() << "The universe is now " << age_ << " years old !");
+//                // Use 'cout.precision(15);' and 'cout<<age_;' to print all digits.
+//            }
+//        }
+//        if (i==lineDimension_) { // Compute dimension.
+//            dimension_ = getCount(line, regex);
+//            logger->info(logger->get() << "dimension_ is now " << dimension_ << ". It was found in '" << line << "' (line " << lineDimension_
+//                         << ").");
+//        }
+//        if (i>=lineDimension_) { // Read data
+//            checkIfExceptionInFile(line, regex, &i);
+//        }
+//    }
+//    totalLines_ = i-lineDimension_+1;
+//    logger->info(logger->get()<< "Found "<<totalLines_<<" usefull lines in '"<<filename_<<"'.\n");
+//    //    printData();
+//}
 
 /**
  * Test if the file filename_ exists.

@@ -1,0 +1,14 @@
+<info> (1) [23732 micros] dimension_ is now 7. It was found in '    1009  3.19393E+03  4.57871E-02  5.97007E-02  4.66993E-02  3.64937E+00  0.00000E+00' (line 3). (23732 micros) 
+<info> (2) [554094 micros] checkIfExceptionInFile: W: Skipping blank or invalid line at l 1552. dimLine was 0 but shouldn't be 0 or (dimension_=7) in '../File/star.txt'. (530361 micros) 
+<info> (3) [554104 micros] Found 1549 usefull lines in '../File/star.txt'.
+ (10 micros) 
+<info> (4) [563263 micros] dimension_ is now 7. It was found in '    1009  3.19393E+03  4.57871E-02  5.97007E-02  4.66993E-02  3.64937E+00  0.00000E+00' (line 3). (9159 micros) 
+<info> (5) [1004851 micros] checkIfExceptionInFile: W: Skipping blank or invalid line at l 1528. dimLine was 0 but shouldn't be 0 or (dimension_=7) in '../File/f1.txt'. (441588 micros) 
+<info> (6) [1004861 micros] Found 1525 usefull lines in '../File/f1.txt'.
+ (10 micros) 
+<info> (7) [1005443 micros] dimension_ is now 4. It was found in '    1009  3.1E+03  4.57871E-02  5.97007E-02' (line 3). (582 micros) 
+<info> (8) [1008024 micros] Found 10 usefull lines in '../File/f2.txt'.
+ (2580 micros) 
+<info> (9) [1008563 micros] dimension_ is now 3. It was found in '    1009  3.1E+03  4.57871E-02' (line 3). (538 micros) 
+<info> (10) [1009104 micros] Found 2 usefull lines in '../File/f3.txt'.
+ (541 micros) 
