@@ -5,7 +5,7 @@
 //#define ENABLE_GTEST 1
 
 #if ENABLE_GTEST
-    std::unique_ptr<Logger> logger(new Logger("log.log", "log.err", false, Severity::error | Severity::info));
+std::unique_ptr<Logger> logger(new Logger("log.log", "log.err", false, Severity::error | Severity::info));
 #endif
 
 /**
@@ -66,7 +66,6 @@ void File::parseText(){
                              std::istreambuf_iterator<char>(), '\n');
     std::regex regex("([^\\s]+)");
     int i=0;
-    cout << totalLines_ <<"\n";
     data_ = new double *[totalLines_*2];
     std::ifstream inFile(filename_);
     std::string line;
@@ -146,8 +145,8 @@ void File::exists_test() {
     }
     if (!isFile) {
         logger->info(logger->get() << "ERROR : File '" << filename_ << "' not found. Please Copy '" <<
-            filename_ << "' to '../build-Simulation-Clang-Debug/' and" <<
-            "'./Shaders/*' to '../build-Simulation-Clang-Debug/' and './Textures/*' to '../build-Simulation-Clang-Debug/'\n");
+                     filename_ << "' to '../build-Simulation-Clang-Debug/' and" <<
+                     "'./Shaders/*' to '../build-Simulation-Clang-Debug/' and './Textures/*' to '../build-Simulation-Clang-Debug/'\n");
         exit(-1);
     } else {
         logger->info(logger->get()<<"File '" << filename_ << "' found.");
@@ -198,7 +197,7 @@ std::sregex_iterator File::checkIfExceptionInFile(std::string text, std::regex r
 
     if (dimLine == 0 || dimLine != dimension_) {
         logger->info(logger->get() << "checkIfExceptionInFile: W: Skipping blank or invalid line at l "<< *i << ". dimLine was " << dimLine <<
-                     " but shouldn't be 0 or (dimension_=" << dimension_ << ") in '"<<filename_<<"'.");
+                     " but should be (dimension_=" << dimension_ << ") in '"<<filename_<<"'.");
         skip = true;
         (*i)--;
     }

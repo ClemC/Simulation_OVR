@@ -621,3 +621,183 @@ Linking C executable cmTryCompileExec985830645
 make[1]: Leaving directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
 
 
+Determining if files pthread.h exist passed with the following output:
+Change Dir: /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec107580138/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec107580138.dir/build.make CMakeFiles/cmTryCompileExec107580138.dir/build
+make[1]: Entering directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec107580138.dir/CheckIncludeFiles.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec107580138.dir/CheckIncludeFiles.c.o   -c /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTryCompileExec107580138
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec107580138.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec107580138.dir/CheckIncludeFiles.c.o  -o cmTryCompileExec107580138 -rdynamic 
+make[1]: Leaving directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+
+
+Determining if the function pthread_create exists in the pthread passed with the following output:
+Change Dir: /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3677658272/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3677658272.dir/build.make CMakeFiles/cmTryCompileExec3677658272.dir/build
+make[1]: Entering directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3677658272.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec3677658272.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec3677658272
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3677658272.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec3677658272.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3677658272 -rdynamic -lpthread 
+make[1]: Leaving directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+
+
+Determining if files pthread.h exist passed with the following output:
+Change Dir: /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2860852065/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2860852065.dir/build.make CMakeFiles/cmTryCompileExec2860852065.dir/build
+make[1]: Entering directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2860852065.dir/CheckIncludeFiles.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec2860852065.dir/CheckIncludeFiles.c.o   -c /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTryCompileExec2860852065
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2860852065.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec2860852065.dir/CheckIncludeFiles.c.o  -o cmTryCompileExec2860852065 -rdynamic 
+make[1]: Leaving directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+
+
+Determining if the function pthread_create exists in the pthread passed with the following output:
+Change Dir: /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2428116428/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2428116428.dir/build.make CMakeFiles/cmTryCompileExec2428116428.dir/build
+make[1]: Entering directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2428116428.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec2428116428.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec2428116428
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2428116428.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec2428116428.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2428116428 -rdynamic -lpthread 
+make[1]: Leaving directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+
+
+Determining if files pthread.h exist passed with the following output:
+Change Dir: /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1171922337/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1171922337.dir/build.make CMakeFiles/cmTryCompileExec1171922337.dir/build
+make[1]: Entering directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1171922337.dir/CheckIncludeFiles.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec1171922337.dir/CheckIncludeFiles.c.o   -c /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTryCompileExec1171922337
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1171922337.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec1171922337.dir/CheckIncludeFiles.c.o  -o cmTryCompileExec1171922337 -rdynamic 
+make[1]: Leaving directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+
+
+Determining if the function pthread_create exists in the pthread passed with the following output:
+Change Dir: /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3872657679/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3872657679.dir/build.make CMakeFiles/cmTryCompileExec3872657679.dir/build
+make[1]: Entering directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3872657679.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec3872657679.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec3872657679
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3872657679.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec3872657679.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3872657679 -rdynamic -lpthread 
+make[1]: Leaving directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+
+
+Determining if files pthread.h exist passed with the following output:
+Change Dir: /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3086562212/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3086562212.dir/build.make CMakeFiles/cmTryCompileExec3086562212.dir/build
+make[1]: Entering directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3086562212.dir/CheckIncludeFiles.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec3086562212.dir/CheckIncludeFiles.c.o   -c /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTryCompileExec3086562212
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3086562212.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec3086562212.dir/CheckIncludeFiles.c.o  -o cmTryCompileExec3086562212 -rdynamic 
+make[1]: Leaving directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+
+
+Determining if the function pthread_create exists in the pthread passed with the following output:
+Change Dir: /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec623122012/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec623122012.dir/build.make CMakeFiles/cmTryCompileExec623122012.dir/build
+make[1]: Entering directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec623122012.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec623122012.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec623122012
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec623122012.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec623122012.dir/CheckFunctionExists.c.o  -o cmTryCompileExec623122012 -rdynamic -lpthread 
+make[1]: Leaving directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+
+
+Determining if files pthread.h exist passed with the following output:
+Change Dir: /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec552608753/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec552608753.dir/build.make CMakeFiles/cmTryCompileExec552608753.dir/build
+make[1]: Entering directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec552608753.dir/CheckIncludeFiles.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec552608753.dir/CheckIncludeFiles.c.o   -c /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTryCompileExec552608753
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec552608753.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec552608753.dir/CheckIncludeFiles.c.o  -o cmTryCompileExec552608753 -rdynamic 
+make[1]: Leaving directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+
+
+Determining if the function pthread_create exists in the pthread passed with the following output:
+Change Dir: /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2623922866/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2623922866.dir/build.make CMakeFiles/cmTryCompileExec2623922866.dir/build
+make[1]: Entering directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2623922866.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec2623922866.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec2623922866
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2623922866.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec2623922866.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2623922866 -rdynamic -lpthread 
+make[1]: Leaving directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+
+
+Determining if files pthread.h exist passed with the following output:
+Change Dir: /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec428028433/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec428028433.dir/build.make CMakeFiles/cmTryCompileExec428028433.dir/build
+make[1]: Entering directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec428028433.dir/CheckIncludeFiles.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec428028433.dir/CheckIncludeFiles.c.o   -c /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTryCompileExec428028433
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec428028433.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec428028433.dir/CheckIncludeFiles.c.o  -o cmTryCompileExec428028433 -rdynamic 
+make[1]: Leaving directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+
+
+Determining if the function pthread_create exists in the pthread passed with the following output:
+Change Dir: /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3757579266/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3757579266.dir/build.make CMakeFiles/cmTryCompileExec3757579266.dir/build
+make[1]: Entering directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3757579266.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec3757579266.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec3757579266
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3757579266.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec3757579266.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3757579266 -rdynamic -lpthread 
+make[1]: Leaving directory '/home/a/Desktop/git/Simulation_OVR/Include/gtest-1.7.0/build/CMakeFiles/CMakeTmp'
+
+

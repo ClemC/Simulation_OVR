@@ -21,7 +21,7 @@ std::unique_ptr<NullOculus> nullOculus(new NullOculus);
 
 Scene::Scene(std::string windowTitle, int windowWidth, int windowHeight, bool oculusRender, bool fullscreen,
              std::string textureName, unsigned long objectsCount, int size, int octantSize,
-             int  octantsDrawnCount, std::string filename):
+             int  octantsDrawnCount, std::string filename, int randomPercentage):
     gObjectsCount_ {objectsCount}, // R&D: if reading files, should be set to the number of lines.
     size_ {size},
     //1 to only draw the octant the camera is in, 2 to draw the immediate neighbours, etc. Power of 2
@@ -37,7 +37,8 @@ Scene::Scene(std::string windowTitle, int windowWidth, int windowHeight, bool oc
     fps_ {0},
     frameCount_ {0},
     textureName_ {textureName},
-    filename_ {filename}
+    filename_ {filename},
+    randomPercentage_ {randomPercentage}
 {
     logger->trace(logger->get() << "Scene constructor");
 
@@ -149,58 +150,47 @@ bool Scene::initGL()
     return true;
 }
 
+void Scene::initOrigin() { // original method with random points.
+    std::default_random_engine generator;
+    std::uniform_int_distribution<> distribution(0, size_ - 1);
+    auto startGeneration = std::chrono::high_resolution_clock::now();
+
+    for(ulong i=1; i <= gObjectsCount_; i++)
+    {
+        int x = distribution(generator);
+        int y = distribution(generator);
+        int z = distribution(generator);
+
+        auto startCrateGeneration = std::chrono::high_resolution_clock::now();
+        gObjects_(x, y, z) = std::shared_ptr<Crate>(new Crate(x, y, z, 1.0, textureName_));
+        auto endCrateGeneration = std::chrono::high_resolution_clock::now();
+
+        logger->debug(logger->get() << "Generated crate n°" << i << " at position ("
+                      << x << ", " << y << ", " << z << ") in "
+                      << chrono::duration_cast<std::chrono::milliseconds>(endCrateGeneration - startCrateGeneration).count() << " ms");
+    }
+    auto endGeneration = std::chrono::high_resolution_clock::now();
+    auto generationTime = std::chrono::duration_cast<std::chrono::milliseconds>(endGeneration - startGeneration).count();
+    logger->info(logger->get() << "Summary: the generation of " << gObjectsCount_ << " graphic objects took " << generationTime << " ms");
+}
+
 /**
- * Generate the Scene.
- * Use file star.txt
- * (x, y, z) are in [0, (128*zoom)].
- * @brief Scene::initGObjects
+ * @brief initGObjectsFile Simple load of the file, with random algorythm if randomPercentage!=1.
  */
-void Scene::initGObjects()
-{
-    if (filename_.empty()) { // no file as a parameter
-        std::default_random_engine generator;
-        std::uniform_int_distribution<> distribution(0, size_ - 1);
-        auto startGeneration = std::chrono::high_resolution_clock::now();
+void Scene::initGObjectsFile() {
+    // A. Parse file
+    File file(( File(filename_) ));
+    file.exists_test();
+    file.parseText(); // 'error: vector::_M_default_append' is here.
+    file_=file;
 
-        for(ulong i=1; i <= gObjectsCount_; i++)
-        {
-            int x = distribution(generator);
-            int y = distribution(generator);
-            int z = distribution(generator);
-
-            auto startCrateGeneration = std::chrono::high_resolution_clock::now();
-            gObjects_(x, y, z) = std::shared_ptr<Crate>(new Crate(x, y, z, 1.0, textureName_));
-            auto endCrateGeneration = std::chrono::high_resolution_clock::now();
-
-            logger->debug(logger->get() << "Generated crate n°" << i << " at position ("
-                          << x << ", " << y << ", " << z << ") in "
-                          << chrono::duration_cast<std::chrono::milliseconds>(endCrateGeneration - startCrateGeneration).count() << " ms");
-        }
-        auto endGeneration = std::chrono::high_resolution_clock::now();
-        auto generationTime = std::chrono::duration_cast<std::chrono::milliseconds>(endGeneration - startGeneration).count();
-
-        logger->info(logger->get() << "Summary: the generation of " << gObjectsCount_ << " graphic objects took " << generationTime << " ms");
-    } else {
-// A. Parse file
-        File file(( File(filename_) ));
-        file.exists_test();
-        file.parseText(); // 'error: vector::_M_default_append' is here.
-        file_=file;
-
-// B. Display content
-//        file_.printData();
-        int i=0, n=file_.getTotalLines();
-        for (i=0; i<=n - 1; i++) {
-// C. Print info in console
+    // B. Plot star.txt
+    int i=0, n=file_.getTotalLines();
+    srand ( time(NULL) ); // seed
+    for (i=0; i<=n - 1; i++) {
+        if (isRandomPoint(randomPercentage_)) { // if randomPercentage==100, always true.
             int max = size_ - 1;
-//            cout << "(xc, yc, zc) = (" << (int)((file_.getData()[i][file_.xpos])*(max)) << ", "
-//                 << (int)((file_.getData()[i][file_.ypos])*(max)) << ", "
-//                 << (int)((file_.getData()[i][file_.zpos])*(max)) << ")\t=>\t(mass, age) = ("
-//                 << file_.getData()[i][file_.mass] << ", "
-//                 << file_.getData()[i][file_.age] << ")\n";
-
-// D. Plot star.txt
-            double zoom = 0.75; // only way to see more data at the same time ? double zoom = 1; // should be 1.
+            double zoom = 1; // only way to see more data at the same time ? double zoom = 1; // should be 1.
             int x = (file_.getData()[i][file_.xpos])*(max)*(zoom);
             int y = (file_.getData()[i][file_.ypos])*(max)*(zoom);
             int z = (file_.getData()[i][file_.zpos])*(max)*(zoom);
@@ -211,7 +201,7 @@ void Scene::initGObjects()
                 zoom=1;
             }
 
-// D. Increase size according to age.
+            // C. Increase size according to age.
             auto startCrateGeneration = std::chrono::high_resolution_clock::now();
             std::string texture;
             if (massV>bigStarLimit_) {
@@ -220,13 +210,51 @@ void Scene::initGObjects()
                 texture = textureSmallStar_;
             }
             gObjects_(x, y, z) = std::shared_ptr<Crate>(new Crate(x, y, z, ageV, texture)); // textureName_
-// E. Log
+            // D. Log
             auto endCrateGeneration = std::chrono::high_resolution_clock::now();
             logger->debug(logger->get() << "Generated crate n°" << i << " at position ("
                           << x << ", " << y << ", " << z << ") in "
-                          << chrono::duration_cast<std::chrono::milliseconds>(endCrateGeneration - startCrateGeneration).count() << " ms");
-
+                          << chrono::duration_cast<std::chrono::milliseconds>(endCrateGeneration - startCrateGeneration).count()
+                          << " ms");
         }
+    }
+}
+
+/**
+ * @brief Scene::isRandomPoint Return true in n% of the time.
+ * @param n
+ * @return
+ */
+bool Scene::isRandomPoint(int n) {
+    bool res = true;
+
+    if (n<100) {
+        int a = 0, b = 100;
+        int r = rand()%(b-a) +a;
+        res = r<n;
+    }
+
+    return res;
+}
+
+/**
+******************************************************
+ * Generate the Scene.
+ * Use file star.txt
+ * (x, y, z) are in [0, (128*zoom)].
+ * @brief Scene::initGObjects
+ */
+void Scene::initGObjects()
+{
+    if (filename_.empty()) { // no file as a parameter
+        initOrigin();
+    } else {
+        if (randomPercentage_<100) {
+            logger->info(logger->get() << "Using Random Algorythm with randomPercentage = " << randomPercentage_);
+        } else {
+            logger->info(logger->get() << "Using basic Algorythm.");
+        }
+        initGObjectsFile();
     }
 }
 
@@ -356,6 +384,9 @@ void Scene::updateFPS(int elapsedTime)
     logger->debug(logger->get() << "Current fps: " << newFps);
     logger->debug(logger->get() << "Current cumulated mean fps: " << fps_);
 
-    std::string newTitle = windowTitle_ + " (" + std::to_string(newFps) + "FPS)";
+    std::string newTitle = windowTitle_ + " | (" + std::to_string(camera_->position().x) + ", " +
+            std::to_string(camera_->position().y) + ", " +
+            std::to_string(camera_->position().z) + ") | (" +
+            std::to_string(newFps) + "FPS)";
     SDL_SetWindowTitle(window_, newTitle.c_str());
 }

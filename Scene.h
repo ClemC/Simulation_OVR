@@ -48,7 +48,8 @@ public:
 
     Scene(std::string windowTitle, int windowWidth, int windowHeight, bool oculusRender,
           bool fullscreen, std::string textureName, unsigned long objectsCount,
-          int size, int octantSize, int  octantsDrawnCount, std::string filename);
+          int size, int octantSize, int  octantsDrawnCount, std::string filename,
+          int randomPercentage);
     ~Scene();
 
     /**
@@ -89,6 +90,22 @@ private:
 
     /**
      * @brief Generates graphical objects at random positions
+     */
+    void initOrigin();
+
+    /**
+     * @brief initGObjectsFile Simple load of the file, with random algorythm if randomPercentage!=1.
+     */
+    void initGObjectsFile();
+
+    /**
+     * @brief isRandomPoint
+     * @return
+     */
+    bool isRandomPoint(int n);
+
+    /**
+     * @brief Generates graphical objects generator.
      */
     void initGObjects();
 
@@ -204,6 +221,11 @@ private:
      * @brief file_ generated in Scene.cpp
      */
     File file_;
+
+    /**
+     * @brief randomPercentage_ percentage of points to display. If 1, do not use random method.
+     */
+    int randomPercentage_;
 };
 
 
