@@ -1,0 +1,7 @@
+<info> (1) [71261 micros] Using basic Algorythm. (71261 micros) 
+<info> (2) [71383 micros] File './File/star.txt' found. (122 micros) 
+<info> (3) [73859 micros] dimension_ is now 7. It was found in '    1009  3.19393E+03  4.57871E-02  5.97007E-02  4.66993E-02  3.64937E+00  0.00000E+00' (line 3). (2475 micros) 
+<info> (4) [351120 micros] checkIfExceptionInFile: W: Skipping blank or invalid line at l 1552. dimLine was 0 but should be (dimension_=7) in './File/star.txt'. (277261 micros) 
+<info> (5) [351157 micros] Found 1549 usefull lines in './File/star.txt'.
+ (36 micros) 
+<info> (6) [10079277 micros] Mean fps at the end; 30.3436 (9728119 micros) 

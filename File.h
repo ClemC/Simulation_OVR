@@ -33,6 +33,11 @@ public:
     std::sregex_iterator checkIfExceptionInFile(std::string text, std::regex regex, int* i);
     void registerData(std::sregex_iterator words_begin, std::sregex_iterator words_end, int i, bool skip);
     void printData();
+    /* hierarchical clustering */
+    void cah(int cluster);
+    double dissim(std::vector<int> c1, std::vector<int> c2);
+    double dissimG(std::vector<int> c1, std::vector<int> c2);
+    void registerClusters();
 
 private:
     // static
@@ -44,6 +49,9 @@ private:
     int dimension_;
     int totalLines_;
     double** data_;
+    int totalLineCah_;
+    double** dataCah_;
+    std::vector<std::vector<int>> clusters_;
 };
 
 #endif // FILE_H
