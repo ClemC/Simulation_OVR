@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <regex>
+#include <random>
 #include "LogCpp/Log.h"
 
 class File
@@ -22,10 +23,13 @@ public:
 
     // accessor
     int getTotalLines();
+    int getTotalLinesCah();
     double getAge();
     double** getData();
+    double** getDataCah();
 
     // method
+    /* parsing */
     void parseText();
     void exists_test();
     int getCount(std::string text, std::regex regex);
@@ -35,9 +39,12 @@ public:
     void printData();
     /* hierarchical clustering */
     void cah(int cluster);
-    double dissim(std::vector<int> c1, std::vector<int> c2);
+    double dissimMax(std::vector<int> c1, std::vector<int> c2);
     double dissimG(std::vector<int> c1, std::vector<int> c2);
+    double dissimAlea(std::vector<int> c1, std::vector<int> c2);
+    std::vector<int> minMatDissim (double **m, int size);
     void registerClusters();
+    void printDataCah();
 
 private:
     // static
@@ -49,7 +56,7 @@ private:
     int dimension_;
     int totalLines_;
     double** data_;
-    int totalLineCah_;
+    int totalLinesCah_;
     double** dataCah_;
     std::vector<std::vector<int>> clusters_;
 };

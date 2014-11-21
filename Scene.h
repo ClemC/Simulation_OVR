@@ -49,7 +49,7 @@ public:
     Scene(std::string windowTitle, int windowWidth, int windowHeight, bool oculusRender,
           bool fullscreen, std::string textureName, unsigned long objectsCount,
           int size, int octantSize, int  octantsDrawnCount, std::string filename,
-          int randomPercentage);
+          int randomPercentage, int clusteringPercentage);
     ~Scene();
 
     /**
@@ -75,6 +75,12 @@ public:
     int windowHeight() const;
     void setWindowHeight(int windowHeight);
 
+    /**
+     * @brief isRandomPoint
+     * @return
+     */
+    bool isRandomPoint(int n);
+
 private:
     /**
      * @brief Opens the window and creates an OpenGL context
@@ -97,12 +103,6 @@ private:
      * @brief initGObjectsFile Simple load of the file, with random algorythm if randomPercentage!=1.
      */
     void initGObjectsFile();
-
-    /**
-     * @brief isRandomPoint
-     * @return
-     */
-    bool isRandomPoint(int n);
 
     /**
      * @brief Generates graphical objects generator.
@@ -226,6 +226,11 @@ private:
      * @brief randomPercentage_ percentage of points to display. If 1, do not use random method.
      */
     int randomPercentage_;
+
+    /**
+     * @brief clusteringPercentage_ percentage of points to display. If 100, do not use clustering method.
+     */
+    int clusteringPercentage_;
 };
 
 

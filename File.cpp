@@ -27,6 +27,15 @@ File::File(std::string filename):filename_(filename)
 }
 
 /**
+ * Getter of dataCah_
+ * @brief File::getDataCah
+ * @return
+ */
+double** File::getDataCah() {
+    return dataCah_;
+}
+
+/**
  * Getter of data_
  * @brief File::getData
  * @return
@@ -36,8 +45,16 @@ double** File::getData() {
 }
 
 /**
+ * Getter of totalLinesCah_
+ * @brief File::getTotalLinesCah
+ */
+int File::getTotalLinesCah() {
+    return totalLinesCah_;
+}
+
+/**
  * Getter of totalLines_
- * @brief File::getTotalLines_
+ * @brief File::getTotalLines
  */
 int File::getTotalLines() {
     return totalLines_;
@@ -243,7 +260,30 @@ void File::printData() {
     }
 }
 
-double File::dissim(std::vector<int> c1, std::vector<int> c2){
+//////////////////////////////////////////////////////////////////
+
+/**
+ * Print all data stored in dataCah_.
+ * @brief File::printDataCah
+ */
+void File::printDataCah() {
+    logger->info(logger->get() << "Printing (totalLines_, dimension_) = (" << totalLines_ << ", " << dimension_ << ") : ");
+    int i=0, j=0;
+    for (i=0; i<=totalLinesCah_ - 1; i++) {
+        for (j=0; j<=dimension_ - 1; j++) {
+            cout << "(" << i << ", " << j << ") = " << data_[i][j] << "\t";
+        }
+        cout << "\n";
+    }
+}
+
+/**
+ * Dissimetry between two clusters using maximum distance
+ * @brief File::dissimMax
+ * @param c1 first cluster
+ * @param c2 second cluster
+ */
+double File::dissimMax(std::vector<int> c1, std::vector<int> c2){
     double res=0.0;
     double x1,y1,z1,x2,y2,z2;
     double dsquare;
@@ -264,6 +304,12 @@ double File::dissim(std::vector<int> c1, std::vector<int> c2){
     return res;
 }
 
+/**
+ * Dissimetry between two clusters using gravity center
+ * @brief File::dissimG
+ * @param c1 first cluster
+ * @param c2 second cluster
+ */
 double File::dissimG(std::vector<int> c1, std::vector<int> c2){
     double x1,y1,z1,x2,y2,z2;
     double xr1,yr1,zr1,xr2,yr2,zr2;
@@ -294,7 +340,35 @@ double File::dissimG(std::vector<int> c1, std::vector<int> c2){
     return (xr2-xr1)*(xr2-xr1)+(yr2-yr1)*(yr2-yr1)+(zr2-zr1)*(zr2-zr1);
 }
 
-std::vector<int> minMatDissim (double **m, int size){
+/**
+ * Dissimetry between two clusters using distance between random points
+ * Doesn't work
+ * @brief File::dissimAlea
+ * @param c1 first cluster
+ * @param c2 second cluster
+ */
+double File::dissimAlea(std::vector<int> c1, std::vector<int> c2){
+    srand ( time(NULL) );
+    int a=0, b;
+    int r1, r2;
+    double res;
+    b=c1.size();
+    r1 = (int)(rand()%(b-a) + a);
+    b=c2.size();
+    r2 = (int)(rand()%(b-a) + a);
+    res = (data_[c2[r2]][xpos]-data_[c1[r1]][xpos])*(data_[c2[r2]][xpos]-data_[c1[r1]][xpos]);
+    res += (data_[c2[r2]][ypos]-data_[c1[r1]][ypos])*(data_[c2[r2]][ypos]-data_[c1[r1]][ypos]);
+    res += (data_[c2[r2]][zpos]-data_[c1[r1]][zpos])*(data_[c2[r2]][zpos]-data_[c1[r1]][zpos]);
+    return res;
+}
+
+/**
+ * Minimum of a symetric square matrix
+ * @brief File::minMatDissim
+ * @param matrix m
+ * @param size of square matrix
+ */
+std::vector<int> File::minMatDissim (double **m, int size){
     std::vector<int> res;
     double tmp=1000000.0;
     int i0=0, j0=0;
@@ -313,14 +387,13 @@ std::vector<int> minMatDissim (double **m, int size){
 }
 
 /**
- * Compute a Hierarchical Clustering (CAH in french), data are saved into dataCah_
+ * Compute a Hierarchical Clustering (CAH in french), clustering is saved into clusters_
  * @brief File::cah
  * @param cluster, the number of clusters
  */
 void File::cah(int cluster){
 
     logger->info(logger->get() << "Hierarchical Clustering in " << cluster << " clusters" );
-    //std::vector<std::vector<int>> clusters;
     // initalize the number of clusters
     int nbClusters = this->getTotalLines();
     for(int i=0; i<nbClusters; i++){
@@ -347,6 +420,10 @@ void File::cah(int cluster){
             clusters_[ijmin[0]].push_back(clusters_[ijmin[1]][i]);
         }
         clusters_.erase (clusters_.begin()+ijmin[1]);
+
+        for(int i=0; i<csize; i++){
+            delete matDissim[i];
+        }
         delete matDissim;
     }
 }
@@ -361,11 +438,11 @@ void File::registerClusters(){
     double resijx, resijy, resijz, resijmass, resijage;
 
     //register the number of clusters
-    totalLineCah_ = clusters_.size();
-    dataCah_ = new double *[totalLineCah_];
+    totalLinesCah_ = clusters_.size();
+    dataCah_ = new double *[totalLinesCah_];
 
     //get the mean of each cluster to create dataCah_
-    for(i=0; i<totalLineCah_; i++){
+    for(i=0; i<totalLinesCah_; i++){
         resijx=0.0;resijy=0.0;resijz=0.0;resijmass=0.0;resijage=0.0;
         dataCah_[i] = new double[dimension_];
         int c = clusters_[i].size();

@@ -21,7 +21,7 @@ std::unique_ptr<NullOculus> nullOculus(new NullOculus);
 
 Scene::Scene(std::string windowTitle, int windowWidth, int windowHeight, bool oculusRender, bool fullscreen,
              std::string textureName, unsigned long objectsCount, int size, int octantSize,
-             int  octantsDrawnCount, std::string filename, int randomPercentage):
+             int  octantsDrawnCount, std::string filename, int randomPercentage, int clusteringPercentage):
     gObjectsCount_ {objectsCount}, // R&D: if reading files, should be set to the number of lines.
     size_ {size},
     //1 to only draw the octant the camera is in, 2 to draw the immediate neighbours, etc. Power of 2
@@ -38,7 +38,8 @@ Scene::Scene(std::string windowTitle, int windowWidth, int windowHeight, bool oc
     frameCount_ {0},
     textureName_ {textureName},
     filename_ {filename},
-    randomPercentage_ {randomPercentage}
+    randomPercentage_ {randomPercentage},
+    clusteringPercentage_ {clusteringPercentage}
 {
     logger->trace(logger->get() << "Scene constructor");
 
@@ -184,18 +185,27 @@ void Scene::initGObjectsFile() {
     file.parseText(); // 'error: vector::_M_default_append' is here.
     file_=file;
 
+
     // B. Plot star.txt
     int i=0, n=file_.getTotalLines();
+    double **data = file_.getData();
+    if(clusteringPercentage_!=100){
+        int cluster = (int)((double)clusteringPercentage_ * (double)file_.getTotalLines() / 100.0);
+        file_.cah(cluster);
+        file_.registerClusters();
+        n=file_.getTotalLinesCah();
+        data=file_.getDataCah();
+    }
     srand ( time(NULL) ); // seed
     for (i=0; i<=n - 1; i++) {
         if (isRandomPoint(randomPercentage_)) { // if randomPercentage==100, always true.
             int max = size_ - 1;
             double zoom = 1; // only way to see more data at the same time ? double zoom = 1; // should be 1.
-            int x = (file_.getData()[i][file_.xpos])*(max)*(zoom);
-            int y = (file_.getData()[i][file_.ypos])*(max)*(zoom);
-            int z = (file_.getData()[i][file_.zpos])*(max)*(zoom);
-            double massV = file_.getData()[i][file_.mass],
-                    ageV = file_.getData()[i][file_.age]; // textureBigStar_
+            int x = (data[i][file_.xpos])*(max)*(zoom);
+            int y = (data[i][file_.ypos])*(max)*(zoom);
+            int z = (data[i][file_.zpos])*(max)*(zoom);
+            double massV = data[i][file_.mass],
+                    ageV = data[i][file_.age]; // textureBigStar_
             if (n>=10000) {
                 ageV=0.1;
                 zoom=1;

@@ -20,9 +20,10 @@ int main(int argc, char** argv)
                 ("number,n", po::value<unsigned long>()->default_value(1024), "Set the number of objects seen")
                 ("size,s", po::value<int>()->default_value(128), "Set the size of the data cube. Must be a power of 2") // 128
                 ("octantSize", po::value<int>()->default_value(8), "Set the size of an octant. Must be a power of 2")
-                ("octantDrawnCount,d", po::value<int>()->default_value(2), "Set the number of octant drawn count. 1 to only draw the octant the camera is currently in, 2 to draw the immediate neighbors, ...")
+                ("octantDrawnCount,d", po::value<int>()->default_value(8), "Set the number of octant drawn count. 1 to only draw the octant the camera is currently in, 2 to draw the immediate neighbors, ...")
                 ("read,r", po::value<std::string>()->default_value("./File/star.txt"), "Set the file to read.") // set "./File/star.txt" or "" here.
                 ("randomPercentage,a", po::value<int>()->default_value(100), "Set the percentage of points to display with the random algorithm. If 100, do not use random method.")
+                ("clusteringPercentage,c", po::value<int>()->default_value(100), "Set the percentage of points to display with the hierarchical clustering algorithm. If 100, do not use clustering method.")
                 ;
 
         po::variables_map vm;
@@ -43,7 +44,8 @@ int main(int argc, char** argv)
                 vm["octantSize"].as<int>(),
                 vm["octantDrawnCount"].as<int>(),
                 vm["read"].as<std::string>(),
-                vm["randomPercentage"].as<int>()
+                vm["randomPercentage"].as<int>(),
+                vm["clusteringPercentage"].as<int>()
                 );
         scene.mainLoop();
     }
