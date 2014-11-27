@@ -195,6 +195,10 @@ void Camera::setEyeTarget()
     logger->debug(logger->get() << "Camera set eye target: phi = " << phi_ << ", theta = " << theta_);
 }
 
+glm::vec3 Camera::eyeTarget(){
+    return eyeTarget_;
+}
+
 void Camera::setPosition(glm::vec3 position)
 {
     position_ = position;

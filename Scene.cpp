@@ -346,13 +346,19 @@ void Scene::render(glm::mat4 & MV, glm::mat4 & proj)
     camera_->move(glm::vec3(sizeToRender + e, sizeToRender + e, sizeToRender + e) , glm::vec3(size_ - sizeToRender -e, size_ - sizeToRender -e, size_ - sizeToRender -e));
     camera_->lookAt(MV);
 
-    for(int z=camera_->position().z - sizeToRender; z<camera_->position().z + sizeToRender; z++)
+    glm::vec3 v = camera_->eyeTarget() - camera_->position();
+    int xp = camera_->position().x;
+    int yp = camera_->position().y;
+    int zp = camera_->position().z;
+    for(int z=zp - sizeToRender; z<zp + sizeToRender; z++)
     {
-        for(int y=camera_->position().y - sizeToRender; y<camera_->position().y + sizeToRender; y++)
+        for(int y=yp - sizeToRender; y<yp + sizeToRender; y++)
         {
-            for(int x=camera_->position().x - sizeToRender; x<camera_->position().x + sizeToRender; x++)
+            for(int x=xp - sizeToRender; x<xp + sizeToRender; x++)
             {
-                gObjects_.at(x, y, z)->draw(proj, MV);
+                if(v.x*x+v.y*y+v.z*z-v.x*xp-v.y*yp-v.z*zp>0){
+                    gObjects_.at(x, y, z)->draw(proj, MV);
+                }
             }
         }
     }

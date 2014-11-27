@@ -73,6 +73,7 @@ public:
     void updateEyeTarget();
 
     void setEyeTarget();
+    glm::vec3 eyeTarget();
     void setPosition(glm::vec3 position);
     glm::vec3 position();
     float sensibility() const;
