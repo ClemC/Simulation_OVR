@@ -135,7 +135,7 @@ private:
      * @details 1 means we only display the octant we are currently in, 2 means we additionnally display the immediate
      * neighbours, etc
      */
-    const int octantsDrawnCount_;
+    int octantsDrawnCount_;
 
     /**
      * @brief The size of an octant

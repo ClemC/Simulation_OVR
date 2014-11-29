@@ -68,15 +68,56 @@ double File::getAge() {
     return age_;
 }
 
+/**
+ * Getter of xCenterTp_
+ * @brief File::xCenterTp_
+ */
+double File::getXCenterTp() {
+    return xCenterTp_;
+}
 
+/**
+ * Getter of yCenterTp_
+ * @brief File::yCenterTp_
+ */
+double File::getYCenterTp() {
+    return yCenterTp_;
+}
+
+/**
+ * Getter of yCenterTp_
+ * @brief File::yCenterTp_
+ */
+double File::getZCenterTp() {
+    return zCenterTp_;
+}
+
+/**
+ * Getter of sizeScene_
+ * @brief File::getSizeScene
+ * @return
+ */
+double File::getSizeScene() {
+    return sizeScene_;
+}
+
+/**
+ * Setter of sizeScene_
+ * @brief File::setSizeScene
+ * @param sizeScene
+ */
+void File::setSizeScene(int sizeScene) {
+    sizeScene_ = sizeScene;
+}
 
 
 /**
  * Parse text files using regex. Skip if line dimension is 0 (only blank).
  * Stores data in_data.
  * @brief File::parseText
+ * @param computeCenterTp yes to compute center of data. Use T to teleport to this center.
  */
-void File::parseText(){
+void File::parseText(bool computeCenterTp){
     // Find max number of valid lines in the file
     std::ifstream inFile0(filename_);
     totalLines_ = std::count(std::istreambuf_iterator<char>(inFile0),
@@ -96,55 +137,13 @@ void File::parseText(){
                          << ").");
         }
         if (i>=lineDimension_) {
-            checkIfExceptionInFile(line, regex, &i);
+            checkIfExceptionInFile(line, regex, &i, computeCenterTp);
         }
     }
     totalLines_ = i-lineDimension_+1;
     logger->info(logger->get()<< "Found "<<totalLines_<<" usefull lines in '"<<filename_<<"'.\n");
     //    printData();
 }
-//void File::parseText(){
-//    // static
-//    std::regex regex("([^\\s]+)");
-//    std::regex regex2("[-+]?([0-9]*\\.[0-9]+|[0-9]+)");
-
-//    // Find max number of valid lines in the file
-//    std::ifstream inFile0(filename_);
-//    totalLines_ = std::count(std::istreambuf_iterator<char>(inFile0),
-//                             std::istreambuf_iterator<char>(), '\n');
-//    int i=0;
-//    logger->info(logger->get() << "parseText: found " << totalLines_ << " lines.");
-//    data_ = new double *[totalLines_*2];
-//    std::ifstream inFile(filename_);
-//    std::string line;
-
-//    // check each line and register them in _data.
-//    while (std::getline(inFile, line)){
-//        i++;
-//        if (i==1) {// Find the age of the universe
-//            auto itUniverse=split(line, regex2);
-//            auto words_end = std::sregex_iterator();
-//            for (std::sregex_iterator it = itUniverse; it != words_end; ++it) {
-//                std::smatch match = *it;
-//                std::string match_str = match.str();
-//                age_ = atof(match_str.c_str());
-//                logger->info(logger->get() << "The universe is now " << age_ << " years old !");
-//                // Use 'cout.precision(15);' and 'cout<<age_;' to print all digits.
-//            }
-//        }
-//        if (i==lineDimension_) { // Compute dimension.
-//            dimension_ = getCount(line, regex);
-//            logger->info(logger->get() << "dimension_ is now " << dimension_ << ". It was found in '" << line << "' (line " << lineDimension_
-//                         << ").");
-//        }
-//        if (i>=lineDimension_) { // Read data
-//            checkIfExceptionInFile(line, regex, &i);
-//        }
-//    }
-//    totalLines_ = i-lineDimension_+1;
-//    logger->info(logger->get()<< "Found "<<totalLines_<<" usefull lines in '"<<filename_<<"'.\n");
-//    //    printData();
-//}
 
 /**
  * Test if the file filename_ exists.
@@ -206,7 +205,7 @@ std::sregex_iterator File::split(std::string text, std::regex regex) {
  * @param i
  * @return
  */
-std::sregex_iterator File::checkIfExceptionInFile(std::string text, std::regex regex, int* i) {
+std::sregex_iterator File::checkIfExceptionInFile(std::string text, std::regex regex, int* i, bool computeCenterTp) {
     auto words_begin = std::sregex_iterator(text.begin(), text.end(), regex);
     auto words_end = std::sregex_iterator();
     int dimLine = std::distance(words_begin, words_end);
@@ -218,7 +217,7 @@ std::sregex_iterator File::checkIfExceptionInFile(std::string text, std::regex r
         skip = true;
         (*i)--;
     }
-    registerData(words_begin, words_end, *i - lineDimension_, skip);
+    registerData(words_begin, words_end, *i - lineDimension_, skip, computeCenterTp);
 
     return words_end;
 }
@@ -230,7 +229,7 @@ std::sregex_iterator File::checkIfExceptionInFile(std::string text, std::regex r
  * @param words_end
  * @param i
  */
-void File::registerData(std::sregex_iterator words_begin, std::sregex_iterator words_end, int i, bool skip){
+void File::registerData(std::sregex_iterator words_begin, std::sregex_iterator words_end, int i, bool skip, bool computeCenterTp){
     int j=0;
     if (!skip) {
         data_[i] = new double[dimension_];
@@ -238,11 +237,35 @@ void File::registerData(std::sregex_iterator words_begin, std::sregex_iterator w
             std::smatch match = *it;
             std::string match_str = match.str();
             data_[i][j] = atof(match_str.c_str());
-            //            cout << "(" << i << ", " << j << ") = " << data_[i][j] << "\t";
             j++;
         }
     }
-    //        cout << "\n";
+    if (computeCenterTp) {
+        updateMax(data_[i][age], i); // update maxTp_ if age is smaller.
+    }
+}
+
+/**
+ * update maxTp_ if age is smaller.
+ * @brief updateMax
+ * @param a
+ * @param b
+ * @return
+ */
+void File::updateMax(double newAge, int i) {
+    if (newAge > maxTp_) {
+        double x = data_[i][xpos], y = data_[i][ypos], z = data_[i][zpos];
+        double limitVisible = 0.4, limitVisibleMax = 0.7; // to avoid going out of octree.
+        if (x>limitVisible && y>limitVisible && z>limitVisible
+             && x<limitVisibleMax && y<limitVisibleMax && z<limitVisibleMax) {
+            maxTp_ = newAge;
+            xCenterTp_ = x;
+            yCenterTp_ = y;
+            zCenterTp_ = z;
+            logger->info(logger->get() << "new minimal age : (line:" << i << ", x:" << xCenterTp_ <<
+                         ", y:" << yCenterTp_ << ", z:" << zCenterTp_ << ", minAge:" << maxTp_ << ")\n");
+        }
+    }
 }
 
 /**
@@ -259,6 +282,16 @@ void File::printData() {
         cout << "\n";
     }
 }
+
+/**
+ * Convert coordonate from file to coordonate used in SDL. return data[i][file_.xpos]*(sizeScene_ - 1)
+ * @brief File::convert
+ * @param d
+ */
+int File::convert(double d) {
+    return (int)((d)*(getSizeScene()-1));
+}
+
 
 //////////////////////////////////////////////////////////////////
 

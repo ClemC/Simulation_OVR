@@ -4,6 +4,7 @@
 #include "LogCpp/Log.h"
 #include "Include/glm/gtc/type_ptr.hpp"
 
+#include "File.h"
 
 #include <cmath>
 
@@ -72,13 +73,15 @@ const Input& Camera::input() const
     return input_;
 }
 
-void Camera::move(glm::vec3 const & clampMin, glm::vec3 const & clampMax)
+int Camera::move(glm::vec3 const & clampMin, glm::vec3 const & clampMax, File f) // les vecteurs contiennent des données énormes, ce qui ralentie le déplacement.
 {
-    movePosition();
+    int octantsDrawnCount = 8;
+    octantsDrawnCount = movePosition(f);
     Utils::clamp(position_, clampMin, clampMax);
     moveOrientation();
 
     updateEyeTarget();
+    return octantsDrawnCount;
 }
 
 void Camera::moveOrientation()
@@ -117,33 +120,59 @@ void Camera::moveOrientation()
     }
 }
 
-void Camera::movePosition()
+void Camera::teleport(double x, double y, double z) {
+
+    setPosition(glm::vec3(x, y, z));
+}
+
+int Camera::movePosition(File f)
 {
+    int octantsDrawnCount = 8;
     glm::vec3 oldPosition = position_;
 
     if(input_.isKeyboardKeyDown(SDL_SCANCODE_UP) || input_.isKeyboardKeyDown(SDL_SCANCODE_Z))
     {
         position_ += orientation_ * speed_;
+//        speed_ = speed_+0.001;
+        octantsDrawnCount=4;
     }
     if(input_.isKeyboardKeyDown(SDL_SCANCODE_DOWN) || input_.isKeyboardKeyDown(SDL_SCANCODE_S))
     {
         position_ += - orientation_ * speed_;
+        octantsDrawnCount=4;
     }
     if(input_.isKeyboardKeyDown(SDL_SCANCODE_LEFT) || input_.isKeyboardKeyDown(SDL_SCANCODE_Q))
     {
         position_ += lateralMove_ * speed_;
+        octantsDrawnCount=4;
     }
     if(input_.isKeyboardKeyDown(SDL_SCANCODE_RIGHT) || input_.isKeyboardKeyDown(SDL_SCANCODE_D))
     {
         position_ += - lateralMove_ * speed_;
+//        speed_ = speed_-0.001;
+        octantsDrawnCount=4;
     }
-
+    if(input_.isKeyboardKeyDown(SDL_SCANCODE_T)) // teleportation
+    {
+        int x = f.convert(f.getXCenterTp()), y = f.convert(f.getYCenterTp()), z =f.convert(f.getZCenterTp());
+        logger->info(logger->get() << "Teleportation to (x, y, z) = (" << x << ", "<< y << ", " << z << ")");
+        teleport(x, y, z);
+    }
+    if(input_.isKeyboardKeyDown(SDL_SCANCODE_I)) // accelerate
+    {
+        speed_ = speed_ * 1.2;
+    }
+    if(input_.isKeyboardKeyDown(SDL_SCANCODE_L)) // decrease speed
+    {
+        speed_ = speed_ * 0.8;
+    }
     if(oldPosition != position_)
     {
-
         logger->debug(logger->get() << "Move camera position from "
                     << Utils::toString(oldPosition) << " to " << Utils::toString(position_));
     }
+
+    return octantsDrawnCount;
 }
 
 void Camera::lookAt(glm::mat4 & modelview)
@@ -202,7 +231,6 @@ glm::vec3 Camera::eyeTarget(){
 void Camera::setPosition(glm::vec3 position)
 {
     position_ = position;
-
     updateEyeTarget();
 }
 

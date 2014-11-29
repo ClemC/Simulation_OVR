@@ -10,6 +10,7 @@
 
 #include "Include/glm/glm.hpp"
 #include "Input.h"
+#include "File.h"
 
 #include <memory>
 
@@ -49,7 +50,7 @@ public:
      * @param clampMin The minimum clamp value
      * @param clampMax The maximum clamp value
      */
-    void move(glm::vec3 const & clampMin, glm::vec3 const & clampMax);
+    int move(glm::vec3 const & clampMin, glm::vec3 const & clampMax, File f);
 
     /**
      * @brief Makes the camera look at a given point described by the modelview matrix
@@ -60,7 +61,16 @@ public:
     /**
      * @brief Moves the camera position depending on the user inputs
      */
-    void movePosition();
+    int movePosition(File f);
+
+    /**
+     * @brief teleport to a point.
+     * @param x
+     * @param y
+     * @param z
+     * @return
+     */
+    void teleport(double x, double y, double z);
 
     /**
      * @brief Changes the camera orientation depending on the user inputs

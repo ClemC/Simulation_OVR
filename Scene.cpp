@@ -12,6 +12,7 @@
 
 #include "File.h"
 
+#include <unistd.h>
 #include <numeric>
 #include <random>
 #include <chrono>
@@ -46,7 +47,6 @@ Scene::Scene(std::string windowTitle, int windowWidth, int windowHeight, bool oc
     input_ = std::unique_ptr<Input>(new Input(this));
     input_->showCursor(false);
     input_->capturePointer(true);
-
     camera_ = std::unique_ptr<Camera>(new Camera(
                                           glm::vec3(size_/2, size_/2, size_/2),
                                           glm::vec3(0, 0, 0), glm::vec3(0, 1, 0),
@@ -182,9 +182,10 @@ void Scene::initGObjectsFile() {
     // A. Parse file
     File file(( File(filename_) ));
     file.exists_test();
-    file.parseText(); // 'error: vector::_M_default_append' is here.
+    file.parseText(true); // 'error: vector::_M_default_append' is here.
+//    cout << file.getXCenterTp() << file.getYCenterTp() << file.getZCenterTp();
+    file.setSizeScene(size_);
     file_=file;
-
 
     // B. Plot star.txt
     int i=0, n=file_.getTotalLines();
@@ -196,18 +197,20 @@ void Scene::initGObjectsFile() {
         n=file_.getTotalLinesCah();
         data=file_.getDataCah();
     }
-    srand ( time(NULL) ); // seed
+    srand ( time(NULL) ); // seed for random algorithm.
+    double zoom = 1; // only way to see more data at the same time ? double zoom = 1; // should be 1.
     for (i=0; i<=n - 1; i++) {
         if (isRandomPoint(randomPercentage_)) { // if randomPercentage==100, always true.
-            int max = size_ - 1;
-            double zoom = 1; // only way to see more data at the same time ? double zoom = 1; // should be 1.
-            int x = (data[i][file_.xpos])*(max)*(zoom);
-            int y = (data[i][file_.ypos])*(max)*(zoom);
-            int z = (data[i][file_.zpos])*(max)*(zoom);
+            int x = file_.convert(data[i][file_.xpos]); // return data[i][file_.xpos]*(size_ - 1)
+            int y = file_.convert(data[i][file_.ypos]);
+            int z = file_.convert(data[i][file_.zpos]);
             double massV = data[i][file_.mass],
                     ageV = data[i][file_.age]; // textureBigStar_
-            if (n>=10000) {
-                ageV=0.1;
+            if (ageV==0) { // new stars must not be invisible
+                ageV = file_.MinCubeSize;
+                }
+            if (n>=10000) { // when too much stars are printed, it becomes unreadable.
+                ageV=file_.MinCubeSize;
                 zoom=1;
             }
 
@@ -293,7 +296,6 @@ void Scene::mainLoop()
         {
             glClearColor(0, 0, 0, 1);
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
             render();
         }
 
@@ -340,28 +342,32 @@ void Scene::render()
 
 void Scene::render(glm::mat4 & MV, glm::mat4 & proj)
 {
+//    unsigned int microseconds = 100000;
+//    usleep(microseconds);
     int sizeToRender = octantSize_ * octantsDrawnCount_;
 
     double e = std::numeric_limits<double>::epsilon();
-    camera_->move(glm::vec3(sizeToRender + e, sizeToRender + e, sizeToRender + e) , glm::vec3(size_ - sizeToRender -e, size_ - sizeToRender -e, size_ - sizeToRender -e));
+    octantsDrawnCount_ = camera_->move(glm::vec3(sizeToRender + e, sizeToRender + e, sizeToRender + e) , glm::vec3(size_ - sizeToRender -e, size_ - sizeToRender -e, size_ - sizeToRender -e), file_);
     camera_->lookAt(MV);
-
-    glm::vec3 v = camera_->eyeTarget() - camera_->position();
-    int xp = camera_->position().x;
-    int yp = camera_->position().y;
-    int zp = camera_->position().z;
-    for(int z=zp - sizeToRender; z<zp + sizeToRender; z++)
-    {
-        for(int y=yp - sizeToRender; y<yp + sizeToRender; y++)
+        glm::vec3 v = camera_->eyeTarget() - camera_->position();
+        int xp = camera_->position().x;
+        int yp = camera_->position().y;
+        int zp = camera_->position().z;
+        // Traiter cette partie par un autre processus ? (si sizeToRender est énorme, il faut plus de temps avant de pouvoir bouger.)
+        for(int z=zp - sizeToRender; z<zp + sizeToRender; z++)
         {
-            for(int x=xp - sizeToRender; x<xp + sizeToRender; x++)
+            for(int y=yp - sizeToRender; y<yp + sizeToRender; y++)
             {
-                if(v.x*x+v.y*y+v.z*z-v.x*xp-v.y*yp-v.z*zp>0){
-                    gObjects_.at(x, y, z)->draw(proj, MV);
+                for(int x=xp - sizeToRender; x<xp + sizeToRender; x++)
+                {
+                    //                if(v.x*x - v.x*xp>0 || v.y*y - v.y*yp>0 && v.z*z - v.z*zp>0)
+                    //                    gObjects_.at(x, y, z)->draw(proj, MV);
+                    if(v.x*x+v.y*y+v.z*z-v.x*xp-v.y*yp-v.z*zp>0){
+                        gObjects_.at(x, y, z)->draw(proj, MV);
+                    }
                 }
             }
         }
-    }
 }
 
 SDL_Window* Scene::window() const
