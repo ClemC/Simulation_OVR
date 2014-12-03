@@ -163,7 +163,8 @@ void Scene::initOrigin() { // original method with random points.
         int z = distribution(generator);
 
         auto startCrateGeneration = std::chrono::high_resolution_clock::now();
-        gObjects_(x, y, z) = std::shared_ptr<Crate>(new Crate(x, y, z, 1.0, textureName_));
+        glm::vec4 dimensions(0.5,0.5,0.0,0.0);
+        gObjects_(x, y, z) = std::shared_ptr<Crate>(new Crate(x, y, z, dimensions, 1.0, textureName_));
         auto endCrateGeneration = std::chrono::high_resolution_clock::now();
 
         logger->debug(logger->get() << "Generated crate n°" << i << " at position ("
@@ -222,7 +223,10 @@ void Scene::initGObjectsFile() {
             } else {
                 texture = textureSmallStar_;
             }
-            gObjects_(x, y, z) = std::shared_ptr<Crate>(new Crate(x, y, z, ageV, texture)); // textureName_
+
+            glm::vec4 dimensions(massV/file_.getMaxMass(),ageV/file_.getMaxAge(),0.0,0.0);
+
+            gObjects_(x, y, z) = std::shared_ptr<Crate>(new Crate(x, y, z, dimensions, ageV, texture)); // textureName_
             // D. Log
             auto endCrateGeneration = std::chrono::high_resolution_clock::now();
             logger->debug(logger->get() << "Generated crate n°" << i << " at position ("

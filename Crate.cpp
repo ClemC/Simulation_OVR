@@ -4,9 +4,10 @@
 #include "Include/glm/gtc/type_ptr.hpp"
 #include "LogCpp/Log.h"
 
-Crate::Crate(float x, float y, float z, float size, std::string const & vertexShader, std::string const & fragmentShader, std::string const & textureFile):
+Crate::Crate(float x, float y, float z, glm::vec4 dimensions, float size, std::string const & vertexShader, std::string const & fragmentShader, std::string const & textureFile):
     Cube(x, y, z, size, vertexShader, fragmentShader),
-    texture_ {nullptr}
+    texture_ {nullptr},
+    dimensions_ {dimensions}
 {
     logger->trace(logger->get() << "Crate constructor: " << textureFile);
     //Shared texture pool
@@ -35,8 +36,8 @@ Crate::Crate(float x, float y, float z, float size, std::string const & vertexSh
     logger->trace(logger->get() << "Crate loaded");
 }
 
-Crate::Crate(int x, int y, int z, float size, std::string const & texture):
-    Crate::Crate(x, y, z, size, "Shaders/texture.vert", "Shaders/texture.frag", texture)
+Crate::Crate(int x, int y, int z, glm::vec4 dimensions, float size, std::string const & texture):
+    Crate::Crate(x, y, z, dimensions, size, "Shaders/texture.vert", "Shaders/texture.frag", texture)
 {
 }
 
@@ -55,6 +56,7 @@ void Crate::draw(glm::mat4 &projection, glm::mat4 &modelview)
 
         glUniformMatrix4fv(glGetUniformLocation(shader_->programID(), "projection"), 1, GL_FALSE, glm::value_ptr(projection));
         glUniformMatrix4fv(glGetUniformLocation(shader_->programID(), "modelview"), 1, GL_FALSE, glm::value_ptr(modelview));
+        glUniform4fv(glGetUniformLocation(shader_->programID(), "dimensions"), 1, glm::value_ptr(dimensions_));
 
         glBindTexture(GL_TEXTURE_2D, texture_->id());
 

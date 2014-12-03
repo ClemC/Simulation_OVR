@@ -11,6 +11,7 @@ in vec2 coordTexture;
 // Uniform
 
 uniform sampler2D mtexture;
+uniform vec4 dimensions;
 
 
 // Sortie
@@ -25,5 +26,10 @@ void main()
     // Couleur du pixel
 
     // light = 2
-    out_Color = 2 * texture(mtexture, coordTexture);
+    // dimensions.x is the mass : 0 for low mass and 1 for high mass
+    // dimensions.y is the age : 0 for low age and 1 for high age
+    out_Color = 2 * 10 * dimensions.x * texture(mtexture, coordTexture);
+    
+    // a high age object is more red than a low age object
+    out_Color.x += dimensions.y; 	
 }

@@ -34,7 +34,8 @@ public:
     double getMaxTp();
     double** getData();
     double** getDataCah();
-
+    double getMaxMass();
+    double getMaxAge();
 
     // method
     /* parsing */

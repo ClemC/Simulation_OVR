@@ -110,6 +110,39 @@ void File::setSizeScene(int sizeScene) {
     sizeScene_ = sizeScene;
 }
 
+/**
+ * Get the maximum of mass data
+ * @brief File::getMaxMass
+ */
+double File::getMaxMass() {
+    double tmp, res=0.0;
+    int i;
+    for(i=0;i<getTotalLines();i++){
+        tmp = data_[i][mass];
+        if(tmp>res){
+            res=tmp;
+        }
+    }
+    return res;
+}
+
+/**
+ * Get the maximum of age data
+ * @brief File::getMaxAge
+ */
+double File::getMaxAge() {
+    double tmp, res=0.0;
+    int i;
+    for(i=0;i<getTotalLines();i++){
+        tmp = data_[i][age];
+        if(tmp>res){
+            res=tmp;
+        }
+    }
+    return res;
+}
+
+
 
 /**
  * Parse text files using regex. Skip if line dimension is 0 (only blank).
