@@ -11,7 +11,10 @@ SOURCES += \
     Shader.cpp \
     Texture.cpp \
     Utils.cpp \
-    File.cpp
+    File.cpp \
+    MThread/MThread.cpp \
+    MThread/MThreadTest.cpp \
+    MThread/UnitTestSample.cpp
 
 HEADERS += \
     Include/GL3/gl3.h \
@@ -310,13 +313,14 @@ HEADERS += \
     Include/OVR/3rdParty/EDID/edid.h \
     Include/OVR/3rdParty/TinyXml/tinyxml2.h \
     LogCpp/Log.h \
-    File.h
+    File.h \
+    MThread/MThread.h
 
 CONFIG += c++11
 CONFIG -= qt
 
 #OpenGL
-LIBS += -lSDL2 -lGL -lGLU -lSDL2_image -lGLEW
+LIBS += -lSDL2 -lGL -lGLU -lSDL2_image -lGLEW -lunittest++
 #Oculus
 LIBS += -lovr -lpthread -lX11 -ludev -lXinerama -lXrandr
 #Boost

@@ -1,5 +1,4 @@
 #include "Scene.h"
-
 #include "Cube.h"
 #include "Input.h"
 #include "Crate.h"
@@ -11,18 +10,21 @@
 #include "LogCpp/Log.h"
 
 #include "File.h"
+#include "MThread/MThread.h"
 
 #include <unistd.h>
 #include <numeric>
 #include <random>
 #include <chrono>
+#include <thread>
 
 std::unique_ptr<Logger> logger(new Logger("log.log", "log.err", true, Severity::error | Severity::info));
 std::unique_ptr<NullOculus> nullOculus(new NullOculus);
 
 Scene::Scene(std::string windowTitle, int windowWidth, int windowHeight, bool oculusRender, bool fullscreen,
              std::string textureName, unsigned long objectsCount, int size, int octantSize,
-             int  octantsDrawnCount, std::string filename, int randomPercentage, int clusteringPercentage):
+             int  octantsDrawnCount, std::string filename, int randomPercentage, int clusteringPercentage,
+             bool isMultiThread):
     gObjectsCount_ {objectsCount}, // R&D: if reading files, should be set to the number of lines.
     size_ {size},
     //1 to only draw the octant the camera is in, 2 to draw the immediate neighbours, etc. Power of 2
@@ -40,22 +42,27 @@ Scene::Scene(std::string windowTitle, int windowWidth, int windowHeight, bool oc
     textureName_ {textureName},
     filename_ {filename},
     randomPercentage_ {randomPercentage},
-    clusteringPercentage_ {clusteringPercentage}
+    clusteringPercentage_ {clusteringPercentage},
+    isMultiThread_ {isMultiThread}
 {
     logger->trace(logger->get() << "Scene constructor");
-
     input_ = std::unique_ptr<Input>(new Input(this));
     input_->showCursor(false);
     input_->capturePointer(true);
+    gObjects_.setEmptyValue(std::shared_ptr<NullGraphicObject>(new NullGraphicObject));
+    file_ = parseFile();
+//    locked_=false;
+//    mthread_ = getThread();
+    getThread();
     camera_ = std::unique_ptr<Camera>(new Camera(
                                           glm::vec3(size_/2, size_/2, size_/2),
                                           glm::vec3(0, 0, 0), glm::vec3(0, 1, 0),
                                           0.5,
                                           0.2,
-                                          *(input_.get()))
-                                      );
+                                          *(input_.get()),
+                                          gObjects_
+                                          ));
 
-    gObjects_.setEmptyValue(std::shared_ptr<NullGraphicObject>(new NullGraphicObject));
 
     assert(initWindow());
     logger->debug(logger->get() << "Window was initialized");
@@ -178,17 +185,9 @@ void Scene::initOrigin() { // original method with random points.
 
 /**
  * @brief initGObjectsFile Simple load of the file, with random algorythm if randomPercentage!=1.
+ * Plot star.txt
  */
 void Scene::initGObjectsFile() {
-    // A. Parse file
-    File file(( File(filename_) ));
-    file.exists_test();
-    file.parseText(true); // 'error: vector::_M_default_append' is here.
-//    cout << file.getXCenterTp() << file.getYCenterTp() << file.getZCenterTp();
-    file.setSizeScene(size_);
-    file_=file;
-
-    // B. Plot star.txt
     int i=0, n=file_.getTotalLines();
     double **data = file_.getData();
     if(clusteringPercentage_!=100){
@@ -198,42 +197,74 @@ void Scene::initGObjectsFile() {
         n=file_.getTotalLinesCah();
         data=file_.getDataCah();
     }
-    srand ( time(NULL) ); // seed for random algorithm.
-    double zoom = 1; // only way to see more data at the same time ? double zoom = 1; // should be 1.
-    for (i=0; i<=n - 1; i++) {
-        if (isRandomPoint(randomPercentage_)) { // if randomPercentage==100, always true.
-            int x = file_.convert(data[i][file_.xpos]); // return data[i][file_.xpos]*(size_ - 1)
-            int y = file_.convert(data[i][file_.ypos]);
-            int z = file_.convert(data[i][file_.zpos]);
-            double massV = data[i][file_.mass],
-                    ageV = data[i][file_.age]; // textureBigStar_
-            if (ageV==0) { // new stars must not be invisible
-                ageV = file_.MinCubeSize;
+    if (!isMultiThread_) {
+        srand ( time(NULL) ); // seed for random algorithm.
+        for (i=0; i<=n - 1; i++) {
+            if (isRandomPoint(randomPercentage_)) { // if randomPercentage==100, always true.
+                int x = file_.convert(data[i][file_.xpos]); // return data[i][file_.xpos]*(size_ - 1)
+                int y = file_.convert(data[i][file_.ypos]);
+                int z = file_.convert(data[i][file_.zpos]);
+                double massV = data[i][file_.mass],
+                        ageV = data[i][file_.age]; // textureBigStar_
+                if (ageV==0) { // new stars must not be invisible
+                    ageV = file_.MinCubeSize;
                 }
-            if (n>=10000) { // when too much stars are printed, it becomes unreadable.
-                ageV=file_.MinCubeSize;
-                zoom=1;
+                if (n>=10000) { // when too much stars are printed, it becomes unreadable.
+                    ageV=file_.MinCubeSize;
+                }
+                addPointToOctree(x, y, z, massV, ageV);
             }
-
-            // C. Increase size according to age.
-            auto startCrateGeneration = std::chrono::high_resolution_clock::now();
-            std::string texture;
-            if (massV>bigStarLimit_) {
-                texture = textureBigStar_;
-            } else {
-                texture = textureSmallStar_;
-            }
-
-            glm::vec4 dimensions(massV/file_.getMaxMass(),ageV/file_.getMaxAge(),0.0,0.0);
-
-            gObjects_(x, y, z) = std::shared_ptr<Crate>(new Crate(x, y, z, dimensions, ageV, texture)); // textureName_
-            // D. Log
-            auto endCrateGeneration = std::chrono::high_resolution_clock::now();
-            logger->debug(logger->get() << "Generated crate n°" << i << " at position ("
-                          << x << ", " << y << ", " << z << ") in "
-                          << chrono::duration_cast<std::chrono::milliseconds>(endCrateGeneration - startCrateGeneration).count()
-                          << " ms");
         }
+    }
+}
+
+void Scene::addPointToOctree(int x, int y, int z, double massV, double ageV) {
+//    ageV=0;
+//    auto startCrateGeneration = std::chrono::high_resolution_clock::now();
+    std::string texture;
+    if (massV>bigStarLimit_) {
+        texture = textureBigStar_;
+    } else {
+        texture = textureSmallStar_;
+    }
+    if (file_.getMaxMass()==0) {
+        cout<<"addPointToOctree: internal error : file_.getMaxMass()=0\n";
+        exit(244);
+    }
+//    glm::vec4 dimensions(1,1,0.0,0.0);
+    glm::vec4 dimensions(massV/file_.getMaxMass(),ageV/file_.getMaxAge(),0.0,0.0);
+//    cout<<"updateOctree: (x,y,z,ageV,texture,mass,age,file_.getMaxMass()) = ("<<x<<", "<<y<<", "<<z
+//       <<", "<<ageV<<","<<texture<<","<<massV/file_.getMaxMass()<<", "<<ageV/file_.getMaxAge()<<","<<
+//         file_.getMaxMass()<<")\n";
+//    Crate* c = new Crate(1, 1, 1, dimensions, 1, texture);
+    Crate* c = new Crate(x, y, z, dimensions, ageV, texture); // Impossible de créer un nouveau Crate avec une autre thread.
+                                                            //Voir Debug après avoir activé le multithreading.
+    gObjects_(x, y, z) = std::shared_ptr<Crate>(c);
+//    }
+    // D. Log
+//    auto endCrateGeneration = std::chrono::high_resolution_clock::now();
+//    logger->debug(logger->get() << "Generated crate n°" << i << " at position ("
+//                  << x << ", " << y << ", " << z << ") in "
+//                  << chrono::duration_cast<std::chrono::milliseconds>(endCrateGeneration - startCrateGeneration).count()
+//                  << " ms");
+}
+
+/**
+******************************************************
+ * Generate the Scene.
+ * @brief Scene::initGObjects
+ */
+void Scene::initGObjects()
+{
+    if (filename_.empty()) { // no file as a parameter
+        initOrigin();
+    } else {
+        if (randomPercentage_<100) {
+            logger->info(logger->get() << "Using Random Algorythm with randomPercentage = " << randomPercentage_);
+        } else {
+            logger->info(logger->get() << "Using basic Algorythm.");
+        }
+        initGObjectsFile();
     }
 }
 
@@ -254,27 +285,6 @@ bool Scene::isRandomPoint(int n) {
     return res;
 }
 
-/**
-******************************************************
- * Generate the Scene.
- * Use file star.txt
- * (x, y, z) are in [0, (128*zoom)].
- * @brief Scene::initGObjects
- */
-void Scene::initGObjects()
-{
-    if (filename_.empty()) { // no file as a parameter
-        initOrigin();
-    } else {
-        if (randomPercentage_<100) {
-            logger->info(logger->get() << "Using Random Algorythm with randomPercentage = " << randomPercentage_);
-        } else {
-            logger->info(logger->get() << "Using basic Algorythm.");
-        }
-        initGObjectsFile();
-    }
-}
-
 void Scene::mainLoop()
 {
     int fpsDesired = 60;
@@ -282,6 +292,7 @@ void Scene::mainLoop()
     Uint32 start (0);
     Uint32 end  (0);
     Uint32 elapsedTime (0);
+    blue_=0;
 
     while( ! input_->isOver())
     {
@@ -298,7 +309,7 @@ void Scene::mainLoop()
         }
         else
         {
-            glClearColor(0, 0, 0, 1);
+            glClearColor(0, 0, blue_, 7); // red,green,blue
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
             render();
         }
@@ -346,32 +357,43 @@ void Scene::render()
 
 void Scene::render(glm::mat4 & MV, glm::mat4 & proj)
 {
-//    unsigned int microseconds = 100000;
-//    usleep(microseconds);
     int sizeToRender = octantSize_ * octantsDrawnCount_;
 
     double e = std::numeric_limits<double>::epsilon();
-    octantsDrawnCount_ = camera_->move(glm::vec3(sizeToRender + e, sizeToRender + e, sizeToRender + e) , glm::vec3(size_ - sizeToRender -e, size_ - sizeToRender -e, size_ - sizeToRender -e), file_);
+    octantsDrawnCount_ = camera_->move(glm::vec3(sizeToRender + e, sizeToRender + e, sizeToRender + e) ,
+                                       glm::vec3(size_ - sizeToRender -e, size_ - sizeToRender -e, size_ - sizeToRender -e), file_);
     camera_->lookAt(MV);
-        glm::vec3 v = camera_->eyeTarget() - camera_->position();
-        int xp = camera_->position().x;
-        int yp = camera_->position().y;
-        int zp = camera_->position().z;
-        // Traiter cette partie par un autre processus ? (si sizeToRender est énorme, il faut plus de temps avant de pouvoir bouger.)
-        for(int z=zp - sizeToRender; z<zp + sizeToRender; z++)
+    glm::vec3 v = camera_->eyeTarget() - camera_->position();
+    int xp = camera_->position().x;
+    int yp = camera_->position().y;
+    int zp = camera_->position().z;
+    // Traiter cette partie par un autre processus ? (si sizeToRender est énorme, il faut plus de temps avant de pouvoir bouger.)
+    for(int z=zp - sizeToRender; z<zp + sizeToRender; z++)
+    {
+        for(int y=yp - sizeToRender; y<yp + sizeToRender; y++)
         {
-            for(int y=yp - sizeToRender; y<yp + sizeToRender; y++)
+            for(int x=xp - sizeToRender; x<xp + sizeToRender; x++)
             {
-                for(int x=xp - sizeToRender; x<xp + sizeToRender; x++)
-                {
-                    //                if(v.x*x - v.x*xp>0 || v.y*y - v.y*yp>0 && v.z*z - v.z*zp>0)
-                    //                    gObjects_.at(x, y, z)->draw(proj, MV);
-                    if(v.x*x+v.y*y+v.z*z-v.x*xp-v.y*yp-v.z*zp>0){
-                        gObjects_.at(x, y, z)->draw(proj, MV);
-                    }
+                if(v.x*x+v.y*y+v.z*z-v.x*xp-v.y*yp-v.z*zp>0) {
+                    gObjects_.at(x, y, z)->draw(proj, MV);
                 }
             }
         }
+    }
+}
+
+/**
+ * Parse the file and return a reference to file_
+ * @brief Scene::parseFile
+ * @return
+ */
+File Scene::parseFile() {
+    File file(( File(filename_) ));
+    file.exists_test();
+    file.parseText(true); // 'error: vector::_M_default_append' is here.
+    //    cout << file.getXCenterTp() << file.getYCenterTp() << file.getZCenterTp();
+    file.setSizeScene(size_);
+    return file;
 }
 
 SDL_Window* Scene::window() const
@@ -415,4 +437,80 @@ void Scene::updateFPS(int elapsedTime)
             std::to_string(camera_->position().z) + ") | (" +
             std::to_string(newFps) + "FPS)";
     SDL_SetWindowTitle(window_, newTitle.c_str());
+}
+
+
+//-------------------------------------------------------
+// Multithreading
+//-------------------------------------------------------
+
+void Scene::updateOctree(std::vector<double*> cube) {
+    int x, y, z;
+    double massV, ageV = file_.MinCubeSize;
+    double* t;
+//    locked_=true;
+        for(std::vector<double*>::iterator it = cube.begin(); it != cube.end(); ++it) {
+            t=*(it);
+            x = file_.convert(t[file_.xpos]);
+            y = file_.convert(t[file_.ypos]);
+            z = file_.convert(t[file_.zpos]);
+            massV = t[file_.mass];
+            ageV = t[file_.age]; // textureBigStar_
+//            cout<<"updateOctree: (x,y,z,massV,ageV) = ("<<x<<", "<<y<<", "<<z<<", "<<massV<<", "<<ageV<<")\n";
+            addPointToOctree(x, y, z, massV, ageV);
+        }
+//     locked_=false;
+//    cout << "updateOctree: Updating Octree in a new Thread.\n";
+}
+
+void Scene::removeOctree(std::vector<double*> d) {
+    gObjects_.setEmptyValue(std::shared_ptr<NullGraphicObject>(new NullGraphicObject));
+//    cout << "removeOctree: Removing old Octree in a new Thread.\n";
+}
+
+void Scene::startThreadEvent(MThread mt) {
+    int cubePos = -1, oldCubePos=-1;
+    int i=0;
+    unsigned int microseconds = 100000; // update every 0.1 s
+
+    // A. Initialize events
+    mt.load(); // split data into 27 cubes
+    mt.print();
+
+    // B. Execute search if there is a new event
+    while (true) { // this thread will be used for events
+        i++;
+        if (camera_ != NULL) {
+            double x = file_.convertToFile(camera_->position().x),
+                    y = file_.convertToFile(camera_->position().y),
+                    z = file_.convertToFile(camera_->position().z);
+            cubePos = mt.getCubeNumber(x, y, z);
+            if ((cubePos != oldCubePos) && (oldCubePos != -1)) {
+                blue_=1;
+                mt.printCube(cubePos, i, x, y, z);
+                usleep(microseconds*10);
+                updateOctree(mt.getCube(cubePos));      // todo : launch this method in a new thread.
+//                removeOctree(mt.getCube(oldCubePos));   // todo : launch this method in a new thread.
+                blue_=0;
+            }
+            oldCubePos = cubePos;
+        } else {
+            cout <<"startThreadEvent: E: ["<<i<<"] Camera null ...\n";
+        }
+        usleep(microseconds); // sleeping to avoid spoofing processor.
+    }
+//        exit(55);
+}
+
+MThread Scene::getThread() {
+    MThread res(( MThread(file_) ));
+    if (isMultiThread_) { // todo : methode à part
+        std::thread myThread([&]() {
+            startThreadEvent(res);
+        });
+        myThread.detach(); // the thread will run forever
+//        myThread.join(); // pauses until first finishes
+    }
+//    exit(88);
+    return res;
 }

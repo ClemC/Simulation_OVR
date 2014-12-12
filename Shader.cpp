@@ -49,6 +49,7 @@ Shader& Shader::operator=(Shader const &copy)
 
 bool Shader::load()
 {
+//    cout << vertexID_<<"\n";
     if(glIsShader(vertexID_) == GL_TRUE)
         glDeleteShader(vertexID_);
 

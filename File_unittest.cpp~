@@ -7,7 +7,7 @@
 TEST(ParsingTest, OriginalFile) {
   
   File of("../File/star.txt");
-  of.parseText(false);
+  of.parseText();
   EXPECT_EQ(1549, of.getTotalLines());
 
 }

@@ -48,6 +48,7 @@ public:
     void updateMax(double newAge, int i);
     void printData();
     int convert(double d);
+    double convertToFile(double d);
     /* hierarchical clustering */
     void cah(int cluster);
     double dissimMax(std::vector<int> c1, std::vector<int> c2);

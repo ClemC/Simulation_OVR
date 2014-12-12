@@ -12,6 +12,10 @@
 #include "Input.h"
 #include "File.h"
 
+#include "Include/Octree/octree.h"
+#include "GraphicObject.h"
+
+
 #include <memory>
 
 /**
@@ -31,7 +35,8 @@ public:
      * @param sensibility The sensibility of the camera, i.e by how much the camera rotates when we move the mouse
      * @param speed The speed of the camera, i.e by how much the camera moves when we hit the corresponding keyboard keys
      */
-    Camera(glm::vec3 const & position, glm::vec3 const & eyeTarget, glm::vec3 const & verticalAxis, float sensibility, float speed, Input const & input);
+    Camera(glm::vec3 const & position, glm::vec3 const & eyeTarget, glm::vec3 const & verticalAxis,
+           float sensibility, float speed, Input const & input, Octree<std::shared_ptr<GraphicObject>> g);
 
     /**
     * @brief Destructor
@@ -151,6 +156,11 @@ protected:
      * @brief The speed of the camera movement
      */
     float speed_;
+
+    /**
+     * @brief A reference to the Octree
+     */
+    Octree<std::shared_ptr<GraphicObject>> gObjects_;
 };
 
 #endif

@@ -22,6 +22,7 @@
 #include "Include/Octree/octree.h"
 
 #include "File.h"
+#include "MThread/MThread.h"
 
 #include <iostream>
 #include <string>
@@ -49,7 +50,7 @@ public:
     Scene(std::string windowTitle, int windowWidth, int windowHeight, bool oculusRender,
           bool fullscreen, std::string textureName, unsigned long objectsCount,
           int size, int octantSize, int  octantsDrawnCount, std::string filename,
-          int randomPercentage, int clusteringPercentage);
+          int randomPercentage, int clusteringPercentage, bool isMultiThread);
     ~Scene();
 
     /**
@@ -110,10 +111,40 @@ private:
     void initGObjects();
 
     /**
+     * @brief addPointToOctree Add a point to the Octree
+     */
+    void addPointToOctree(int x, int y, int z, double massV, double ageV);
+
+    /**
+    * @brief parseFile
+    */
+    File parseFile();
+
+    /**
      * @brief Update the current FPS
      * @param elapsedTime The time the main loop took to render 1 frame
      */
     void updateFPS(int elapsedTime);
+
+    /**
+     * @brief startThreadEvent In a new Thread, detect position and inject data in Octree if needed.
+     */
+    void startThreadEvent(MThread mt);
+
+    /**
+     * @brief getThread
+     */
+    MThread getThread();
+
+    /**
+     * @brief update octree in an other thread
+    */
+    void updateOctree(std::vector<double*> d);
+
+    /**
+     * @brief remove old octree in an other thread
+    */
+    void removeOctree(std::vector<double*> d);
 
     /**
      * @brief Perform final actions at the end of the scene/program
@@ -218,9 +249,14 @@ private:
     std::string filename_;
 
     /**
-     * @brief file_ generated in Scene.cpp
+     * @brief file_ generated in File.cpp
      */
     File file_;
+
+    /**
+     * @brief thread_ The thread for events if multithreading is enable.
+     */
+    MThread mthread_;
 
     /**
      * @brief randomPercentage_ percentage of points to display. If 1, do not use random method.
@@ -231,6 +267,15 @@ private:
      * @brief clusteringPercentage_ percentage of points to display. If 100, do not use clustering method.
      */
     int clusteringPercentage_;
+
+    /**
+     * @brief multiThread_ Enable multithreading.
+     */
+    bool isMultiThread_;
+
+    int blue_;
+
+//    bool locked_;
 };
 
 

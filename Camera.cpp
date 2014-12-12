@@ -8,7 +8,8 @@
 
 #include <cmath>
 
-Camera::Camera(glm::vec3 const & position, glm::vec3 const & eyeTarget, glm::vec3 const & verticalAxis, float sensibility, float speed, Input const & input):
+Camera::Camera(glm::vec3 const & position, glm::vec3 const & eyeTarget, glm::vec3 const & verticalAxis,
+               float sensibility, float speed, Input const & input, Octree<std::shared_ptr<GraphicObject>> g):
     input_ {input},
     phi_ {0},
     theta_ {0},
@@ -18,7 +19,8 @@ Camera::Camera(glm::vec3 const & position, glm::vec3 const & eyeTarget, glm::vec
     position_ {position},
     eyeTarget_ {eyeTarget},
     sensibility_ {sensibility},
-    speed_ {speed}
+    speed_ {speed},
+    gObjects_ {g}
 {
     setEyeTarget();
 }
@@ -149,7 +151,6 @@ int Camera::movePosition(File f)
     if(input_.isKeyboardKeyDown(SDL_SCANCODE_RIGHT) || input_.isKeyboardKeyDown(SDL_SCANCODE_D))
     {
         position_ += - lateralMove_ * speed_;
-//        speed_ = speed_-0.001;
         octantsDrawnCount=4;
     }
     if(input_.isKeyboardKeyDown(SDL_SCANCODE_T)) // teleportation
@@ -157,6 +158,19 @@ int Camera::movePosition(File f)
         int x = f.convert(f.getXCenterTp()), y = f.convert(f.getYCenterTp()), z =f.convert(f.getZCenterTp());
         logger->info(logger->get() << "Teleportation to (x, y, z) = (" << x << ", "<< y << ", " << z << ")");
         teleport(x, y, z);
+    }
+    if(input_.isKeyboardKeyDown(SDL_SCANCODE_R)) // clean octree
+    {
+        logger->info(logger->get() << "Cleaning Octree.");
+        // TODO : trouver les bonnes limites pour le clean.
+//        for(int z=zp - sizeToRender; z<zp + sizeToRender; z++)
+//        {
+//            for(int y=yp - sizeToRender; y<yp + sizeToRender; y++)
+//            {
+//                for(int x=xp - sizeToRender; x<xp + sizeToRender; x++)
+//                {
+//        gObjects_.erase(x, y, z);
+        //TODO: gObjects_->clean
     }
     if(input_.isKeyboardKeyDown(SDL_SCANCODE_I)) // accelerate
     {
@@ -273,7 +287,6 @@ void Camera::setOrientation(const glm::vec3 &orientation)
 void Camera::updateEyeTarget()
 {
     eyeTarget_ = position_ + orientation_;
-
     logger->debug(logger->get() << "Update eye target: " << Utils::toString(eyeTarget_));
 }
 float Camera::phi() const

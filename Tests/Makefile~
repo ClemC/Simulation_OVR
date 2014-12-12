@@ -30,8 +30,8 @@ CXXFLAGS += -g -Wall -Wextra -pthread -std=c++11
 # All tests produced by this Makefile.  Remember to add new tests you
 # created to the list.
 #TESTS = Scene_unittest
-TESTS = File_unittest
-#TESTS = MThread_unittest
+#TESTS = File_unittest
+TESTS = MThread_unittest
 
 # All Google Test headers.  Usually you shouldn't change this
 # definition.
@@ -78,12 +78,29 @@ gtest_main.a : gtest-all.o gtest_main.o
 
 
 
-File.o : $(USER_DIR)/File.cpp $(USER_DIR)/File.h $(GTEST_HEADERS)
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/File.cpp
+#File.o : $(USER_DIR)/File.cpp $(USER_DIR)/File.h $(GTEST_HEADERS)
+#	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/File.cpp
 
-File_unittest.o : $(USER_DIR)/File_unittest.cpp \
-                     $(USER_DIR)/File.h $(GTEST_HEADERS)
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/File_unittest.cpp
+#File_unittest.o : $(USER_DIR)/File_unittest.cpp \
+#                     $(USER_DIR)/File.h $(GTEST_HEADERS)
+#	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/File_unittest.cpp
 #
-File_unittest : File.o File_unittest.o gtest_main.a
+#File_unittest : File.o File_unittest.o gtest_main.a
+#	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $^ -o $@
+
+
+
+
+
+
+MThread.o : $(USER_DIR)/MThread/MThread.cpp $(USER_DIR)/MThread/MThread.h $(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/MThread/MThread.cpp
+
+MThread_unittest.o : $(USER_DIR)/MThread/MThread_unittest.cpp \
+                     $(USER_DIR)/MThread/MThread.h $(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/MThread/MThread_unittest.cpp
+
+MThread_unittest : MThread.o MThread_unittest.o gtest_main.a
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $^ -o $@
+
+

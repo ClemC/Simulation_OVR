@@ -325,6 +325,10 @@ int File::convert(double d) {
     return (int)((d)*(getSizeScene()-1));
 }
 
+double File::convertToFile(double d) {
+    return d/(getSizeScene()-1);
+}
+
 
 //////////////////////////////////////////////////////////////////
 

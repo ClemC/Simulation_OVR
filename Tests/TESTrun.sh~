@@ -1,7 +1,7 @@
 sleeptime=1000
 
 make
-./MThread_unittest
+./File_unittest
 make clean
 echo "\nsleeping $sleeptime s ..."
 sleep $sleeptime
