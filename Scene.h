@@ -50,7 +50,7 @@ public:
     Scene(std::string windowTitle, int windowWidth, int windowHeight, bool oculusRender,
           bool fullscreen, std::string textureName, unsigned long objectsCount,
           int size, int octantSize, int  octantsDrawnCount, std::string filename,
-          int randomPercentage, int clusteringPercentage, bool isMultiThread);
+          int randomPercentage, int clusteringPercentage, bool isMultiThread, bool renderTypeSimplified);
     ~Scene();
 
     /**
@@ -272,6 +272,11 @@ private:
      * @brief multiThread_ Enable multithreading.
      */
     bool isMultiThread_;
+    
+    /**
+     * @brief renderTypeSimplified_ is true for half plane loading and false for vision cone loading.
+     */
+    bool renderTypeSimplified_;
 
     int blue_;
 
