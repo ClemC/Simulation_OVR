@@ -24,7 +24,7 @@ std::unique_ptr<NullOculus> nullOculus(new NullOculus);
 Scene::Scene(std::string windowTitle, int windowWidth, int windowHeight, bool oculusRender, bool fullscreen,
              std::string textureName, unsigned long objectsCount, int size, int octantSize,
              int  octantsDrawnCount, std::string filename, int randomPercentage, int clusteringPercentage,
-             bool isMultiThread):
+             bool isMultiThread, bool renderTypeSimplified):
     gObjectsCount_ {objectsCount}, // R&D: if reading files, should be set to the number of lines.
     size_ {size},
     //1 to only draw the octant the camera is in, 2 to draw the immediate neighbours, etc. Power of 2
@@ -43,7 +43,8 @@ Scene::Scene(std::string windowTitle, int windowWidth, int windowHeight, bool oc
     filename_ {filename},
     randomPercentage_ {randomPercentage},
     clusteringPercentage_ {clusteringPercentage},
-    isMultiThread_ {isMultiThread}
+    isMultiThread_ {isMultiThread},
+    renderTypeSimplified_ {renderTypeSimplified}
 {
     logger->trace(logger->get() << "Scene constructor");
     input_ = std::unique_ptr<Input>(new Input(this));
@@ -355,6 +356,13 @@ void Scene::render()
     Scene::render(modelview, projection);
 }
 
+double norm2xyz(float x, float y, float z){
+    return sqrt(x*x+y*y+z*z);
+}
+
+// 1/4 Uncomment the line to see the effect of the vision cone
+// double inc=0.0;
+
 void Scene::render(glm::mat4 & MV, glm::mat4 & proj)
 {
     int sizeToRender = octantSize_ * octantsDrawnCount_;
@@ -367,6 +375,7 @@ void Scene::render(glm::mat4 & MV, glm::mat4 & proj)
     int xp = camera_->position().x;
     int yp = camera_->position().y;
     int zp = camera_->position().z;
+    double cos55 = 0.5735;
     // Traiter cette partie par un autre processus ? (si sizeToRender est énorme, il faut plus de temps avant de pouvoir bouger.)
     for(int z=zp - sizeToRender; z<zp + sizeToRender; z++)
     {
@@ -374,12 +383,44 @@ void Scene::render(glm::mat4 & MV, glm::mat4 & proj)
         {
             for(int x=xp - sizeToRender; x<xp + sizeToRender; x++)
             {
-                if(v.x*x+v.y*y+v.z*z-v.x*xp-v.y*yp-v.z*zp>0) {
+
+                if(renderTypeSimplified_){
+
+                    // Half space
+                    if(v.x*x+v.y*y+v.z*z-v.x*xp-v.y*yp-v.z*zp>0) {
+                        gObjects_.at(x, y, z)->draw(proj, MV);
+                    }
+
+                }
+                else{
+
+                    // Vision angles
+                    // theta <= 110°/2
+                    // cos(theta) >= cos(55°) with cos(55°)=0.5735
+                    // norm(v)*norm(p)*cos(theta) >= norm(v)*norm(p)*0.5735 with p=(x-xp,y-yp,z-zp)
+                    // dotproduct(v,p) >= norm(v)*norm(p)*0.5735
+
+                    // 2/4 Uncomment the line to see the effect of the vision cone
+                    // cos55+=inc;
+                    if((x-xp)*v.x+(y-yp)*v.y+(z-zp)*v.z >= norm2xyz(x-xp,y-yp,z-zp) * norm2xyz(v.x,v.y,v.z) * cos55){
+                        gObjects_.at(x, y, z)->draw(proj, MV);
+                    }
+                    // 3/4 Uncomment the line to see the effect of the vision cone
+                    // cos55-=inc;
+                }
+
+                /* Vision angles unoptimized
+                glm::vec3 m(x,y,z);
+                if(glm::dot(m - camera_->position(),v) >= norm2(m - camera_->position()) * norm2(v) * (0.5735+inc)){
                     gObjects_.at(x, y, z)->draw(proj, MV);
                 }
+                */
+
             }
         }
     }
+    // 4/4 Uncomment the line to see the effect of the vision cone
+    // inc+=0.001;
 }
 
 /**
