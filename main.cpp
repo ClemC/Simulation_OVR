@@ -25,6 +25,7 @@ int main(int argc, char** argv)
                 ("randomPercentage,a", po::value<int>()->default_value(100), "Set the percentage of points to display with the random algorithm. If 100, do not use random method.")
                 ("clusteringPercentage,c", po::value<int>()->default_value(100), "Set the percentage of points to display with the hierarchical clustering algorithm. If 100, do not use clustering method.")
                 ("isMultiThread,m", po::value<bool>()->default_value(false), "Enable multithreading.")
+                ("renderTypeSimplified,m", po::value<bool>()->default_value(false), "True for half plane loading, and false for vision cone loading")
                 ;
 
         po::variables_map vm;
@@ -48,6 +49,7 @@ int main(int argc, char** argv)
                 vm["randomPercentage"].as<int>(),
                 vm["clusteringPercentage"].as<int>(),
                 vm["isMultiThread"].as<bool>()
+                vm["renderTypeSimplified"].as<bool>()
                 );
         scene.mainLoop();
     }
