@@ -59,6 +59,11 @@ public:
     void mainLoop();
 
     /**
+     * @brief The main loop to test the application
+     */
+    void mainLoopTest();
+
+    /**
      * @brief The graphical rendering
      */
     void render();

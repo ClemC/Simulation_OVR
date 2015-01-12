@@ -133,7 +133,7 @@ void Input::showCursor(bool show) const
     }
     else
     {
-        SDL_ShowCursor(SDL_DISABLE);
+        SDL_ShowCursor(SDL_ENABLE);
     }
 }
 

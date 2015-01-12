@@ -338,6 +338,43 @@ void Scene::mainLoop()
     doEnd();
 }
 
+void Scene::mainLoopTest()
+{
+    int fpsDesired = 60;
+    unsigned int frameRate = 1000 / fpsDesired;
+    Uint32 start (0);
+    Uint32 end  (0);
+    Uint32 elapsedTime (0);
+    blue_=0;
+        start = SDL_GetTicks();
+        input_->updateEvent();
+        if(oculusRender_)
+        {
+            input_->oculus()->render();
+        }
+        else
+        {
+            glClearColor(0, 0, blue_, 7); // red,green,blue
+            glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+            render();
+        }
+        if(!oculusRender_)
+        {
+            SDL_GL_SwapWindow(window_);
+        }
+        SDL_GL_SwapWindow(window_);
+        //Wait for FPS
+        end = SDL_GetTicks();
+        elapsedTime = end - start;
+        updateFPS(elapsedTime);
+        if(elapsedTime < frameRate)
+        {
+            SDL_Delay(frameRate - elapsedTime);
+        }
+        frameCount_++;
+    doEnd();
+}
+
 void Scene::doEnd()
 {
     logger->info(logger->get() << "Mean fps at the end; " << fps_);

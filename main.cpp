@@ -1,6 +1,5 @@
 #include "LogCpp/Log.h"
 #include "Scene.h"
-#include "File.h"
 
 #include <boost/program_options.hpp>
 namespace po = boost::program_options;
@@ -21,11 +20,11 @@ int main(int argc, char** argv)
                 ("size,s", po::value<int>()->default_value(1024), "Set the size of the data cube. Must be a power of 2") // Up to 8192 with 20fps !
                 ("octantSize", po::value<int>()->default_value(8), "Set the size of an octant. Must be a power of 2")
                 ("octantDrawnCount,d", po::value<int>()->default_value(8), "Set the number of octant drawn count. 1 to only draw the octant the camera is currently in, 2 to draw the immediate neighbors, ...")
-                ("read,r", po::value<std::string>()->default_value("./File/test.txt"), "Set the file to read.") // set "./File/star.txt" or "" here.
+                ("read,r", po::value<std::string>()->default_value("./File/star_00012"), "Set the file to read.") // set "./File/star.txt" or "" here.
                 ("randomPercentage,a", po::value<int>()->default_value(100), "Set the percentage of points to display with the random algorithm. If 100, do not use random method.")
                 ("clusteringPercentage,c", po::value<int>()->default_value(100), "Set the percentage of points to display with the hierarchical clustering algorithm. If 100, do not use clustering method.")
                 ("isMultiThread,m", po::value<bool>()->default_value(false), "Enable multithreading.")
-                ("renderTypeSimplified,m", po::value<bool>()->default_value(false), "True for half plane loading, and false for vision cone loading")
+                ("renderTypeSimplified", po::value<bool>()->default_value(false), "True for half plane loading, and false for vision cone loading")
                 ;
 
         po::variables_map vm;
@@ -48,7 +47,7 @@ int main(int argc, char** argv)
                 vm["read"].as<std::string>(),
                 vm["randomPercentage"].as<int>(),
                 vm["clusteringPercentage"].as<int>(),
-                vm["isMultiThread"].as<bool>()
+                vm["isMultiThread"].as<bool>(),
                 vm["renderTypeSimplified"].as<bool>()
                 );
         scene.mainLoop();

@@ -13,8 +13,9 @@ SOURCES += \
     Utils.cpp \
     File.cpp \
     MThread/MThread.cpp \
-    MThread/MThreadTest.cpp \
-    MThread/UnitTestSample.cpp
+    Tests/UnitTest++/MThreadTest.cpp \
+    Tests/UnitTest++/UnitTestSample.cpp \
+    Tests/UnitTest++/SceneTest.cpp
 
 HEADERS += \
     Include/GL3/gl3.h \
