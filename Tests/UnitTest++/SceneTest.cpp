@@ -43,56 +43,56 @@ int run(std::string filename, int size) {
 
 TEST(SceneTest) {
 std::string filename = "./File/star_00012";
-//CHECK_EQUAL(1, run(filename, 1024));
+//    CHECK_EQUAL(1, run(filename, 1024));
 //    CHECK_EQUAL(1, run(filename, 2048));
 //    CHECK_EQUAL(1, run(filename, 4096));
 //    CHECK_EQUAL(1, run(filename, 8192));
 
 filename = "./File/star_00013";
-//CHECK_EQUAL(1, run(filename, 1024));
+//    CHECK_EQUAL(1, run(filename, 1024));
 //    CHECK_EQUAL(1, run(filename, 2048));
 //    CHECK_EQUAL(1, run(filename, 4096));
 //    CHECK_EQUAL(1, run(filename, 8192));
 
 filename = "./File/star_00014";
-//CHECK_EQUAL(1, run(filename, 1024));
+//    CHECK_EQUAL(1, run(filename, 1024));
 //    CHECK_EQUAL(1, run(filename, 2048));
 //    CHECK_EQUAL(1, run(filename, 4096));
 //    CHECK_EQUAL(1, run(filename, 8192));
 
 filename = "./File/star_00016";
-//CHECK_EQUAL(1, run(filename, 1024));
+//    CHECK_EQUAL(1, run(filename, 1024));
 //    CHECK_EQUAL(1, run(filename, 2048));
 //    CHECK_EQUAL(1, run(filename, 4096));
 //    CHECK_EQUAL(1, run(filename, 8192));
 
 filename = "./File/star_00017";
-//CHECK_EQUAL(1, run(filename, 1024));
+//    CHECK_EQUAL(1, run(filename, 1024));
 //    CHECK_EQUAL(1, run(filename, 2048));
 //    CHECK_EQUAL(1, run(filename, 4096));
 //    CHECK_EQUAL(1, run(filename, 8192));
 
 filename = "./File/star_00020";
-//CHECK_EQUAL(1, run(filename, 1024));
-    CHECK_EQUAL(1, run(filename, 2048));
+//    CHECK_EQUAL(1, run(filename, 1024));
+//    CHECK_EQUAL(1, run(filename, 2048));
 //    CHECK_EQUAL(1, run(filename, 4096));
 //    CHECK_EQUAL(1, run(filename, 8192));
 
-filename = "./File/star_000025";
-//CHECK_EQUAL(1, run(filename, 1024));
+filename = "./File/star_00025";
+//    CHECK_EQUAL(1, run(filename, 1024));
 //    CHECK_EQUAL(1, run(filename, 2048));
 //    CHECK_EQUAL(1, run(filename, 4096));
 //    CHECK_EQUAL(1, run(filename, 8192));
 
 filename = "./File/star_00030";
-//CHECK_EQUAL(1, run(filename, 1024));
+//    CHECK_EQUAL(1, run(filename, 1024));
 //    CHECK_EQUAL(1, run(filename, 2048));
 //    CHECK_EQUAL(1, run(filename, 4096));
 //    CHECK_EQUAL(1, run(filename, 8192));
 }
 
 
-
+// Uncomment this to use UnitTest++
 //int main()
 //{
 //    UnitTest::RunAllTests();

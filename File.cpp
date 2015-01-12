@@ -295,8 +295,8 @@ void File::updateMax(double newAge, int i) {
             xCenterTp_ = x;
             yCenterTp_ = y;
             zCenterTp_ = z;
-            logger->info(logger->get() << "new minimal age : (line:" << i << ", x:" << xCenterTp_ <<
-                         ", y:" << yCenterTp_ << ", z:" << zCenterTp_ << ", minAge:" << maxTp_ << ")\n");
+//            logger->info(logger->get() << "new minimal age : (line:" << i << ", x:" << xCenterTp_ <<
+//                         ", y:" << yCenterTp_ << ", z:" << zCenterTp_ << ", minAge:" << maxTp_ << ")\n");
         }
     }
 }
