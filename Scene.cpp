@@ -171,8 +171,8 @@ void Scene::initOrigin() { // original method with random points.
         int z = distribution(generator);
 
         auto startCrateGeneration = std::chrono::high_resolution_clock::now();
-        glm::vec4 dimensions(0.5,0.5,0.0,0.0);
-        gObjects_(x, y, z) = std::shared_ptr<Crate>(new Crate(x, y, z, dimensions, 1.0, textureName_));
+        //glm::vec4 dimensions(0.5,0.5,0.0,0.0);
+        gObjects_(x, y, z) = std::shared_ptr<Crate>(new Crate(x, y, z, 1.0, textureName_));
         auto endCrateGeneration = std::chrono::high_resolution_clock::now();
 
         logger->debug(logger->get() << "Generated crate n°" << i << " at position ("
@@ -233,12 +233,12 @@ void Scene::addPointToOctree(int x, int y, int z, double massV, double ageV) {
         exit(244);
     }
 //    glm::vec4 dimensions(1,1,0.0,0.0);
-    glm::vec4 dimensions(massV/file_.getMaxMass(),ageV/file_.getMaxAge(),0.0,0.0);
+//    glm::vec4 dimensions(massV/file_.getMaxMass(),ageV/file_.getMaxAge(),0.0,0.0);
 //    cout<<"updateOctree: (x,y,z,ageV,texture,mass,age,file_.getMaxMass()) = ("<<x<<", "<<y<<", "<<z
 //       <<", "<<ageV<<","<<texture<<","<<massV/file_.getMaxMass()<<", "<<ageV/file_.getMaxAge()<<","<<
 //         file_.getMaxMass()<<")\n";
 //    Crate* c = new Crate(1, 1, 1, dimensions, 1, texture);
-    Crate* c = new Crate(x, y, z, dimensions, ageV, texture); // Impossible de créer un nouveau Crate avec une autre thread.
+    Crate* c = new Crate(x, y, z, ageV, texture); // Impossible de créer un nouveau Crate avec une autre thread.
                                                             //Voir Debug après avoir activé le multithreading.
     gObjects_(x, y, z) = std::shared_ptr<Crate>(c);
 //    }

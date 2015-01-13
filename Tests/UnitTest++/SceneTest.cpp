@@ -79,7 +79,7 @@ filename = "./File/star_00020";
 //    CHECK_EQUAL(1, run(filename, 8192));
 
 filename = "./File/star_00025";
-//    CHECK_EQUAL(1, run(filename, 1024));
+    CHECK_EQUAL(1, run(filename, 1024));
 //    CHECK_EQUAL(1, run(filename, 2048));
 //    CHECK_EQUAL(1, run(filename, 4096));
 //    CHECK_EQUAL(1, run(filename, 8192));

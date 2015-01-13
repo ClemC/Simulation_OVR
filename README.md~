@@ -26,34 +26,34 @@ of what you can do with the Oculus Rift.
 #Install tutorial
 Installation :
 - 1. sudo apt-get install synaptic qtcreator clang libglew-dev libsdl2-dev libboost-all-dev libunittest++-dev
-- 2. Run Synaptic (installed in 1.) -> Rechercher -> "sdl2 image library" -> Check all (about 4 elements) -> Apply.
-- 3. Run Synaptic -> Rechercher -> "sdl2" -> check librairies which contains "sdl2" (about 10))
-- 4. Unpack "ovr_sdk_linux_0.3.2.tar.gz" on the Desktop.
-			Then, in administrator mode, copy "./Bureau/OculusSDK/LibOVR/Lib/Linux/Release/i386/*" to "/usr/local/lib/"
-- 5. Extract git files. Check if the file "Simulation.pro" exist.
-- 6. In QtCreator -> File -> Open File or Project -> Simulation_Stage_2014/Simulation.pro -> Yes
-- 7. In qtCreator -> Tools -> Options -> Build & Run -> Compilers -> Add -> Clang -> 
+- 2. Lancer Synaptic (installé en 1.) -> Rechercher -> "sdl2 image library" -> Tout cocher (environ 4 éléments) -> Appliquer.
+- 3. Lancer Synaptic -> Rechercher -> "sdl2" -> cocher les librairies avec sdl2 dedans (environ 10))
+- 4. Décompresser "ovr_sdk_linux_0.3.2.tar.gz" vers le bureau
+			Ensuite, en mode Administrateur, copier "./Bureau/OculusSDK/LibOVR/Lib/Linux/Release/i386"  dans "/usr/local/lib/"
+- 5. Extraire CLEAN.zip sur le bureau (ou les fichiers de GIT). Vérifier qu'il y ait bien le fichier Simulation.pro
+- 6. Dans qtCreator -> File -> Open File or Project -> Simulation_Stage_2014/Simulation.pro -> Yes
+- 7. Dans qtCreator -> Tools -> Options -> Build & Run -> Compilers -> Add -> Clang -> 
 		Compiler path = "/usr/bin/clang++" -> Apply.
-- 8. In qtCreator -> Tools -> Options -> Build & Run -> Kit -> Add -> Name="Clang++",
-		Debugger ="System GDB at /usr/bin/gdb", Compiler="Clang", QtVersion="Qt 5.3.0 in PATH (qt5)" or QtVersion="Qt 5.2.1 in PATH (qt5)" -> Apply
-- 9. In qtCreator -> Projects : "Configure Project", bottom right.
-- 10. In qtCreator -> Projects -> Add Kit (en haut à gauche) -> "Clang++" -> Run below "Clang++"
-- 11. In qtCreator -> Edit -> Select "Simulation.pro".
-- 12. In qtCreator -> Green arrow at the bottom.
+- 8. Dans qtCreator -> Tools -> Options -> Build & Run -> Kit -> Add -> Name="Clang++",
+		Debugger ="System GDB at /usr/bin/gdb", Compiler="Clang", QtVersion="Qt 5.3.0 in PATH (qt5)" ou QtVersion="Qt 5.2.1 in PATH (qt5)" -> Apply
+- 9. Dans qtCreator -> Projects : "Configure Project" en bas à droite.
+- 10. Dans qtCreator -> Projects -> Add Kit (en haut à gauche) -> "Clang++" -> Run en dessous de "Clang++"
+- 11. Dans qtCreator -> Edit -> Selectionner "Simulation.pro" du projet de Philippe.
+- 12. Dans qtCreator -> Flèche verte en bas
 
-# Error Handling in QtCreator :
-Error list :
--  "SDL2/SDL.h not found" Alors Lancer Synaptic -> Rechercher "sdl2" et "sdl2 image library" -> Check all
--  "GL/glew.h file not found" Then with Synaptic -> Search "glew" -> Check "libglew-dev"
--  "LogCpp/Log.h File not found" Then use the git file which contains "LogCpp/Log.h"
--  "cannot find -lovr" -> Unpack "ovr_sdk_linux_0.3.2.tar.gz" to the desktop.
-				Then, in administrator mode, copy "./Bureau/OculusSDK/LibOVR/Lib/Linux/Release/i386/*" to "/usr/local/lib/"
+# Gestion des erreurs dans QtCreator :
+Liste des erreurs :
+-  "SDL2/SDL.h not found" Alors Lancer Synaptic -> Rechercher "sdl2" et "sdl2 image library" -> Tout Cocher
+-  "GL/glew.h file not found" Alors Lancer Synaptic -> Rechercher "glew" -> Cocher "libglew-dev"
+-  "LogCpp/Log.h File not found" Alors Utiliser le fichier "CLEAN.zip" qui contient le fichier "LogCpp/Log.h"
+-  "cannot find -lovr" -> Décompresser "ovr_sdk_linux_0.3.2.tar.gz" vers le bureau
+				Ensuite, en mode Administrateur, copier "./Bureau/OculusSDK/LibOVR/Lib/Linux/Release/i386"  dans "/usr/local/lib/"
 -  "cannot find -lboost_program_options" -> sudo apt-get install libboost-all-dev
 -  "std::regex..." -> sudo add-apt-repository ppa:ubuntu-toolchain-r/test;sudo apt-get update;sudo apt-get install g++-4.9
 -  "Error creating the OpenGL context" ->
-				If the computer have a graphical card, use proprietary drivers from NVidia.
-				Else, install "intel-linux-graphics-installer_1.0.6-0intel1_i386.deb" -> 
-						Run intel-linux-graphics -> Upgrade -> Reboot
+				Si ordi avec carte graphique : Utiliser les pilotes propriétaires NVidia.
+				Si ordi sans carte graphique : Installer "intel-linux-graphics-installer_1.0.6-0intel1_i386.deb" -> 
+						Lancer intel-linux-graphics -> Upgrade -> Reboot
 -  "g++ 4.9 missing"
 			sudo add-apt-repository ppa:ubuntu-toolchain-r/test;sudo apt-get update
 			sudo apt-get install g++-4.9

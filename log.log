@@ -1,8 +1,8 @@
-<info> (1) [342 micros] File './File/star_00012' found. (342 micros) 
-<info> (2) [916 micros] dimension_ is now 7. It was found in '      20  3.19393E+03  4.43012E-01  3.30564E-01  4.22354E-01  1.03956E+01  0.00000E+00' (line 3). (573 micros) 
-<info> (3) [21509 micros] Found 100 usefull lines in './File/star_00012'.
- (20593 micros) 
-<info> (4) [594686 micros] Using basic Algorythm. (573176 micros) 
-<info> (5) [2530761 micros] Teleportation to (x, y, z) = (5372, 3398, 4364) (1936075 micros) 
-<info> (6) [2580175 micros] Teleportation to (x, y, z) = (5372, 3398, 4364) (49413 micros) 
-<info> (7) [3816292 micros] Mean fps at the end; 19.8033 (1236117 micros) 
+<info> (1) [369 micros] File './File/star_00020' found. (369 micros) 
+<info> (2) [14893 micros] dimension_ is now 7. It was found in '   10040  3.19393E+03  4.56792E-02  5.77574E-02  1.16433E-02  2.01123E+01  0.00000E+00' (line 3). (14523 micros) 
+<info> (3) [4207538 micros] Found 29678 usefull lines in './File/star_00020'.
+ (4192644 micros) 
+<info> (5) [4785936 micros] Using basic Algorythm. (46035 micros) 
+<info> (6) [13139934 micros] Teleportation to (x, y, z) = (670, 424, 545) (8353997 micros) 
+<info> (7) [13176692 micros] Teleportation to (x, y, z) = (670, 424, 545) (36758 micros) 
+<info> (8) [20253856 micros] Mean fps at the end; 18.9925 (7077163 micros) 
