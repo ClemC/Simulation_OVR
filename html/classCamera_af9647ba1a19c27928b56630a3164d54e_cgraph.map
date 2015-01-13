@@ -1,0 +1,9 @@
+<map id="Camera::orientate" name="Camera::orientate">
+<area shape="rect" id="node2" href="$Scene_8cpp.html#a33bb9dd6236cf80e87339343a8be3f4e" title="logger" alt="" coords="631,32,688,59"/>
+<area shape="rect" id="node3" href="$namespaceUtils.html#ac77440fa22cefff120355abc5e6f6de8" title="Clamps an angle to a value Clamps (i.e limits) an angle to a given value which is both a minimum and ..." alt="" coords="427,32,519,59"/>
+<area shape="rect" id="node4" href="$namespaceUtils.html#aa1bf98827f90b3843660995e4efb4c84" title="Converts an angle from degrees to radians. " alt="" coords="191,83,326,110"/>
+<area shape="rect" id="node5" href="$classCamera.html#a015160787796d34df98db2e23cb3387e" title="Camera::setOrientation" alt="" coords="180,134,337,160"/>
+<area shape="rect" id="node7" href="$classCamera.html#afff594534eab1614a3045e6dbf030323" title="Updates the point the camera is looking at from its position and rotation. " alt="" coords="385,159,560,186"/>
+<area shape="rect" id="node6" href="$classCamera.html#af6b0d4052d268bc0674ed5dd53068fc9" title="Camera::orientation" alt="" coords="405,108,541,135"/>
+<area shape="rect" id="node8" href="$namespaceUtils.html#aae7fe80e12cf4342629d49803946568d" title="Converts a 3 dimensional vector to a pretty string ready to be printed. " alt="" coords="608,159,711,186"/>
+</map>

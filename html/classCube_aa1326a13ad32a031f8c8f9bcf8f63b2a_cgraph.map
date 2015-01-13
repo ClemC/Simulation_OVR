@@ -1,0 +1,4 @@
+<map id="Cube::load" name="Cube::load">
+<area shape="rect" id="node2" href="$classGraphicObject.html#a8e43dbd70ae6a48bc53cf1b509791af0" title="Gives the memory size of the vertices coordinates in bytes. " alt="" coords="151,5,325,47"/>
+<area shape="rect" id="node3" href="$classGraphicObject.html#a9f4d774f94d51ebf0c44829898dbe012" title="Gives the memory size of the colors coordinates in bytes. " alt="" coords="139,71,337,98"/>
+</map>

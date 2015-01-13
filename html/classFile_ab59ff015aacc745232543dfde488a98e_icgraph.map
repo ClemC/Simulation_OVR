@@ -1,0 +1,11 @@
+<map id="File::getSizeScene" name="File::getSizeScene">
+<area shape="rect" id="node2" href="$classFile.html#a9af2773d1dd86d3e95e830563a51e3b5" title="File::convert. " alt="" coords="203,69,298,96"/>
+<area shape="rect" id="node10" href="$classFile.html#a9ba7a94c8022986138d194a02b9f3396" title="File::convertToFile" alt="" coords="185,132,316,159"/>
+<area shape="rect" id="node3" href="$classCamera.html#aee126011d76a1f867c35ad2fa54e73d7" title="Moves the camera position depending on the user inputs. " alt="" coords="367,5,521,32"/>
+<area shape="rect" id="node5" href="$classScene.html#a96c0932a87a2e4bdae8752b1d4deca20" title="initGObjectsFile Simple load of the file, with random algorythm if randomPercentage!=1. " alt="" coords="364,56,524,83"/>
+<area shape="rect" id="node7" href="$classScene.html#a358f49a9a46561e71fccfdaa9f1dbe9d" title="update octree in an other thread " alt="" coords="371,107,517,133"/>
+<area shape="rect" id="node4" href="$classCamera.html#a631854f3063e6ddf8f7c2697c34c2bc0" title="Moves the camera depending on the user inputs and clamps the position. " alt="" coords="601,5,709,32"/>
+<area shape="rect" id="node6" href="$classScene.html#a6bca5b828c5be195b28899ccbda22ead" title="Generates graphical objects generator. " alt="" coords="586,56,725,83"/>
+<area shape="rect" id="node8" href="$classScene.html#a5d8a784dae122a4bbb1c74bc3dc550fc" title="startThreadEvent In a new Thread, detect position and inject data in Octree if needed. " alt="" coords="572,132,739,159"/>
+<area shape="rect" id="node9" href="$classScene.html#a4e0d849508a5e8a3e0a627a7e367dfef" title="getThread " alt="" coords="787,132,912,159"/>
+</map>

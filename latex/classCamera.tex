@@ -1,0 +1,247 @@
+\hypertarget{classCamera}{}\section{Camera Class Reference}
+\label{classCamera}\index{Camera@{Camera}}
+
+
+The \hyperlink{classCamera}{Camera} class.  
+
+
+
+
+{\ttfamily \#include $<$Camera.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCamera_a4e0bc7a830bd127815fdb45fc4230768}{Camera} (glm\+::vec3 const \&position, glm\+::vec3 const \&eye\+Target, glm\+::vec3 const \&vertical\+Axis, float sensibility, float speed, \hyperlink{classInput}{Input} const \&input, Octree$<$ std\+::shared\+\_\+ptr$<$ \hyperlink{classGraphicObject}{Graphic\+Object} $>$$>$ g)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hypertarget{classCamera_ad1897942d0ccf91052386388a497349f}{}\hyperlink{classCamera_ad1897942d0ccf91052386388a497349f}{$\sim$\+Camera} ()\label{classCamera_ad1897942d0ccf91052386388a497349f}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classCamera_af9647ba1a19c27928b56630a3164d54e}{orientate} (float x\+Rel, float y\+Rel)
+\begin{DoxyCompactList}\small\item\em Orientates the camera depending on the mouse movements. \end{DoxyCompactList}\item 
+int \hyperlink{classCamera_a631854f3063e6ddf8f7c2697c34c2bc0}{move} (glm\+::vec3 const \&clamp\+Min, glm\+::vec3 const \&clamp\+Max, \hyperlink{classFile}{File} f)
+\begin{DoxyCompactList}\small\item\em Moves the camera depending on the user inputs and clamps the position. \end{DoxyCompactList}\item 
+void \hyperlink{classCamera_ac086b3a16c50dfd4accfc3a76b1db719}{look\+At} (glm\+::mat4 \&modelview)
+\begin{DoxyCompactList}\small\item\em Makes the camera look at a given point described by the modelview matrix. \end{DoxyCompactList}\item 
+\hypertarget{classCamera_aee126011d76a1f867c35ad2fa54e73d7}{}int \hyperlink{classCamera_aee126011d76a1f867c35ad2fa54e73d7}{move\+Position} (\hyperlink{classFile}{File} f)\label{classCamera_aee126011d76a1f867c35ad2fa54e73d7}
+
+\begin{DoxyCompactList}\small\item\em Moves the camera position depending on the user inputs. \end{DoxyCompactList}\item 
+void \hyperlink{classCamera_a0dc77df7121855934ca107be392c9bd7}{teleport} (double x, double y, double z)
+\begin{DoxyCompactList}\small\item\em teleport to a point. \end{DoxyCompactList}\item 
+\hypertarget{classCamera_a856ab6b929b48aca124e05f4c4cf32fd}{}void \hyperlink{classCamera_a856ab6b929b48aca124e05f4c4cf32fd}{move\+Orientation} ()\label{classCamera_a856ab6b929b48aca124e05f4c4cf32fd}
+
+\begin{DoxyCompactList}\small\item\em Changes the camera orientation depending on the user inputs. \end{DoxyCompactList}\item 
+\hypertarget{classCamera_afff594534eab1614a3045e6dbf030323}{}void \hyperlink{classCamera_afff594534eab1614a3045e6dbf030323}{update\+Eye\+Target} ()\label{classCamera_afff594534eab1614a3045e6dbf030323}
+
+\begin{DoxyCompactList}\small\item\em Updates the point the camera is looking at from its position and rotation. \end{DoxyCompactList}\item 
+\hypertarget{classCamera_afe1507a03bc72df5325bc6bf2ae2b22d}{}void {\bfseries set\+Eye\+Target} ()\label{classCamera_afe1507a03bc72df5325bc6bf2ae2b22d}
+
+\item 
+\hypertarget{classCamera_a1aeeadf5c83ad322746dbab2aea31625}{}glm\+::vec3 {\bfseries eye\+Target} ()\label{classCamera_a1aeeadf5c83ad322746dbab2aea31625}
+
+\item 
+\hypertarget{classCamera_abe8633adb8475cb7c62e1a12743a1025}{}void {\bfseries set\+Position} (glm\+::vec3 position)\label{classCamera_abe8633adb8475cb7c62e1a12743a1025}
+
+\item 
+\hypertarget{classCamera_a34977bb92f9318343d8b706faa64b399}{}glm\+::vec3 {\bfseries position} ()\label{classCamera_a34977bb92f9318343d8b706faa64b399}
+
+\item 
+\hypertarget{classCamera_a46344382b241bebe8b091bb810938133}{}float {\bfseries sensibility} () const \label{classCamera_a46344382b241bebe8b091bb810938133}
+
+\item 
+\hypertarget{classCamera_ac25cb204a2aeff72f143836d27eeae4a}{}void {\bfseries set\+Sensibility} (float const sensibility)\label{classCamera_ac25cb204a2aeff72f143836d27eeae4a}
+
+\item 
+\hypertarget{classCamera_a9d5f5bfa927044db06ce687b0c00173e}{}float {\bfseries speed} () const \label{classCamera_a9d5f5bfa927044db06ce687b0c00173e}
+
+\item 
+\hypertarget{classCamera_afad82ebb393903702a11076b905bbbe5}{}void {\bfseries set\+Speed} (float const speed)\label{classCamera_afad82ebb393903702a11076b905bbbe5}
+
+\item 
+\hypertarget{classCamera_af6b0d4052d268bc0674ed5dd53068fc9}{}glm\+::vec3 {\bfseries orientation} () const \label{classCamera_af6b0d4052d268bc0674ed5dd53068fc9}
+
+\item 
+\hypertarget{classCamera_a015160787796d34df98db2e23cb3387e}{}void {\bfseries set\+Orientation} (const glm\+::vec3 \&orientation)\label{classCamera_a015160787796d34df98db2e23cb3387e}
+
+\item 
+\hypertarget{classCamera_ae7bb2862b1a76e2651f756f0caf615d0}{}float {\bfseries phi} () const \label{classCamera_ae7bb2862b1a76e2651f756f0caf615d0}
+
+\item 
+\hypertarget{classCamera_a75de7f8740d9ecb21dbc1a42cbee5117}{}void {\bfseries set\+Phi} (float phi)\label{classCamera_a75de7f8740d9ecb21dbc1a42cbee5117}
+
+\item 
+\hypertarget{classCamera_a4443693aa3a0390e24429a0be0e2b9d2}{}float {\bfseries theta} () const \label{classCamera_a4443693aa3a0390e24429a0be0e2b9d2}
+
+\item 
+\hypertarget{classCamera_a79cc39c9b41f69453fe34f1810be8814}{}void {\bfseries set\+Theta} (float theta)\label{classCamera_a79cc39c9b41f69453fe34f1810be8814}
+
+\item 
+\hypertarget{classCamera_a2e3137139562efd184a7dd3606de9ded}{}void {\bfseries set\+Orientation} (float phi\+Rad, float theta\+Rad)\label{classCamera_a2e3137139562efd184a7dd3606de9ded}
+
+\item 
+\hypertarget{classCamera_a2c95537205c12327a6fe61462680c1da}{}const \hyperlink{classInput}{Input} \& {\bfseries input} () const \label{classCamera_a2c95537205c12327a6fe61462680c1da}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classCamera_abb6eecba65dc1877d649f77f28dcd6ca}{}const \hyperlink{classInput}{Input} \& \hyperlink{classCamera_abb6eecba65dc1877d649f77f28dcd6ca}{input\+\_\+}\label{classCamera_abb6eecba65dc1877d649f77f28dcd6ca}
+
+\begin{DoxyCompactList}\small\item\em The input management. \end{DoxyCompactList}\item 
+\hypertarget{classCamera_a8c50ee4d80451716b8253b30c857569f}{}float \hyperlink{classCamera_a8c50ee4d80451716b8253b30c857569f}{phi\+\_\+}\label{classCamera_a8c50ee4d80451716b8253b30c857569f}
+
+\begin{DoxyCompactList}\small\item\em The phi angle, also sometimes reffered as yaw. \end{DoxyCompactList}\item 
+\hypertarget{classCamera_a2338b5b1bcb16ecd098156c434ba4cca}{}float \hyperlink{classCamera_a2338b5b1bcb16ecd098156c434ba4cca}{theta\+\_\+}\label{classCamera_a2338b5b1bcb16ecd098156c434ba4cca}
+
+\begin{DoxyCompactList}\small\item\em The theta angle, also sometimes reffered as pitch. \end{DoxyCompactList}\item 
+\hypertarget{classCamera_a1b10fb1e06e27545a419cc17b5c96388}{}glm\+::vec3 \hyperlink{classCamera_a1b10fb1e06e27545a419cc17b5c96388}{orientation\+\_\+}\label{classCamera_a1b10fb1e06e27545a419cc17b5c96388}
+
+\begin{DoxyCompactList}\small\item\em The orientation of the camera. \end{DoxyCompactList}\item 
+\hypertarget{classCamera_af83f5328265cf1633d6d6788e7ed5090}{}glm\+::vec3 \hyperlink{classCamera_af83f5328265cf1633d6d6788e7ed5090}{vertical\+Axis\+\_\+}\label{classCamera_af83f5328265cf1633d6d6788e7ed5090}
+
+\begin{DoxyCompactList}\small\item\em The vertical axis convention. \end{DoxyCompactList}\item 
+\hypertarget{classCamera_a634f2ef128ac82ce60a20cb126b50988}{}glm\+::vec3 \hyperlink{classCamera_a634f2ef128ac82ce60a20cb126b50988}{lateral\+Move\+\_\+}\label{classCamera_a634f2ef128ac82ce60a20cb126b50988}
+
+\begin{DoxyCompactList}\small\item\em The lateral (i.\+e perpendicural) move of the camera. \end{DoxyCompactList}\item 
+\hypertarget{classCamera_a37ad3807cdae28452b1826659ee81b3e}{}glm\+::vec3 \hyperlink{classCamera_a37ad3807cdae28452b1826659ee81b3e}{position\+\_\+}\label{classCamera_a37ad3807cdae28452b1826659ee81b3e}
+
+\begin{DoxyCompactList}\small\item\em The position of the camera. \end{DoxyCompactList}\item 
+\hypertarget{classCamera_a18a5a0f6e51878a69a052317532bf8f2}{}glm\+::vec3 \hyperlink{classCamera_a18a5a0f6e51878a69a052317532bf8f2}{eye\+Target\+\_\+}\label{classCamera_a18a5a0f6e51878a69a052317532bf8f2}
+
+\begin{DoxyCompactList}\small\item\em The point the camera is looking at. \end{DoxyCompactList}\item 
+\hypertarget{classCamera_a2b5914942cc2b10cd5f192f179b9f7ac}{}float \hyperlink{classCamera_a2b5914942cc2b10cd5f192f179b9f7ac}{sensibility\+\_\+}\label{classCamera_a2b5914942cc2b10cd5f192f179b9f7ac}
+
+\begin{DoxyCompactList}\small\item\em The sensibility of the camera rotation. \end{DoxyCompactList}\item 
+\hypertarget{classCamera_ac6e79c6e2ba82ffd315458eb6940ece4}{}float \hyperlink{classCamera_ac6e79c6e2ba82ffd315458eb6940ece4}{speed\+\_\+}\label{classCamera_ac6e79c6e2ba82ffd315458eb6940ece4}
+
+\begin{DoxyCompactList}\small\item\em The speed of the camera movement. \end{DoxyCompactList}\item 
+\hypertarget{classCamera_a6eb4aecc1fbea0713079b1f1880322bc}{}Octree$<$ std\+::shared\+\_\+ptr$<$ \hyperlink{classGraphicObject}{Graphic\+Object} $>$ $>$ \hyperlink{classCamera_a6eb4aecc1fbea0713079b1f1880322bc}{g\+Objects\+\_\+}\label{classCamera_a6eb4aecc1fbea0713079b1f1880322bc}
+
+\begin{DoxyCompactList}\small\item\em A reference to the Octree. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classCamera}{Camera} class. 
+
+Typical F\+P\+S camera. Orientation controlled by the mouse, position controlled by the arrow keys or the Z\+Q\+S\+D keys 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCamera_a4e0bc7a830bd127815fdb45fc4230768}{}\index{Camera@{Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!Camera@{Camera}}
+\subsubsection[{Camera}]{\setlength{\rightskip}{0pt plus 5cm}Camera\+::\+Camera (
+\begin{DoxyParamCaption}
+\item[{glm\+::vec3 const \&}]{position, }
+\item[{glm\+::vec3 const \&}]{eye\+Target, }
+\item[{glm\+::vec3 const \&}]{vertical\+Axis, }
+\item[{float}]{sensibility, }
+\item[{float}]{speed, }
+\item[{{\bf Input} const \&}]{input, }
+\item[{Octree$<$ std\+::shared\+\_\+ptr$<$ {\bf Graphic\+Object} $>$$>$}]{g}
+\end{DoxyParamCaption}
+)}\label{classCamera_a4e0bc7a830bd127815fdb45fc4230768}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The position of the camera \\
+\hline
+{\em eye\+Target} & The position of the point the camera points to, i.\+e is looking at \\
+\hline
+{\em vertical\+Axis} & The vertical axis we choose to use. Typically it is y, so the value of this argument would be (0, 1, 0) \\
+\hline
+{\em sensibility} & The sensibility of the camera, i.\+e by how much the camera rotates when we move the mouse \\
+\hline
+{\em speed} & The speed of the camera, i.\+e by how much the camera moves when we hit the corresponding keyboard keys \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCamera_ac086b3a16c50dfd4accfc3a76b1db719}{}\index{Camera@{Camera}!look\+At@{look\+At}}
+\index{look\+At@{look\+At}!Camera@{Camera}}
+\subsubsection[{look\+At}]{\setlength{\rightskip}{0pt plus 5cm}void Camera\+::look\+At (
+\begin{DoxyParamCaption}
+\item[{glm\+::mat4 \&}]{modelview}
+\end{DoxyParamCaption}
+)}\label{classCamera_ac086b3a16c50dfd4accfc3a76b1db719}
+
+
+Makes the camera look at a given point described by the modelview matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em modelview} & The modelview matrix from Open\+G\+L \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCamera_a631854f3063e6ddf8f7c2697c34c2bc0}{}\index{Camera@{Camera}!move@{move}}
+\index{move@{move}!Camera@{Camera}}
+\subsubsection[{move}]{\setlength{\rightskip}{0pt plus 5cm}int Camera\+::move (
+\begin{DoxyParamCaption}
+\item[{glm\+::vec3 const \&}]{clamp\+Min, }
+\item[{glm\+::vec3 const \&}]{clamp\+Max, }
+\item[{{\bf File}}]{f}
+\end{DoxyParamCaption}
+)}\label{classCamera_a631854f3063e6ddf8f7c2697c34c2bc0}
+
+
+Moves the camera depending on the user inputs and clamps the position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clamp\+Min} & The minimum clamp value \\
+\hline
+{\em clamp\+Max} & The maximum clamp value \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCamera_af9647ba1a19c27928b56630a3164d54e}{}\index{Camera@{Camera}!orientate@{orientate}}
+\index{orientate@{orientate}!Camera@{Camera}}
+\subsubsection[{orientate}]{\setlength{\rightskip}{0pt plus 5cm}void Camera\+::orientate (
+\begin{DoxyParamCaption}
+\item[{float}]{x\+Rel, }
+\item[{float}]{y\+Rel}
+\end{DoxyParamCaption}
+)}\label{classCamera_af9647ba1a19c27928b56630a3164d54e}
+
+
+Orientates the camera depending on the mouse movements. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Rel} & The differential x mouse position \\
+\hline
+{\em y\+Rel} & The differential y mouse position \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCamera_a0dc77df7121855934ca107be392c9bd7}{}\index{Camera@{Camera}!teleport@{teleport}}
+\index{teleport@{teleport}!Camera@{Camera}}
+\subsubsection[{teleport}]{\setlength{\rightskip}{0pt plus 5cm}void Camera\+::teleport (
+\begin{DoxyParamCaption}
+\item[{double}]{x, }
+\item[{double}]{y, }
+\item[{double}]{z}
+\end{DoxyParamCaption}
+)}\label{classCamera_a0dc77df7121855934ca107be392c9bd7}
+
+
+teleport to a point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \\
+\hline
+{\em y} & \\
+\hline
+{\em z} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Camera_8h}{Camera.\+h}\item 
+Camera.\+cpp\end{DoxyCompactItemize}

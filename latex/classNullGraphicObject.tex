@@ -1,0 +1,63 @@
+\hypertarget{classNullGraphicObject}{}\section{Null\+Graphic\+Object Class Reference}
+\label{classNullGraphicObject}\index{Null\+Graphic\+Object@{Null\+Graphic\+Object}}
+
+
+The \hyperlink{classNullGraphicObject}{Null\+Graphic\+Object} class.  
+
+
+
+
+{\ttfamily \#include $<$Graphic\+Object.\+h$>$}
+
+Inheritance diagram for Null\+Graphic\+Object\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classNullGraphicObject}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classNullGraphicObject_a30a7f189d257cff45556b20a431a4a9c}{}void {\bfseries release} ()\label{classNullGraphicObject_a30a7f189d257cff45556b20a431a4a9c}
+
+\item 
+void \hyperlink{classNullGraphicObject_a33c23cd19bac667ad7b1ccbcd9a373d2}{draw} (glm\+::mat4 \&, glm\+::mat4 \&)
+\begin{DoxyCompactList}\small\item\em Displays the graphic object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classNullGraphicObject}{Null\+Graphic\+Object} class. 
+
+Enables the Null Object pattern for Graphic Object. It means that its methods do nothing and are harmless. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classNullGraphicObject_a33c23cd19bac667ad7b1ccbcd9a373d2}{}\index{Null\+Graphic\+Object@{Null\+Graphic\+Object}!draw@{draw}}
+\index{draw@{draw}!Null\+Graphic\+Object@{Null\+Graphic\+Object}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void Null\+Graphic\+Object\+::draw (
+\begin{DoxyParamCaption}
+\item[{glm\+::mat4 \&}]{projection, }
+\item[{glm\+::mat4 \&}]{modelview}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classNullGraphicObject_a33c23cd19bac667ad7b1ccbcd9a373d2}
+
+
+Displays the graphic object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em projection} & The Open\+G\+L projection matrix \\
+\hline
+{\em modelview} & The Open\+G\+L modelview matrix, which is the product of the model matrix and the view matrix, in this order \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classGraphicObject_aacdc39f9e0b36ebb5c815e8bba717d7e}{Graphic\+Object}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{GraphicObject_8h}{Graphic\+Object.\+h}\item 
+Graphic\+Object.\+cpp\end{DoxyCompactItemize}

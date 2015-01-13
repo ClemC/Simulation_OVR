@@ -1,0 +1,160 @@
+\hypertarget{classInput}{}\section{Input Class Reference}
+\label{classInput}\index{Input@{Input}}
+
+
+The \hyperlink{classInput}{Input} class.  
+
+
+
+
+{\ttfamily \#include $<$Input.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classInput_a41b7906e2eafdf62069e994218838f61}{Input} (\hyperlink{classScene}{Scene} $\ast$scene)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hypertarget{classInput_af2db35ba67c8a8ccd23bef6a482fc291}{}\hyperlink{classInput_af2db35ba67c8a8ccd23bef6a482fc291}{$\sim$\+Input} ()\label{classInput_af2db35ba67c8a8ccd23bef6a482fc291}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classInput_a1ad46645cf09f920db19ac848ce0e896}{update\+Event} ()
+\begin{DoxyCompactList}\small\item\em Updates the state of all the possible events. \end{DoxyCompactList}\item 
+\hypertarget{classInput_a13f33a25d0499886637e16f86e724dc2}{}bool {\bfseries is\+Over} () const \label{classInput_a13f33a25d0499886637e16f86e724dc2}
+
+\item 
+\hypertarget{classInput_a4246f4ddfbf7f8128087fdcc502dd134}{}bool {\bfseries is\+Keyboard\+Key\+Down} (S\+D\+L\+\_\+\+Scancode const \&key) const \label{classInput_a4246f4ddfbf7f8128087fdcc502dd134}
+
+\item 
+\hypertarget{classInput_a4cec69c66a5f2a62b84bd4011056b748}{}bool {\bfseries is\+Mouse\+Key\+Down} (Uint8 key)\label{classInput_a4cec69c66a5f2a62b84bd4011056b748}
+
+\item 
+bool \hyperlink{classInput_a3b6c9efa09e69765fd65d1a33bccc8d2}{is\+Mouse\+Moving} () const 
+\begin{DoxyCompactList}\small\item\em Tells if the mouse is moving by watching its differential position. \end{DoxyCompactList}\item 
+bool \hyperlink{classInput_a58c6efa3f40b91303082f110de53d3f6}{is\+Oculus\+Moving} () const 
+\begin{DoxyCompactList}\small\item\em Tells if the \hyperlink{classOculus}{Oculus} Rift is moving by watching its differential angular position. \end{DoxyCompactList}\item 
+\hypertarget{classInput_a8ac03b246ba70872b33f8d07e9d112ea}{}int {\bfseries mouse\+X} () const \label{classInput_a8ac03b246ba70872b33f8d07e9d112ea}
+
+\item 
+\hypertarget{classInput_a3fc2746389b41d399382a70ef9274293}{}int {\bfseries mouse\+Y} () const \label{classInput_a3fc2746389b41d399382a70ef9274293}
+
+\item 
+\hypertarget{classInput_a4ea40bc98f495e60ca31b2c30e4db881}{}int {\bfseries mouse\+X\+Rel} () const \label{classInput_a4ea40bc98f495e60ca31b2c30e4db881}
+
+\item 
+\hypertarget{classInput_af2bd0c0f5e6b02225e6e433274cf733b}{}int {\bfseries mouse\+Y\+Rel} () const \label{classInput_af2bd0c0f5e6b02225e6e433274cf733b}
+
+\item 
+\hypertarget{classInput_a02286400f531ce70242e74835494877f}{}\hyperlink{classGenericOculus}{Generic\+Oculus} $\ast$ {\bfseries oculus} () const \label{classInput_a02286400f531ce70242e74835494877f}
+
+\item 
+\hypertarget{classInput_af62b5d0302086edc1d63f0e8354e84d1}{}void {\bfseries set\+Oculus} (std\+::unique\+\_\+ptr$<$ \hyperlink{classGenericOculus}{Generic\+Oculus} $>$ oculus)\label{classInput_af62b5d0302086edc1d63f0e8354e84d1}
+
+\item 
+void \hyperlink{classInput_a94bb57a699f733be6356eb4c5c392548}{show\+Cursor} (bool show) const 
+\begin{DoxyCompactList}\small\item\em Activates or deactivates the showing of the mouse cursor. \end{DoxyCompactList}\item 
+void \hyperlink{classInput_a5669c45f85df3e647d93d111b0b5db38}{capture\+Pointer} (bool capture) const 
+\begin{DoxyCompactList}\small\item\em Activates or deactivates the containing of the mouse cursor inside the window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classInput}{Input} class. 
+
+Handles input for the mouse, the keyboard and the \hyperlink{classOculus}{Oculus} Rift sensors 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classInput_a41b7906e2eafdf62069e994218838f61}{}\index{Input@{Input}!Input@{Input}}
+\index{Input@{Input}!Input@{Input}}
+\subsubsection[{Input}]{\setlength{\rightskip}{0pt plus 5cm}Input\+::\+Input (
+\begin{DoxyParamCaption}
+\item[{{\bf Scene} $\ast$}]{scene}
+\end{DoxyParamCaption}
+)}\label{classInput_a41b7906e2eafdf62069e994218838f61}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & The Open\+G\+L scene that the inputs have an effect on \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classInput_a5669c45f85df3e647d93d111b0b5db38}{}\index{Input@{Input}!capture\+Pointer@{capture\+Pointer}}
+\index{capture\+Pointer@{capture\+Pointer}!Input@{Input}}
+\subsubsection[{capture\+Pointer}]{\setlength{\rightskip}{0pt plus 5cm}void Input\+::capture\+Pointer (
+\begin{DoxyParamCaption}
+\item[{bool}]{capture}
+\end{DoxyParamCaption}
+) const}\label{classInput_a5669c45f85df3e647d93d111b0b5db38}
+
+
+Activates or deactivates the containing of the mouse cursor inside the window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em capture} & Boolean to whether contain or let free the mouse cursor \\
+\hline
+\end{DoxyParams}
+\hypertarget{classInput_a3b6c9efa09e69765fd65d1a33bccc8d2}{}\index{Input@{Input}!is\+Mouse\+Moving@{is\+Mouse\+Moving}}
+\index{is\+Mouse\+Moving@{is\+Mouse\+Moving}!Input@{Input}}
+\subsubsection[{is\+Mouse\+Moving}]{\setlength{\rightskip}{0pt plus 5cm}bool Input\+::is\+Mouse\+Moving (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classInput_a3b6c9efa09e69765fd65d1a33bccc8d2}
+
+
+Tells if the mouse is moving by watching its differential position. 
+
+\begin{DoxyReturn}{Returns}
+true if the mouse if moving, else false 
+\end{DoxyReturn}
+\hypertarget{classInput_a58c6efa3f40b91303082f110de53d3f6}{}\index{Input@{Input}!is\+Oculus\+Moving@{is\+Oculus\+Moving}}
+\index{is\+Oculus\+Moving@{is\+Oculus\+Moving}!Input@{Input}}
+\subsubsection[{is\+Oculus\+Moving}]{\setlength{\rightskip}{0pt plus 5cm}bool Input\+::is\+Oculus\+Moving (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classInput_a58c6efa3f40b91303082f110de53d3f6}
+
+
+Tells if the \hyperlink{classOculus}{Oculus} Rift is moving by watching its differential angular position. 
+
+\begin{DoxyReturn}{Returns}
+true if the \hyperlink{classOculus}{Oculus} Rift if moving, else false 
+\end{DoxyReturn}
+\hypertarget{classInput_a94bb57a699f733be6356eb4c5c392548}{}\index{Input@{Input}!show\+Cursor@{show\+Cursor}}
+\index{show\+Cursor@{show\+Cursor}!Input@{Input}}
+\subsubsection[{show\+Cursor}]{\setlength{\rightskip}{0pt plus 5cm}void Input\+::show\+Cursor (
+\begin{DoxyParamCaption}
+\item[{bool}]{show}
+\end{DoxyParamCaption}
+) const}\label{classInput_a94bb57a699f733be6356eb4c5c392548}
+
+
+Activates or deactivates the showing of the mouse cursor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em show} & Boolean to whether show or hide the mouse cursor \\
+\hline
+\end{DoxyParams}
+\hypertarget{classInput_a1ad46645cf09f920db19ac848ce0e896}{}\index{Input@{Input}!update\+Event@{update\+Event}}
+\index{update\+Event@{update\+Event}!Input@{Input}}
+\subsubsection[{update\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Input\+::update\+Event (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classInput_a1ad46645cf09f920db19ac848ce0e896}
+
+
+Updates the state of all the possible events. 
+
+It is called every frame 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Input_8h}{Input.\+h}\item 
+Input.\+cpp\end{DoxyCompactItemize}

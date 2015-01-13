@@ -1,0 +1,4 @@
+<map id="GenericOculus::dAngles" name="GenericOculus::dAngles">
+<area shape="rect" id="node2" href="$classCamera.html#a856ab6b929b48aca124e05f4c4cf32fd" title="Changes the camera orientation depending on the user inputs. " alt="" coords="216,5,387,32"/>
+<area shape="rect" id="node3" href="$classCamera.html#a631854f3063e6ddf8f7c2697c34c2bc0" title="Moves the camera depending on the user inputs and clamps the position. " alt="" coords="435,5,543,32"/>
+</map>

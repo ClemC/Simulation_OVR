@@ -1,0 +1,14 @@
+<map id="Camera::movePosition" name="Camera::movePosition">
+<area shape="rect" id="node2" href="$classInput.html#a4246f4ddfbf7f8128087fdcc502dd134" title="Input::isKeyboardKeyDown" alt="" coords="208,5,389,32"/>
+<area shape="rect" id="node3" href="$classFile.html#a9af2773d1dd86d3e95e830563a51e3b5" title="File::convert. " alt="" coords="251,56,346,83"/>
+<area shape="rect" id="node5" href="$classFile.html#a9e40fb995d13f0ed06ef1d56508eb8ed" title="File::xCenterTp_. " alt="" coords="233,107,365,133"/>
+<area shape="rect" id="node6" href="$classFile.html#a1f9f5945b6d122bd4fbed4ea02596e8c" title="File::yCenterTp_. " alt="" coords="233,157,365,184"/>
+<area shape="rect" id="node7" href="$classFile.html#a66dad0937bbef79d22bfca7428e9c5b8" title="File::yCenterTp_. " alt="" coords="233,208,364,235"/>
+<area shape="rect" id="node8" href="$Scene_8cpp.html#a33bb9dd6236cf80e87339343a8be3f4e" title="logger" alt="" coords="872,284,929,311"/>
+<area shape="rect" id="node9" href="$classCamera.html#a0dc77df7121855934ca107be392c9bd7" title="teleport to a point. " alt="" coords="239,309,358,336"/>
+<area shape="rect" id="node13" href="$namespaceUtils.html#aae7fe80e12cf4342629d49803946568d" title="Converts a 3 dimensional vector to a pretty string ready to be printed. " alt="" coords="849,385,952,412"/>
+<area shape="rect" id="node4" href="$classFile.html#ab59ff015aacc745232543dfde488a98e" title="File::getSizeScene. " alt="" coords="442,56,574,83"/>
+<area shape="rect" id="node10" href="$classCamera.html#abe8633adb8475cb7c62e1a12743a1025" title="Camera::setPosition" alt="" coords="437,309,579,336"/>
+<area shape="rect" id="node11" href="$classCamera.html#a34977bb92f9318343d8b706faa64b399" title="Camera::position" alt="" coords="653,309,775,336"/>
+<area shape="rect" id="node12" href="$classCamera.html#afff594534eab1614a3045e6dbf030323" title="Updates the point the camera is looking at from its position and rotation. " alt="" coords="627,360,801,387"/>
+</map>

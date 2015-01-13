@@ -1,0 +1,175 @@
+\hypertarget{classGraphicObject}{}\section{Graphic\+Object Class Reference}
+\label{classGraphicObject}\index{Graphic\+Object@{Graphic\+Object}}
+
+
+The \hyperlink{classGraphicObject}{Graphic\+Object} class.  
+
+
+
+
+{\ttfamily \#include $<$Graphic\+Object.\+h$>$}
+
+Inheritance diagram for Graphic\+Object\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classGraphicObject}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classGraphicObject_a71f73b9dbb85a3a27d98aae1922120f4}{}{\bfseries Graphic\+Object} (float x=0, float y=0, float z=0, float size=0, std\+::string const \&vertex\+Shader=\char`\"{}\char`\"{}, std\+::string const \&fragment\+Shader=\char`\"{}\char`\"{})\label{classGraphicObject_a71f73b9dbb85a3a27d98aae1922120f4}
+
+\item 
+virtual void \hyperlink{classGraphicObject_aacdc39f9e0b36ebb5c815e8bba717d7e}{draw} (glm\+::mat4 \&projection, glm\+::mat4 \&modelview)=0
+\begin{DoxyCompactList}\small\item\em Displays the graphic object. \end{DoxyCompactList}\item 
+int \hyperlink{classGraphicObject_a8e43dbd70ae6a48bc53cf1b509791af0}{nb\+Vertices\+Bytes} ()
+\begin{DoxyCompactList}\small\item\em Gives the memory size of the vertices coordinates in bytes. \end{DoxyCompactList}\item 
+int \hyperlink{classGraphicObject_a9f4d774f94d51ebf0c44829898dbe012}{nb\+Colors\+Bytes} ()
+\begin{DoxyCompactList}\small\item\em Gives the memory size of the colors coordinates in bytes. \end{DoxyCompactList}\item 
+void \hyperlink{classGraphicObject_a797f54b07ba4ee40b496a011245d9d8c}{move} (glm\+::vec3 const \&value)
+\begin{DoxyCompactList}\small\item\em Moves the object a given vector. \end{DoxyCompactList}\item 
+\hypertarget{classGraphicObject_ab4fe774c59ee6d67547094f2410b7266}{}void {\bfseries update\+V\+B\+O} (void $\ast$data, int bytes\+Size, int offset)\label{classGraphicObject_ab4fe774c59ee6d67547094f2410b7266}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classGraphicObject_a5bed301cfd29cea7e56e6e4b47c85c39}{}glm\+::vec3 \hyperlink{classGraphicObject_a5bed301cfd29cea7e56e6e4b47c85c39}{position\+\_\+}\label{classGraphicObject_a5bed301cfd29cea7e56e6e4b47c85c39}
+
+\begin{DoxyCompactList}\small\item\em The position of the object. \end{DoxyCompactList}\item 
+glm\+::vec3 \hyperlink{classGraphicObject_ad147f3d14ee99610b7ff2f6d50f601c9}{orientation\+\_\+}
+\begin{DoxyCompactList}\small\item\em The orientation of the object. \end{DoxyCompactList}\item 
+float \hyperlink{classGraphicObject_aaf5a021607b05779bd670fa912950bd1}{size\+\_\+}
+\begin{DoxyCompactList}\small\item\em The size of the object. \end{DoxyCompactList}\item 
+std\+::vector$<$ float $>$ \hyperlink{classGraphicObject_a911bfc9f48b22d0dbb3de68ff8a52ecf}{vertices\+\_\+}
+\begin{DoxyCompactList}\small\item\em The vertices coordinates of the object. \end{DoxyCompactList}\item 
+std\+::vector$<$ float $>$ \hyperlink{classGraphicObject_a58d16316152c9b216b0c258395f4ccb1}{colors\+\_\+}
+\begin{DoxyCompactList}\small\item\em The colors coordinates of the object. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \hyperlink{classShader}{Shader} $>$ \hyperlink{classGraphicObject_a8ad07f4e11a71b5ed0d4fc66f14ab83e}{shader\+\_\+}
+\begin{DoxyCompactList}\small\item\em The shader manager. \end{DoxyCompactList}\item 
+\hypertarget{classGraphicObject_a8a25934d9b5af9b66ae731458a916db3}{}G\+Luint \hyperlink{classGraphicObject_a8a25934d9b5af9b66ae731458a916db3}{V\+B\+O\+Id\+\_\+}\label{classGraphicObject_a8a25934d9b5af9b66ae731458a916db3}
+
+\begin{DoxyCompactList}\small\item\em The Open\+G\+L id of the Vertex Buffer Object which stores the vertices coordinates in the graphic card. \end{DoxyCompactList}\item 
+\hypertarget{classGraphicObject_ad3c92aa937932b6effd095a2ce6ba6e9}{}G\+Luint \hyperlink{classGraphicObject_ad3c92aa937932b6effd095a2ce6ba6e9}{V\+A\+O\+Id\+\_\+}\label{classGraphicObject_ad3c92aa937932b6effd095a2ce6ba6e9}
+
+\begin{DoxyCompactList}\small\item\em The Open\+G\+L id of the Vertex Array Object which stores multiple V\+B\+Os in the graphic card. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classGraphicObject}{Graphic\+Object} class. 
+
+Abstract base class for all graphic objects in the scene. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classGraphicObject_aacdc39f9e0b36ebb5c815e8bba717d7e}{}\index{Graphic\+Object@{Graphic\+Object}!draw@{draw}}
+\index{draw@{draw}!Graphic\+Object@{Graphic\+Object}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Graphic\+Object\+::draw (
+\begin{DoxyParamCaption}
+\item[{glm\+::mat4 \&}]{projection, }
+\item[{glm\+::mat4 \&}]{modelview}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classGraphicObject_aacdc39f9e0b36ebb5c815e8bba717d7e}
+
+
+Displays the graphic object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em projection} & The Open\+G\+L projection matrix \\
+\hline
+{\em modelview} & The Open\+G\+L modelview matrix, which is the product of the model matrix and the view matrix, in this order \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classNullGraphicObject_a33c23cd19bac667ad7b1ccbcd9a373d2}{Null\+Graphic\+Object}, \hyperlink{classCrate_a0ef280ead61384d18817071ef85041d3}{Crate}, \hyperlink{classPlane_ac046dce6b4226e86fbcaf850fa7e30fd}{Plane}, and \hyperlink{classCube_a4646f297e874e0dad42288ad153fc761}{Cube}.
+
+\hypertarget{classGraphicObject_a797f54b07ba4ee40b496a011245d9d8c}{}\index{Graphic\+Object@{Graphic\+Object}!move@{move}}
+\index{move@{move}!Graphic\+Object@{Graphic\+Object}}
+\subsubsection[{move}]{\setlength{\rightskip}{0pt plus 5cm}void Graphic\+Object\+::move (
+\begin{DoxyParamCaption}
+\item[{glm\+::vec3 const \&}]{value}
+\end{DoxyParamCaption}
+)}\label{classGraphicObject_a797f54b07ba4ee40b496a011245d9d8c}
+
+
+Moves the object a given vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The vector to add to the object position \\
+\hline
+\end{DoxyParams}
+\hypertarget{classGraphicObject_a9f4d774f94d51ebf0c44829898dbe012}{}\index{Graphic\+Object@{Graphic\+Object}!nb\+Colors\+Bytes@{nb\+Colors\+Bytes}}
+\index{nb\+Colors\+Bytes@{nb\+Colors\+Bytes}!Graphic\+Object@{Graphic\+Object}}
+\subsubsection[{nb\+Colors\+Bytes}]{\setlength{\rightskip}{0pt plus 5cm}int Graphic\+Object\+::nb\+Colors\+Bytes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classGraphicObject_a9f4d774f94d51ebf0c44829898dbe012}
+
+
+Gives the memory size of the colors coordinates in bytes. 
+
+It is used to send the colors coordinates to the graphic card with a Vertex Buffer Object, indicating to Open\+G\+L how much memory this buffer takes \begin{DoxyReturn}{Returns}
+The memory size of the colors coordinates in bytes 
+\end{DoxyReturn}
+\hypertarget{classGraphicObject_a8e43dbd70ae6a48bc53cf1b509791af0}{}\index{Graphic\+Object@{Graphic\+Object}!nb\+Vertices\+Bytes@{nb\+Vertices\+Bytes}}
+\index{nb\+Vertices\+Bytes@{nb\+Vertices\+Bytes}!Graphic\+Object@{Graphic\+Object}}
+\subsubsection[{nb\+Vertices\+Bytes}]{\setlength{\rightskip}{0pt plus 5cm}int Graphic\+Object\+::nb\+Vertices\+Bytes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classGraphicObject_a8e43dbd70ae6a48bc53cf1b509791af0}
+
+
+Gives the memory size of the vertices coordinates in bytes. 
+
+It is used to send the vertices coordinates to the graphic card with a Vertex Buffer Object, indicating to Open\+G\+L how much memory this buffer takes \begin{DoxyReturn}{Returns}
+The memory size of the vertices coordinates in bytes 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classGraphicObject_a58d16316152c9b216b0c258395f4ccb1}{}\index{Graphic\+Object@{Graphic\+Object}!colors\+\_\+@{colors\+\_\+}}
+\index{colors\+\_\+@{colors\+\_\+}!Graphic\+Object@{Graphic\+Object}}
+\subsubsection[{colors\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$float$>$ Graphic\+Object\+::colors\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}\label{classGraphicObject_a58d16316152c9b216b0c258395f4ccb1}
+
+
+The colors coordinates of the object. 
+
+Open\+G\+L requires that these are given in a 1\+D array, so they are stored this way. These are ignored if the object is textured. \hypertarget{classGraphicObject_ad147f3d14ee99610b7ff2f6d50f601c9}{}\index{Graphic\+Object@{Graphic\+Object}!orientation\+\_\+@{orientation\+\_\+}}
+\index{orientation\+\_\+@{orientation\+\_\+}!Graphic\+Object@{Graphic\+Object}}
+\subsubsection[{orientation\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec3 Graphic\+Object\+::orientation\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}\label{classGraphicObject_ad147f3d14ee99610b7ff2f6d50f601c9}
+
+
+The orientation of the object. 
+
+Not used as of yet \hypertarget{classGraphicObject_a8ad07f4e11a71b5ed0d4fc66f14ab83e}{}\index{Graphic\+Object@{Graphic\+Object}!shader\+\_\+@{shader\+\_\+}}
+\index{shader\+\_\+@{shader\+\_\+}!Graphic\+Object@{Graphic\+Object}}
+\subsubsection[{shader\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unique\+\_\+ptr$<${\bf Shader}$>$ Graphic\+Object\+::shader\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}\label{classGraphicObject_a8ad07f4e11a71b5ed0d4fc66f14ab83e}
+
+
+The shader manager. 
+
+In Open\+G\+L $>$ 3.\+0 every object is displayed and tranformed through a shader. \hypertarget{classGraphicObject_aaf5a021607b05779bd670fa912950bd1}{}\index{Graphic\+Object@{Graphic\+Object}!size\+\_\+@{size\+\_\+}}
+\index{size\+\_\+@{size\+\_\+}!Graphic\+Object@{Graphic\+Object}}
+\subsubsection[{size\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}float Graphic\+Object\+::size\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}\label{classGraphicObject_aaf5a021607b05779bd670fa912950bd1}
+
+
+The size of the object. 
+
+It is used to scale the object. By default its value is 1. \hypertarget{classGraphicObject_a911bfc9f48b22d0dbb3de68ff8a52ecf}{}\index{Graphic\+Object@{Graphic\+Object}!vertices\+\_\+@{vertices\+\_\+}}
+\index{vertices\+\_\+@{vertices\+\_\+}!Graphic\+Object@{Graphic\+Object}}
+\subsubsection[{vertices\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$float$>$ Graphic\+Object\+::vertices\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}\label{classGraphicObject_a911bfc9f48b22d0dbb3de68ff8a52ecf}
+
+
+The vertices coordinates of the object. 
+
+Open\+G\+L requires that these are given in a 1\+D array, so they are stored this way. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{GraphicObject_8h}{Graphic\+Object.\+h}\item 
+Graphic\+Object.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,12 @@
+<map id="GraphicObject.h" name="GraphicObject.h">
+<area shape="rect" id="node2" href="$Camera_8h.html" title="Camera management. " alt="" coords="76,80,155,107"/>
+<area shape="rect" id="node4" href="$Scene_8cpp.html" title="Scene.cpp" alt="" coords="167,229,251,256"/>
+<area shape="rect" id="node5" href="$Cube_8h.html" title="Cube management. " alt="" coords="432,80,496,107"/>
+<area shape="rect" id="node9" href="$GraphicObject_8cpp.html" title="GraphicObject.cpp" alt="" coords="270,80,401,107"/>
+<area shape="rect" id="node10" href="$Plane_8h.html" title="Plane management. " alt="" coords="180,80,246,107"/>
+<area shape="rect" id="node3" href="$Camera_8cpp.html" title="Camera.cpp" alt="" coords="28,155,121,181"/>
+<area shape="rect" id="node6" href="$Crate_8h.html" title="Crate (i.e textured Cube) management. " alt="" coords="506,155,571,181"/>
+<area shape="rect" id="node8" href="$Cube_8cpp.html" title="Cube.cpp" alt="" coords="351,155,430,181"/>
+<area shape="rect" id="node7" href="$Crate_8cpp.html" title="Crate.cpp" alt="" coords="499,229,578,256"/>
+<area shape="rect" id="node11" href="$Plane_8cpp.html" title="Plane.cpp" alt="" coords="246,155,326,181"/>
+</map>

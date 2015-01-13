@@ -1,0 +1,86 @@
+\hypertarget{Scene_8cpp}{}\section{Référence du fichier Scene.\+cpp}
+\label{Scene_8cpp}\index{Scene.\+cpp@{Scene.\+cpp}}
+{\ttfamily \#include \char`\"{}Scene.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Cube.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Input.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Crate.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Texture.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Camera.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Graphic\+Object.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Plane.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Utils.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Log\+Cpp/\+Log.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}File.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}M\+Thread/\+M\+Thread.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$unistd.\+h$>$}\\*
+{\ttfamily \#include $<$numeric$>$}\\*
+{\ttfamily \#include $<$random$>$}\\*
+{\ttfamily \#include $<$chrono$>$}\\*
+{\ttfamily \#include $<$thread$>$}\\*
+Graphe des dépendances par inclusion de Scene.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Scene_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ Logger $>$ \hyperlink{Scene_8cpp_a33bb9dd6236cf80e87339343a8be3f4e}{logger} (new Logger(\char`\"{}log.\+log\char`\"{},\char`\"{}log.\+err\char`\"{}, true, Severity\+::error$\vert$Severity\+::info))
+\item 
+std\+::unique\+\_\+ptr$<$ \hyperlink{classNullOculus}{Null\+Oculus} $>$ \hyperlink{Scene_8cpp_a8192f47983ba927b085c524c6d404dca}{null\+Oculus} (new \hyperlink{classNullOculus}{Null\+Oculus})
+\item 
+double \hyperlink{Scene_8cpp_ad71d19d19e94ad02de3aa7e6f225fc77}{norm2xyz} (float x, float y, float z)
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentation des fonctions}
+\hypertarget{Scene_8cpp_a33bb9dd6236cf80e87339343a8be3f4e}{}\index{Scene.\+cpp@{Scene.\+cpp}!logger@{logger}}
+\index{logger@{logger}!Scene.\+cpp@{Scene.\+cpp}}
+\subsubsection[{logger}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unique\+\_\+ptr$<$Logger$>$ logger (
+\begin{DoxyParamCaption}
+\item[{new }]{Logger\char`\"{}log.\+log\char`\"{},\char`\"{}log.\+err\char`\"{}, true, Severity\+::error$\vert$\+Severity\+::info}
+\end{DoxyParamCaption}
+)}\label{Scene_8cpp_a33bb9dd6236cf80e87339343a8be3f4e}
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{Scene_8cpp_a33bb9dd6236cf80e87339343a8be3f4e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{Scene_8cpp_ad71d19d19e94ad02de3aa7e6f225fc77}{}\index{Scene.\+cpp@{Scene.\+cpp}!norm2xyz@{norm2xyz}}
+\index{norm2xyz@{norm2xyz}!Scene.\+cpp@{Scene.\+cpp}}
+\subsubsection[{norm2xyz}]{\setlength{\rightskip}{0pt plus 5cm}double norm2xyz (
+\begin{DoxyParamCaption}
+\item[{float}]{x, }
+\item[{float}]{y, }
+\item[{float}]{z}
+\end{DoxyParamCaption}
+)}\label{Scene_8cpp_ad71d19d19e94ad02de3aa7e6f225fc77}
+
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{Scene_8cpp_ad71d19d19e94ad02de3aa7e6f225fc77_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{Scene_8cpp_a8192f47983ba927b085c524c6d404dca}{}\index{Scene.\+cpp@{Scene.\+cpp}!null\+Oculus@{null\+Oculus}}
+\index{null\+Oculus@{null\+Oculus}!Scene.\+cpp@{Scene.\+cpp}}
+\subsubsection[{null\+Oculus}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unique\+\_\+ptr$<${\bf Null\+Oculus}$>$ null\+Oculus (
+\begin{DoxyParamCaption}
+\item[{new}]{Null\+Oculus}
+\end{DoxyParamCaption}
+)}\label{Scene_8cpp_a8192f47983ba927b085c524c6d404dca}

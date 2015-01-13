@@ -1,0 +1,6 @@
+<map id="Camera::position" name="Camera::position">
+<area shape="rect" id="node2" href="$classCamera.html#abe8633adb8475cb7c62e1a12743a1025" title="Camera::setPosition" alt="" coords="175,5,316,32"/>
+<area shape="rect" id="node3" href="$classCamera.html#a0dc77df7121855934ca107be392c9bd7" title="teleport to a point. " alt="" coords="364,5,483,32"/>
+<area shape="rect" id="node4" href="$classCamera.html#aee126011d76a1f867c35ad2fa54e73d7" title="Moves the camera position depending on the user inputs. " alt="" coords="531,5,685,32"/>
+<area shape="rect" id="node5" href="$classCamera.html#a631854f3063e6ddf8f7c2697c34c2bc0" title="Moves the camera depending on the user inputs and clamps the position. " alt="" coords="733,5,841,32"/>
+</map>

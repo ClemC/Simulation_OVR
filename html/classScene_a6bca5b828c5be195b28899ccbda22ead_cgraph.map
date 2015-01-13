@@ -1,0 +1,19 @@
+<map id="Scene::initGObjects" name="Scene::initGObjects">
+<area shape="rect" id="node2" href="$classScene.html#a464409dc2f8d64e7cd1ca1e772daa21b" title="Generates graphical objects at random positions. " alt="" coords="213,28,331,55"/>
+<area shape="rect" id="node3" href="$Scene_8cpp.html#a33bb9dd6236cf80e87339343a8be3f4e" title="logger" alt="" coords="659,28,716,55"/>
+<area shape="rect" id="node4" href="$classScene.html#a96c0932a87a2e4bdae8752b1d4deca20" title="initGObjectsFile Simple load of the file, with random algorythm if randomPercentage!=1. " alt="" coords="192,281,352,308"/>
+<area shape="rect" id="node5" href="$classFile.html#ad1024f9c4c3c48083f024aefaf45b9b8" title="File::getTotalLines. " alt="" coords="803,205,932,232"/>
+<area shape="rect" id="node6" href="$classFile.html#a982f88fed4bf555b9f3ba69c37b5f0a7" title="File::getData. " alt="" coords="437,256,535,283"/>
+<area shape="rect" id="node7" href="$classFile.html#a4714786d79812c9aa720403af5a43210" title="File::cah. " alt="" coords="450,155,522,181"/>
+<area shape="rect" id="node10" href="$classFile.html#a311c46b95241183e414757bb52f79f7a" title="File::registerCluster. " alt="" coords="415,307,557,333"/>
+<area shape="rect" id="node11" href="$classFile.html#ab18dbfe80270e02ebb5e11754c30baa2" title="File::getTotalLinesCah. " alt="" coords="409,357,563,384"/>
+<area shape="rect" id="node12" href="$classFile.html#a8f59da39256bf141404043e3a93f9654" title="File::getDataCah. " alt="" coords="425,408,547,435"/>
+<area shape="rect" id="node13" href="$classScene.html#aec8cd9d85f671a8c2c1f45b373fc90b7" title="isRandomPoint " alt="" coords="408,459,564,485"/>
+<area shape="rect" id="node14" href="$classFile.html#a9af2773d1dd86d3e95e830563a51e3b5" title="File::convert. " alt="" coords="439,509,533,536"/>
+<area shape="rect" id="node16" href="$classScene.html#ab193a1fadf55a1308ad1b33c3d1aae3f" title="addPointToOctree Add a point to the Octree " alt="" coords="400,205,572,232"/>
+<area shape="rect" id="node8" href="$classFile.html#a0db1da2014c0f1ac9253efe86c0a57d8" title="File::dissimG. " alt="" coords="638,180,737,207"/>
+<area shape="rect" id="node9" href="$classFile.html#a2fb2437e094b917b7d5d9836a75e5d4f" title="File::minMatDissim. " alt="" coords="620,231,755,257"/>
+<area shape="rect" id="node15" href="$classFile.html#ab59ff015aacc745232543dfde488a98e" title="File::getSizeScene. " alt="" coords="621,509,753,536"/>
+<area shape="rect" id="node17" href="$classFile.html#abf8e0e8e4e7d8a4ff99e327a8d30c394" title="File::getMaxMass. " alt="" coords="624,281,751,308"/>
+<area shape="rect" id="node18" href="$classFile.html#ab9f463bb8afd01c69d323872e2f3d275" title="File::getMaxAge. " alt="" coords="629,332,746,359"/>
+</map>

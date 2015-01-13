@@ -1,0 +1,4 @@
+<map id="Crate::load" name="Crate::load">
+<area shape="rect" id="node2" href="$classGraphicObject.html#a8e43dbd70ae6a48bc53cf1b509791af0" title="Gives the memory size of the vertices coordinates in bytes. " alt="" coords="140,5,315,47"/>
+<area shape="rect" id="node3" href="$classCrate.html#a29df7675912f47eddd3a32010a8611fd" title="Gives the memory size of the texture coordinates in bytes. " alt="" coords="150,71,305,98"/>
+</map>

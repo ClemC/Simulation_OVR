@@ -1,0 +1,12 @@
+<map id="File::getTotalLines" name="File::getTotalLines">
+<area shape="rect" id="node2" href="$classFile.html#abf8e0e8e4e7d8a4ff99e327a8d30c394" title="File::getMaxMass. " alt="" coords="183,5,309,32"/>
+<area shape="rect" id="node4" href="$classScene.html#a96c0932a87a2e4bdae8752b1d4deca20" title="initGObjectsFile Simple load of the file, with random algorythm if randomPercentage!=1. " alt="" coords="577,107,737,133"/>
+<area shape="rect" id="node9" href="$classFile.html#ab9f463bb8afd01c69d323872e2f3d275" title="File::getMaxAge. " alt="" coords="187,56,305,83"/>
+<area shape="rect" id="node10" href="$classFile.html#a4714786d79812c9aa720403af5a43210" title="File::cah. " alt="" coords="407,157,479,184"/>
+<area shape="rect" id="node11" href="$File__unittest_8cpp.html#ab0c13e08f2d62558021c9a4fadf8c104" title="TEST" alt="" coords="218,208,274,235"/>
+<area shape="rect" id="node3" href="$classScene.html#ab193a1fadf55a1308ad1b33c3d1aae3f" title="addPointToOctree Add a point to the Octree " alt="" coords="357,56,529,83"/>
+<area shape="rect" id="node6" href="$classScene.html#a358f49a9a46561e71fccfdaa9f1dbe9d" title="update octree in an other thread " alt="" coords="585,56,730,83"/>
+<area shape="rect" id="node5" href="$classScene.html#a6bca5b828c5be195b28899ccbda22ead" title="Generates graphical objects generator. " alt="" coords="799,107,938,133"/>
+<area shape="rect" id="node7" href="$classScene.html#a5d8a784dae122a4bbb1c74bc3dc550fc" title="startThreadEvent In a new Thread, detect position and inject data in Octree if needed. " alt="" coords="785,56,952,83"/>
+<area shape="rect" id="node8" href="$classScene.html#a4e0d849508a5e8a3e0a627a7e367dfef" title="getThread " alt="" coords="1000,56,1125,83"/>
+</map>

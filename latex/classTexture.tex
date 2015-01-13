@@ -1,0 +1,140 @@
+\hypertarget{classTexture}{}\section{Texture Class Reference}
+\label{classTexture}\index{Texture@{Texture}}
+
+
+The \hyperlink{classTexture}{Texture} class.  
+
+
+
+
+{\ttfamily \#include $<$Texture.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classTexture_a6c275e3f186675ff6ed73ccf970e552f}{}\hyperlink{classTexture_a6c275e3f186675ff6ed73ccf970e552f}{Texture} ()\label{classTexture_a6c275e3f186675ff6ed73ccf970e552f}
+
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classTexture_a93d4d7c41898028b54b1ea8d09e4eb4d}{Texture} (std\+::string const \&file)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classTexture_a1c6655d1e07186cb84e30528a8a5e4e6}{Texture} (\hyperlink{classTexture}{Texture} const \&texture)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classTexture}{Texture} \& \hyperlink{classTexture_ab67757726d23554fc006316b2643dd6a}{operator=} (\hyperlink{classTexture}{Texture} const \&texture)
+\begin{DoxyCompactList}\small\item\em operator = \end{DoxyCompactList}\item 
+\hypertarget{classTexture_a09c4bcb7462f64c1d20fa69dba3cee8a}{}\hyperlink{classTexture_a09c4bcb7462f64c1d20fa69dba3cee8a}{$\sim$\+Texture} ()\label{classTexture_a09c4bcb7462f64c1d20fa69dba3cee8a}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+bool \hyperlink{classTexture_ae432f108267f5e56b0104ddd91dd2f6b}{load} ()
+\begin{DoxyCompactList}\small\item\em Reads the image file. \end{DoxyCompactList}\item 
+\hypertarget{classTexture_a861a4436c37bc1c36192d1f8186dd375}{}G\+Luint {\bfseries id} () const \label{classTexture_a861a4436c37bc1c36192d1f8186dd375}
+
+\item 
+\hypertarget{classTexture_a110cb9bab034a04fa97a9f40267c3942}{}void {\bfseries set\+File} (const std\+::string \&file)\label{classTexture_a110cb9bab034a04fa97a9f40267c3942}
+
+\item 
+\hypertarget{classTexture_a59d6cc03b8eff939e5fec54656caa30c}{}const std\+::string \& {\bfseries file} () const \label{classTexture_a59d6cc03b8eff939e5fec54656caa30c}
+
+\item 
+S\+D\+L\+\_\+\+Surface $\ast$ \hyperlink{classTexture_a7ebd087e2501ecae2b37d8d6d69b47cf}{invert\+Pixels} (S\+D\+L\+\_\+\+Surface $\ast$source) const 
+\begin{DoxyCompactList}\small\item\em Inverts the pixels of the texture image to comply to the Open\+G\+L format. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classTexture}{Texture} class. 
+
+Manages the textures resources 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classTexture_a93d4d7c41898028b54b1ea8d09e4eb4d}{}\index{Texture@{Texture}!Texture@{Texture}}
+\index{Texture@{Texture}!Texture@{Texture}}
+\subsubsection[{Texture}]{\setlength{\rightskip}{0pt plus 5cm}Texture\+::\+Texture (
+\begin{DoxyParamCaption}
+\item[{std\+::string const \&}]{file}
+\end{DoxyParamCaption}
+)}\label{classTexture_a93d4d7c41898028b54b1ea8d09e4eb4d}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & The image file we read from \\
+\hline
+\end{DoxyParams}
+\hypertarget{classTexture_a1c6655d1e07186cb84e30528a8a5e4e6}{}\index{Texture@{Texture}!Texture@{Texture}}
+\index{Texture@{Texture}!Texture@{Texture}}
+\subsubsection[{Texture}]{\setlength{\rightskip}{0pt plus 5cm}Texture\+::\+Texture (
+\begin{DoxyParamCaption}
+\item[{{\bf Texture} const \&}]{texture}
+\end{DoxyParamCaption}
+)}\label{classTexture_a1c6655d1e07186cb84e30528a8a5e4e6}
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em texture} & The texture to copy \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classTexture_a7ebd087e2501ecae2b37d8d6d69b47cf}{}\index{Texture@{Texture}!invert\+Pixels@{invert\+Pixels}}
+\index{invert\+Pixels@{invert\+Pixels}!Texture@{Texture}}
+\subsubsection[{invert\+Pixels}]{\setlength{\rightskip}{0pt plus 5cm}S\+D\+L\+\_\+\+Surface $\ast$ Texture\+::invert\+Pixels (
+\begin{DoxyParamCaption}
+\item[{S\+D\+L\+\_\+\+Surface $\ast$}]{source}
+\end{DoxyParamCaption}
+) const}\label{classTexture_a7ebd087e2501ecae2b37d8d6d69b47cf}
+
+
+Inverts the pixels of the texture image to comply to the Open\+G\+L format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & The image in memory in S\+D\+L format \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The image in memory in Open\+G\+L format 
+\end{DoxyReturn}
+\hypertarget{classTexture_ae432f108267f5e56b0104ddd91dd2f6b}{}\index{Texture@{Texture}!load@{load}}
+\index{load@{load}!Texture@{Texture}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}bool Texture\+::load (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classTexture_ae432f108267f5e56b0104ddd91dd2f6b}
+
+
+Reads the image file. 
+
+\begin{DoxyReturn}{Returns}
+true if the reading is succesful, else false 
+\end{DoxyReturn}
+\hypertarget{classTexture_ab67757726d23554fc006316b2643dd6a}{}\index{Texture@{Texture}!operator=@{operator=}}
+\index{operator=@{operator=}!Texture@{Texture}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Texture} \& Texture\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Texture} const \&}]{texture}
+\end{DoxyParamCaption}
+)}\label{classTexture_ab67757726d23554fc006316b2643dd6a}
+
+
+operator = 
+
+
+\begin{DoxyParams}{Parameters}
+{\em texture} & The texture to affect to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The texture with the updated values 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Texture_8h}{Texture.\+h}\item 
+Texture.\+cpp\end{DoxyCompactItemize}

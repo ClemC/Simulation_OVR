@@ -1,0 +1,55 @@
+\hypertarget{classTextureFactory}{}\section{Texture\+Factory Class Reference}
+\label{classTextureFactory}\index{Texture\+Factory@{Texture\+Factory}}
+
+
+The \hyperlink{classTextureFactory}{Texture\+Factory} class.  
+
+
+
+
+{\ttfamily \#include $<$Texture.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::shared\+\_\+ptr$<$ \hyperlink{classTexture}{Texture} $>$ \& \hyperlink{classTextureFactory_a3326fe1ffdcb4c3660ca127f3d87aee2}{create\+Texture} (std\+::string const \&file)
+\begin{DoxyCompactList}\small\item\em Gives a pointer to the texture queried by a textured graphical object. \end{DoxyCompactList}\item 
+\hypertarget{classTextureFactory_a9ded2336698fbf1a38656d48c527838d}{}static std\+::string {\bfseries to\+String} ()\label{classTextureFactory_a9ded2336698fbf1a38656d48c527838d}
+
+\item 
+\hypertarget{classTextureFactory_abb1949776510f478f2bf3203d90d489f}{}static void \hyperlink{classTextureFactory_abb1949776510f478f2bf3203d90d489f}{destroy\+Textures} ()\label{classTextureFactory_abb1949776510f478f2bf3203d90d489f}
+
+\begin{DoxyCompactList}\small\item\em Clears the texture pool. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classTextureFactory}{Texture\+Factory} class. 
+
+Implements a shared texture pool use by all graphical textured objects Part of the Flyweight pattern in use by the textured graphical object 
+
+\subsection{Member Function Documentation}
+\hypertarget{classTextureFactory_a3326fe1ffdcb4c3660ca127f3d87aee2}{}\index{Texture\+Factory@{Texture\+Factory}!create\+Texture@{create\+Texture}}
+\index{create\+Texture@{create\+Texture}!Texture\+Factory@{Texture\+Factory}}
+\subsubsection[{create\+Texture}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<$ {\bf Texture} $>$ \& Texture\+Factory\+::create\+Texture (
+\begin{DoxyParamCaption}
+\item[{std\+::string const \&}]{file}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classTextureFactory_a3326fe1ffdcb4c3660ca127f3d87aee2}
+
+
+Gives a pointer to the texture queried by a textured graphical object. 
+
+Under the hood, it checks wether the texture already exists, i.\+e if it has already been queried for use by a textured graphical object. If it is the case, it simply gives a pointer to the existing texture. Else it creates a new texture with the corresponding resource file and adds it to the pool. 
+\begin{DoxyParams}{Parameters}
+{\em file} & The resource texture file, which uniquely identifies it \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the queried texture 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Texture_8h}{Texture.\+h}\item 
+Texture.\+cpp\end{DoxyCompactItemize}

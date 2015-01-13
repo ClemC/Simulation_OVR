@@ -1,0 +1,8 @@
+<map id="Camera" name="Camera">
+<area shape="rect" id="node2" href="$classInput.html" title="The Input class. " alt="" coords="500,2385,664,2756"/>
+<area shape="rect" id="node4" href="$classGenericOculus.html" title="The GenericOculus class. " alt="" coords="849,1086,1001,1237"/>
+<area shape="rect" id="node5" href="$classScene.html" title="The Scene class. " alt="" coords="219,1615,377,2323"/>
+<area shape="rect" id="node9" title="STL class. " alt="" coords="205,389,285,466"/>
+<area shape="rect" id="node11" href="$classFile.html" title="{File\n|+ mass\l+ xpos\l+ ypos\l+ zpos\l+ age\l+ MinCubeSize\l&#45; lineDimension_\l&#45; age_\l&#45; xCenterTp_\l&#45; yCenterTp_\l&#45; zCenterTp_\l&#45; maxTp_\l&#45; dimension_\l&#45; totalLines_\l&#45; sizeScene_\l&#45; data_\l&#45; totalLinesCah_\l&#45; dataCah_\l|+ File()\l+ File()\l+ getTotalLines()\l+ getTotalLinesCah()\l+ getAge()\l+ getXCenterTp()\l+ getYCenterTp()\l+ getZCenterTp()\l+ getSizeScene()\l+ setSizeScene()\l+ getMaxTp()\l+ getData()\l+ getDataCah()\l+ getMaxMass()\l+ getMaxAge()\l+ parseText()\l+ exists_test()\l+ getCount()\l+ split()\l+ checkIfExceptionInFile()\l+ registerData()\l+ updateMax()\l+ printData()\l+ convert()\l+ convertToFile()\l+ cah()\l+ dissimMax()\l+ dissimG()\l+ dissimAlea()\l+ minMatDissim()\l+ registerClusters()\l+ printDataCah()\l}" alt="" coords="39,771,213,1552"/>
+<area shape="rect" id="node10" title="STL class. " alt="" coords="181,5,308,97"/>
+</map>

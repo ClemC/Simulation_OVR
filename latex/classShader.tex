@@ -1,0 +1,98 @@
+\hypertarget{classShader}{}\section{Shader Class Reference}
+\label{classShader}\index{Shader@{Shader}}
+
+
+The \hyperlink{classShader}{Shader} class.  
+
+
+
+
+{\ttfamily \#include $<$Shader.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classShader_a2676488e17d2c7adde4caa1b76c2d8f7}{}{\bfseries Shader} (\hyperlink{classShader}{Shader} const \&copy)\label{classShader_a2676488e17d2c7adde4caa1b76c2d8f7}
+
+\item 
+\hypertarget{classShader_a59b1b61c30690647dca39952ed58a277}{}{\bfseries Shader} (std\+::string const \&vertex\+Source, std\+::string const \&fragment\+Source)\label{classShader_a59b1b61c30690647dca39952ed58a277}
+
+\item 
+\hypertarget{classShader_a04809b02b4cd13ca28baeb911c1924c4}{}\hyperlink{classShader}{Shader} \& {\bfseries operator=} (\hyperlink{classShader}{Shader} const \&copy)\label{classShader_a04809b02b4cd13ca28baeb911c1924c4}
+
+\item 
+bool \hyperlink{classShader_aa9413a27c7e5247d67c624a561e31d3e}{load} ()
+\begin{DoxyCompactList}\small\item\em Reads the shader source files, compiles them and links them. \end{DoxyCompactList}\item 
+bool \hyperlink{classShader_aee927a450e958f2b6f38442bde03114e}{compile} (G\+Luint \&shader, G\+Lenum type, std\+::string const \&file\+Source)
+\begin{DoxyCompactList}\small\item\em Reads the shader source file and compiles it. \end{DoxyCompactList}\item 
+\hypertarget{classShader_a3168baec42843f55afee3e06f6a5932a}{}G\+Luint {\bfseries program\+I\+D} () const \label{classShader_a3168baec42843f55afee3e06f6a5932a}
+
+\item 
+\hypertarget{classShader_a0526dd74a934803b9a897b42677de029}{}void {\bfseries set\+Program\+I\+D} (const G\+Luint \&program\+I\+D)\label{classShader_a0526dd74a934803b9a897b42677de029}
+
+\item 
+\hypertarget{classShader_ab731456d17dd27d97b56210c96b4b9eb}{}std\+::string {\bfseries vertex\+Source} () const \label{classShader_ab731456d17dd27d97b56210c96b4b9eb}
+
+\item 
+\hypertarget{classShader_ae69b940a8db2b13fa1b24a16a0e21223}{}void {\bfseries set\+Vertex\+Source} (const std\+::string \&vertex\+Source)\label{classShader_ae69b940a8db2b13fa1b24a16a0e21223}
+
+\item 
+\hypertarget{classShader_a2c1ac0c77fc4d8123bf7c9368a532a17}{}std\+::string {\bfseries fragment\+Source} () const \label{classShader_a2c1ac0c77fc4d8123bf7c9368a532a17}
+
+\item 
+\hypertarget{classShader_acaa19c547d8bb3bc2efd189f4b4843b8}{}void {\bfseries set\+Fragment\+Source} (const std\+::string \&fragment\+Source)\label{classShader_acaa19c547d8bb3bc2efd189f4b4843b8}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classShader}{Shader} class. 
+
+Manages the shader resources 
+
+\subsection{Member Function Documentation}
+\hypertarget{classShader_aee927a450e958f2b6f38442bde03114e}{}\index{Shader@{Shader}!compile@{compile}}
+\index{compile@{compile}!Shader@{Shader}}
+\subsubsection[{compile}]{\setlength{\rightskip}{0pt plus 5cm}bool Shader\+::compile (
+\begin{DoxyParamCaption}
+\item[{G\+Luint \&}]{shader, }
+\item[{G\+Lenum}]{type, }
+\item[{std\+::string const \&}]{file\+Source}
+\end{DoxyParamCaption}
+)}\label{classShader_aee927a450e958f2b6f38442bde03114e}
+
+
+Reads the shader source file and compiles it. 
+
+Works on vertex and fragment shaders 
+\begin{DoxyParams}{Parameters}
+{\em shader} & The Open\+G\+L shader id \\
+\hline
+{\em type} & \hyperlink{classShader}{Shader} type\+: vertex or fragment \\
+\hline
+{\em file\+Source} & The shader source file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classShader_aa9413a27c7e5247d67c624a561e31d3e}{}\index{Shader@{Shader}!load@{load}}
+\index{load@{load}!Shader@{Shader}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}bool Shader\+::load (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classShader_aa9413a27c7e5247d67c624a561e31d3e}
+
+
+Reads the shader source files, compiles them and links them. 
+
+\begin{DoxyReturn}{Returns}
+true if it was successful, else false 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Shader_8h}{Shader.\+h}\item 
+Shader.\+cpp\end{DoxyCompactItemize}

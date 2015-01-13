@@ -1,0 +1,6 @@
+<map id="Utils::radToDegree" name="Utils::radToDegree">
+<area shape="rect" id="node2" href="$classCamera.html#a856ab6b929b48aca124e05f4c4cf32fd" title="Changes the camera orientation depending on the user inputs. " alt="" coords="185,5,356,32"/>
+<area shape="rect" id="node4" href="$classCamera.html#afe1507a03bc72df5325bc6bf2ae2b22d" title="Camera::setEyeTarget" alt="" coords="193,56,348,83"/>
+<area shape="rect" id="node5" href="$classOculus.html#a21273c2c3dd1e2d4b9d113cac0d72ec3" title="Computes the texture size. " alt="" coords="193,107,348,133"/>
+<area shape="rect" id="node3" href="$classCamera.html#a631854f3063e6ddf8f7c2697c34c2bc0" title="Moves the camera depending on the user inputs and clamps the position. " alt="" coords="404,5,512,32"/>
+</map>

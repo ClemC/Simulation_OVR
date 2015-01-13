@@ -1,0 +1,5 @@
+<map id="Camera::setOrientation" name="Camera::setOrientation">
+<area shape="rect" id="node2" href="$classCamera.html#af9647ba1a19c27928b56630a3164d54e" title="Orientates the camera depending on the mouse movements. " alt="" coords="211,5,337,32"/>
+<area shape="rect" id="node3" href="$classCamera.html#a856ab6b929b48aca124e05f4c4cf32fd" title="Changes the camera orientation depending on the user inputs. " alt="" coords="385,5,556,32"/>
+<area shape="rect" id="node4" href="$classCamera.html#a631854f3063e6ddf8f7c2697c34c2bc0" title="Moves the camera depending on the user inputs and clamps the position. " alt="" coords="604,5,712,32"/>
+</map>

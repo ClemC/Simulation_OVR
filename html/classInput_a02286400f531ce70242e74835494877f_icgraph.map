@@ -1,0 +1,4 @@
+<map id="Input::oculus" name="Input::oculus">
+<area shape="rect" id="node2" href="$classCamera.html#a856ab6b929b48aca124e05f4c4cf32fd" title="Changes the camera orientation depending on the user inputs. " alt="" coords="151,5,321,32"/>
+<area shape="rect" id="node3" href="$classCamera.html#a631854f3063e6ddf8f7c2697c34c2bc0" title="Moves the camera depending on the user inputs and clamps the position. " alt="" coords="369,5,477,32"/>
+</map>

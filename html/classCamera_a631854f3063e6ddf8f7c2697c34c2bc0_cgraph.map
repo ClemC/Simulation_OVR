@@ -1,0 +1,29 @@
+<map id="Camera::move" name="Camera::move">
+<area shape="rect" id="node2" href="$classCamera.html#aee126011d76a1f867c35ad2fa54e73d7" title="Moves the camera position depending on the user inputs. " alt="" coords="169,208,324,235"/>
+<area shape="rect" id="node13" href="$classCamera.html#afff594534eab1614a3045e6dbf030323" title="Updates the point the camera is looking at from its position and rotation. " alt="" coords="860,436,1035,463"/>
+<area shape="rect" id="node15" href="$namespaceUtils.html#ac77440fa22cefff120355abc5e6f6de8" title="Clamps an angle to a value Clamps (i.e limits) an angle to a given value which is both a minimum and ..." alt="" coords="687,715,779,741"/>
+<area shape="rect" id="node16" href="$classCamera.html#a856ab6b929b48aca124e05f4c4cf32fd" title="Changes the camera orientation depending on the user inputs. " alt="" coords="161,715,332,741"/>
+<area shape="rect" id="node3" href="$classInput.html#a4246f4ddfbf7f8128087fdcc502dd134" title="Input::isKeyboardKeyDown" alt="" coords="403,107,584,133"/>
+<area shape="rect" id="node4" href="$classFile.html#a9af2773d1dd86d3e95e830563a51e3b5" title="File::convert. " alt="" coords="446,157,541,184"/>
+<area shape="rect" id="node6" href="$classFile.html#a9e40fb995d13f0ed06ef1d56508eb8ed" title="File::xCenterTp_. " alt="" coords="427,259,559,285"/>
+<area shape="rect" id="node7" href="$classFile.html#a1f9f5945b6d122bd4fbed4ea02596e8c" title="File::yCenterTp_. " alt="" coords="427,309,559,336"/>
+<area shape="rect" id="node8" href="$classFile.html#a66dad0937bbef79d22bfca7428e9c5b8" title="File::yCenterTp_. " alt="" coords="428,5,559,32"/>
+<area shape="rect" id="node9" href="$Scene_8cpp.html#a33bb9dd6236cf80e87339343a8be3f4e" title="logger" alt="" coords="1105,613,1163,640"/>
+<area shape="rect" id="node10" href="$classCamera.html#a0dc77df7121855934ca107be392c9bd7" title="teleport to a point. " alt="" coords="434,208,553,235"/>
+<area shape="rect" id="node14" href="$namespaceUtils.html#aae7fe80e12cf4342629d49803946568d" title="Converts a 3 dimensional vector to a pretty string ready to be printed. " alt="" coords="1083,309,1185,336"/>
+<area shape="rect" id="node5" href="$classFile.html#ab59ff015aacc745232543dfde488a98e" title="File::getSizeScene. " alt="" coords="667,157,799,184"/>
+<area shape="rect" id="node11" href="$classCamera.html#abe8633adb8475cb7c62e1a12743a1025" title="Camera::setPosition" alt="" coords="663,233,804,260"/>
+<area shape="rect" id="node12" href="$classCamera.html#a34977bb92f9318343d8b706faa64b399" title="Camera::position" alt="" coords="887,233,1008,260"/>
+<area shape="rect" id="node17" href="$classInput.html#a3b6c9efa09e69765fd65d1a33bccc8d2" title="Tells if the mouse is moving by watching its differential position. " alt="" coords="418,689,569,716"/>
+<area shape="rect" id="node18" href="$classCamera.html#af9647ba1a19c27928b56630a3164d54e" title="Orientates the camera depending on the mouse movements. " alt="" coords="430,537,557,564"/>
+<area shape="rect" id="node22" href="$classInput.html#a4ea40bc98f495e60ca31b2c30e4db881" title="Input::mouseXRel" alt="" coords="430,740,557,767"/>
+<area shape="rect" id="node23" href="$classInput.html#af2bd0c0f5e6b02225e6e433274cf733b" title="Input::mouseYRel" alt="" coords="430,791,557,817"/>
+<area shape="rect" id="node24" href="$classInput.html#a02286400f531ce70242e74835494877f" title="Input::oculus" alt="" coords="445,841,542,868"/>
+<area shape="rect" id="node25" href="$classGenericOculus.html#a074b05f3be2cb859b00c49e779685276" title="GenericOculus::isMoving" alt="" coords="863,879,1031,905"/>
+<area shape="rect" id="node26" href="$classGenericOculus.html#a5d62cc682f918c2cfad7d139b1ff3299" title="GenericOculus::isUsingDebugHmd" alt="" coords="380,892,607,919"/>
+<area shape="rect" id="node27" href="$classGenericOculus.html#ad679f6563497fa5b79f32d2295a32e6e" title="GenericOculus::dAngles" alt="" coords="412,943,575,969"/>
+<area shape="rect" id="node28" href="$namespaceUtils.html#aa9b1255584f0bb41fa3795c7d79eff9f" title="Converts an angle from radians to degrees. " alt="" coords="427,639,559,665"/>
+<area shape="rect" id="node19" href="$namespaceUtils.html#aa1bf98827f90b3843660995e4efb4c84" title="Converts an angle from degrees to radians. " alt="" coords="666,613,801,640"/>
+<area shape="rect" id="node20" href="$classCamera.html#a015160787796d34df98db2e23cb3387e" title="Camera::setOrientation" alt="" coords="655,512,812,539"/>
+<area shape="rect" id="node21" href="$classCamera.html#af6b0d4052d268bc0674ed5dd53068fc9" title="Camera::orientation" alt="" coords="879,512,1015,539"/>
+</map>

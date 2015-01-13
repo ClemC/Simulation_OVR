@@ -1,0 +1,102 @@
+\hypertarget{classScene}{}\section{Scene Class Reference}
+\label{classScene}\index{Scene@{Scene}}
+
+
+The \hyperlink{classScene}{Scene} class.  
+
+
+
+
+{\ttfamily \#include $<$Scene.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classScene_aeb61892e50f410db3fd84be5037a1e3c}{}{\bfseries Scene} (std\+::string window\+Title, int window\+Width, int window\+Height, bool oculus\+Render, bool fullscreen, std\+::string texture\+Name, unsigned long objects\+Count, int size, int octant\+Size, int octants\+Drawn\+Count, std\+::string filename, int random\+Percentage, int clustering\+Percentage, bool is\+Multi\+Thread, bool render\+Type\+Simplified)\label{classScene_aeb61892e50f410db3fd84be5037a1e3c}
+
+\item 
+\hypertarget{classScene_ab81ad242d6c35a24cfffb693b343cd20}{}void \hyperlink{classScene_ab81ad242d6c35a24cfffb693b343cd20}{main\+Loop} ()\label{classScene_ab81ad242d6c35a24cfffb693b343cd20}
+
+\begin{DoxyCompactList}\small\item\em The main loop of the application. \end{DoxyCompactList}\item 
+\hypertarget{classScene_ae0a213f3b0461622c7a5124362975603}{}void \hyperlink{classScene_ae0a213f3b0461622c7a5124362975603}{main\+Loop\+Test} ()\label{classScene_ae0a213f3b0461622c7a5124362975603}
+
+\begin{DoxyCompactList}\small\item\em The main loop to test the application. \end{DoxyCompactList}\item 
+\hypertarget{classScene_a4ddf2d16f371ee9533b3faf1dd5ddfb1}{}void \hyperlink{classScene_a4ddf2d16f371ee9533b3faf1dd5ddfb1}{render} ()\label{classScene_a4ddf2d16f371ee9533b3faf1dd5ddfb1}
+
+\begin{DoxyCompactList}\small\item\em The graphical rendering. \end{DoxyCompactList}\item 
+void \hyperlink{classScene_a693d39c8c9c53dfd6307fcd3293506da}{render} (glm\+::mat4 \&M\+V, glm\+::mat4 \&proj)
+\begin{DoxyCompactList}\small\item\em The graphical rendering. \end{DoxyCompactList}\item 
+\hypertarget{classScene_ae20240e6c189eb8088ae92b4be5625f8}{}S\+D\+L\+\_\+\+Window $\ast$ {\bfseries window} () const \label{classScene_ae20240e6c189eb8088ae92b4be5625f8}
+
+\item 
+\hypertarget{classScene_a9ce2dab07ddcb400a08953f9faebfdf5}{}int {\bfseries window\+Width} () const \label{classScene_a9ce2dab07ddcb400a08953f9faebfdf5}
+
+\item 
+\hypertarget{classScene_acf77d9dc5f53f98f506e1ffc0636662d}{}void {\bfseries set\+Window\+Width} (int window\+Width)\label{classScene_acf77d9dc5f53f98f506e1ffc0636662d}
+
+\item 
+\hypertarget{classScene_ad899521bb92f8a0818d263e255bde87d}{}int {\bfseries window\+Height} () const \label{classScene_ad899521bb92f8a0818d263e255bde87d}
+
+\item 
+\hypertarget{classScene_a8e81e065002b9a95c575b94f9129bb35}{}void {\bfseries set\+Window\+Height} (int window\+Height)\label{classScene_a8e81e065002b9a95c575b94f9129bb35}
+
+\item 
+bool \hyperlink{classScene_aec8cd9d85f671a8c2c1f45b373fc90b7}{is\+Random\+Point} (int n)
+\begin{DoxyCompactList}\small\item\em is\+Random\+Point \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classScene}{Scene} class. 
+
+The Open\+G\+L scene. It contains the graphical objects, the camera, the input, etc. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classScene_aec8cd9d85f671a8c2c1f45b373fc90b7}{}\index{Scene@{Scene}!is\+Random\+Point@{is\+Random\+Point}}
+\index{is\+Random\+Point@{is\+Random\+Point}!Scene@{Scene}}
+\subsubsection[{is\+Random\+Point}]{\setlength{\rightskip}{0pt plus 5cm}bool Scene\+::is\+Random\+Point (
+\begin{DoxyParamCaption}
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}\label{classScene_aec8cd9d85f671a8c2c1f45b373fc90b7}
+
+
+is\+Random\+Point 
+
+\hyperlink{classScene_aec8cd9d85f671a8c2c1f45b373fc90b7}{Scene\+::is\+Random\+Point} Return true in n\% of the time.
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em n} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{classScene_a693d39c8c9c53dfd6307fcd3293506da}{}\index{Scene@{Scene}!render@{render}}
+\index{render@{render}!Scene@{Scene}}
+\subsubsection[{render}]{\setlength{\rightskip}{0pt plus 5cm}void Scene\+::render (
+\begin{DoxyParamCaption}
+\item[{glm\+::mat4 \&}]{M\+V, }
+\item[{glm\+::mat4 \&}]{proj}
+\end{DoxyParamCaption}
+)}\label{classScene_a693d39c8c9c53dfd6307fcd3293506da}
+
+
+The graphical rendering. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em The} & modelview matrix \\
+\hline
+{\em The} & projection matrix \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Scene_8h}{Scene.\+h}\item 
+Scene.\+cpp\end{DoxyCompactItemize}

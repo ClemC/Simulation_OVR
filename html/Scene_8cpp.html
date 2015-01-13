@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>Simulation en vue Oculus: Référence du fichier Scene.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Simulation en vue Oculus
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Représentationd&#39;objetscélestesen3DavecvueOculus</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier Scene.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="Scene_8h_source.html">Scene.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Cube_8h_source.html">Cube.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Input_8h_source.html">Input.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Crate_8h_source.html">Crate.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Texture_8h_source.html">Texture.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Camera_8h_source.html">Camera.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GraphicObject_8h_source.html">GraphicObject.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Plane_8h_source.html">Plane.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Utils_8h_source.html">Utils.h</a>&quot;</code><br />
+<code>#include &quot;LogCpp/Log.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="File_8h_source.html">File.h</a>&quot;</code><br />
+<code>#include &quot;MThread/MThread.h&quot;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
+<code>#include &lt;numeric&gt;</code><br />
+<code>#include &lt;random&gt;</code><br />
+<code>#include &lt;chrono&gt;</code><br />
+<code>#include &lt;thread&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de Scene.cpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="Scene_8cpp__incl.png" border="0" usemap="#Scene_8cpp" alt=""/></div>
+<map name="Scene_8cpp" id="Scene_8cpp">
+<area shape="rect" id="node2" href="Scene_8h.html" title="OpenGL scene. " alt="" coords="1106,155,1177,181"/><area shape="rect" id="node14" href="File_8h.html" title="File.h" alt="" coords="2352,237,2406,263"/><area shape="rect" id="node27" href="Utils_8h.html" title="Gathers utility functions. " alt="" coords="1569,326,1629,353"/><area shape="rect" id="node32" href="Cube_8h.html" title="Cube management. " alt="" coords="344,155,408,181"/><area shape="rect" id="node33" href="GraphicObject_8h.html" title="Graphic object management. " alt="" coords="414,237,530,263"/><area shape="rect" id="node34" href="Input_8h.html" title="Input management. " alt="" coords="2052,155,2114,181"/><area shape="rect" id="node36" href="Crate_8h.html" title="Crate (i.e textured Cube) management. " alt="" coords="414,80,480,107"/><area shape="rect" id="node37" href="Texture_8h.html" title="Texture management. " alt="" coords="312,237,390,263"/><area shape="rect" id="node39" href="Camera_8h.html" title="Camera management. " alt="" coords="1970,80,2049,107"/><area shape="rect" id="node40" href="Plane_8h.html" title="Plane management. " alt="" coords="807,155,874,181"/><area shape="rect" id="node8" href="Shader_8h.html" title="Shader management. " alt="" coords="566,326,640,353"/><area shape="rect" id="node21" href="Oculus_8h.html" title="All Oculus related features live in here. " alt="" coords="2046,237,2120,263"/></map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a33bb9dd6236cf80e87339343a8be3f4e"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; Logger &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Scene_8cpp.html#a33bb9dd6236cf80e87339343a8be3f4e">logger</a> (new Logger(&quot;log.log&quot;,&quot;log.err&quot;, true, Severity::error|Severity::info))</td></tr>
+<tr class="separator:a33bb9dd6236cf80e87339343a8be3f4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8192f47983ba927b085c524c6d404dca"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classNullOculus.html">NullOculus</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Scene_8cpp.html#a8192f47983ba927b085c524c6d404dca">nullOculus</a> (new <a class="el" href="classNullOculus.html">NullOculus</a>)</td></tr>
+<tr class="separator:a8192f47983ba927b085c524c6d404dca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad71d19d19e94ad02de3aa7e6f225fc77"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Scene_8cpp.html#ad71d19d19e94ad02de3aa7e6f225fc77">norm2xyz</a> (float x, float y, float z)</td></tr>
+<tr class="separator:ad71d19d19e94ad02de3aa7e6f225fc77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a class="anchor" id="a33bb9dd6236cf80e87339343a8be3f4e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;Logger&gt; logger </td>
+          <td>(</td>
+          <td class="paramtype">new &#160;</td>
+          <td class="paramname"><em>Logger</em>&quot;log.log&quot;,&quot;log.err&quot;, true, Severity::error|Severity::info</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="Scene_8cpp_a33bb9dd6236cf80e87339343a8be3f4e_icgraph.png" border="0" usemap="#Scene_8cpp_a33bb9dd6236cf80e87339343a8be3f4e_icgraph" alt=""/></div>
+<map name="Scene_8cpp_a33bb9dd6236cf80e87339343a8be3f4e_icgraph" id="Scene_8cpp_a33bb9dd6236cf80e87339343a8be3f4e_icgraph">
+<area shape="rect" id="node2" href="classCamera.html#af9647ba1a19c27928b56630a3164d54e" title="Orientates the camera depending on the mouse movements. " alt="" coords="591,183,718,209"/><area shape="rect" id="node3" href="classCamera.html#a856ab6b929b48aca124e05f4c4cf32fd" title="Changes the camera orientation depending on the user inputs. " alt="" coords="787,145,957,172"/><area shape="rect" id="node5" href="classCamera.html#aee126011d76a1f867c35ad2fa54e73d7" title="Moves the camera position depending on the user inputs. " alt="" coords="795,385,949,412"/><area shape="rect" id="node6" href="classCamera.html#ac086b3a16c50dfd4accfc3a76b1db719" title="Makes the camera look at a given point described by the modelview matrix. " alt="" coords="156,436,269,463"/><area shape="rect" id="node7" href="classCamera.html#afe1507a03bc72df5325bc6bf2ae2b22d" title="Camera::setEyeTarget" alt="" coords="135,487,290,513"/><area shape="rect" id="node8" href="classCamera.html#afff594534eab1614a3045e6dbf030323" title="Updates the point the camera is looking at from its position and rotation. " alt="" coords="125,284,300,311"/><area shape="rect" id="node12" href="classCrate.html#a42be595436e58da126d47d149d009671" title="Crate::~Crate" alt="" coords="161,537,264,564"/><area shape="rect" id="node13" href="classCrate.html#aa52ebd20025131701e8b41986f318057" title="Crate::print" alt="" coords="169,588,256,615"/><area shape="rect" id="node14" href="classCube.html#ab8c70b8c650e3beaf14e4cbc21fec119" title="Cube::Cube" alt="" coords="167,639,259,665"/><area shape="rect" id="node15" href="classFile.html#a986cac1668c92bf580eb20244fefab02" title="File::parseText. " alt="" coords="388,740,497,767"/><area shape="rect" id="node18" href="classFile.html#a152b94a16617a9df570352696bfea31a" title="File::exists_test. " alt="" coords="385,791,500,817"/><area shape="rect" id="node19" href="classFile.html#a6a8d457f6b0ef7e8cf7d672381ad054a" title="File::checkIfExceptionInFile. " alt="" coords="121,740,305,767"/><area shape="rect" id="node20" href="classFile.html#a45db1a62b806343e520adb535ef6417a" title="File::printData. " alt="" coords="161,841,265,868"/><area shape="rect" id="node21" href="classFile.html#afc54ef20547ada0b2bc0c1f7a0a939f1" title="File::printDataCah. " alt="" coords="149,892,277,919"/><area shape="rect" id="node22" href="classFile.html#a4714786d79812c9aa720403af5a43210" title="File::cah. " alt="" coords="177,1044,249,1071"/><area shape="rect" id="node24" href="classScene.html#a6bca5b828c5be195b28899ccbda22ead" title="Generates graphical objects generator. " alt="" coords="585,993,724,1020"/><area shape="rect" id="node25" href="classGraphicObject.html#aed2ed78852340368187f2c35b05c31c4" title="GraphicObject::~GraphicObject" alt="" coords="111,1095,315,1121"/><area shape="rect" id="node26" href="classGraphicObject.html#ab4fe774c59ee6d67547094f2410b7266" title="GraphicObject::updateVBO" alt="" coords="123,1145,303,1172"/><area shape="rect" id="node27" href="classNullGraphicObject.html#a4e38fd174d466066e4cec40d8e8ac400" title="NullGraphicObject::\lNullGraphicObject" alt="" coords="145,1197,281,1238"/><area shape="rect" id="node28" href="classNullGraphicObject.html#a9e4c8e7f6beb19c37ecbf72e8b3ad842" title="NullGraphicObject::\l~NullGraphicObject" alt="" coords="145,1262,281,1303"/><area shape="rect" id="node29" href="classInput.html#a1ad46645cf09f920db19ac848ce0e896" title="Updates the state of all the possible events. " alt="" coords="147,1328,279,1355"/><area shape="rect" id="node30" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="629,1455,680,1481"/><area shape="rect" id="node31" href="classNullOculus.html#aeb3bda5fef2b6b3d1db781d6270377c0" title="NullOculus::NullOculus" alt="" coords="133,1531,292,1557"/><area shape="rect" id="node32" href="classNullOculus.html#a4df4f64c4b5acdc11289348da2554337" title="NullOculus::~NullOculus" alt="" coords="129,1581,296,1608"/><area shape="rect" id="node33" href="classGenericOculus.html#a074b05f3be2cb859b00c49e779685276" title="GenericOculus::isMoving" alt="" coords="571,107,739,133"/><area shape="rect" id="node34" href="classOculus.html#a042717ce733876a9c2979576d6002107" title="Destructor. " alt="" coords="153,1632,273,1659"/><area shape="rect" id="node35" href="classOculus.html#a60f6bd046dfba11f0d9f3e7277b4a0bb" title="Retrieves the values from the Oculus Rift sensors. " alt="" coords="153,1683,272,1709"/><area shape="rect" id="node37" href="classOculus.html#a21273c2c3dd1e2d4b9d113cac0d72ec3" title="Computes the texture size. " alt="" coords="135,1784,290,1811"/><area shape="rect" id="node38" href="classScene.html#a5aa76b5f23af18a54376728adf305d59" title="Opens the window and creates an OpenGL context. " alt="" coords="147,1835,278,1861"/><area shape="rect" id="node39" href="classScene.html#a25c27d07e2f2c25fde068bdde460e3fc" title="Inits OpenGL. " alt="" coords="162,1885,263,1912"/><area shape="rect" id="node40" href="classScene.html#a464409dc2f8d64e7cd1ca1e772daa21b" title="Generates graphical objects at random positions. " alt="" coords="383,943,502,969"/><area shape="rect" id="node41" href="classScene.html#a5e1b168b0556eb00479d50deda0e4081" title="Perform final actions at the end of the scene/program. " alt="" coords="161,1429,265,1456"/><area shape="rect" id="node44" href="classScene.html#a29e8b971167ae548057c32726fd1c8de" title="Update the current FPS. " alt="" coords="147,1379,279,1405"/><area shape="rect" id="node45" href="classShader.html#aa9413a27c7e5247d67c624a561e31d3e" title="Reads the shader source files, compiles them and links them. " alt="" coords="395,1961,490,1988"/><area shape="rect" id="node48" href="classShader.html#aee927a450e958f2b6f38442bde03114e" title="Reads the shader source file and compiles it. " alt="" coords="155,1987,271,2013"/><area shape="rect" id="node49" href="classTexture.html#a09c4bcb7462f64c1d20fa69dba3cee8a" title="Destructor. " alt="" coords="149,2037,276,2064"/><area shape="rect" id="node50" href="classTexture.html#ae432f108267f5e56b0104ddd91dd2f6b" title="Reads the image file. " alt="" coords="163,2088,262,2115"/><area shape="rect" id="node53" href="classTextureFactory.html#a3326fe1ffdcb4c3660ca127f3d87aee2" title="Gives a pointer to the texture queried by a textured graphical object. " alt="" coords="113,2139,312,2165"/><area shape="rect" id="node55" href="namespaceUtils.html#a8f7c7c4fbf51f5d7aa6ee6fc6dd249b9" title="Retrieves all the errors from OpenGL. " alt="" coords="151,1733,274,1760"/><area shape="rect" id="node59" href="namespaceUtils.html#ac77440fa22cefff120355abc5e6f6de8" title="Clamps an angle to a value Clamps (i.e limits) an angle to a given value which is both a minimum and ..." alt="" coords="397,335,489,361"/><area shape="rect" id="node4" href="classCamera.html#a631854f3063e6ddf8f7c2697c34c2bc0" title="Moves the camera depending on the user inputs and clamps the position. " alt="" coords="1005,309,1113,336"/><area shape="rect" id="node9" href="classCamera.html#abe8633adb8475cb7c62e1a12743a1025" title="Camera::setPosition" alt="" coords="372,385,513,412"/><area shape="rect" id="node11" href="classCamera.html#a015160787796d34df98db2e23cb3387e" title="Camera::setOrientation" alt="" coords="364,183,521,209"/><area shape="rect" id="node10" href="classCamera.html#a0dc77df7121855934ca107be392c9bd7" title="teleport to a point. " alt="" coords="595,385,714,412"/><area shape="rect" id="node16" href="File__unittest_8cpp.html#ab0c13e08f2d62558021c9a4fadf8c104" title="TEST" alt="" coords="627,740,683,767"/><area shape="rect" id="node17" href="classScene.html#a018ba6178d20e7bf9d53fc8572a987e4" title="parseFile " alt="" coords="595,791,715,817"/><area shape="rect" id="node23" href="classScene.html#a96c0932a87a2e4bdae8752b1d4deca20" title="initGObjectsFile Simple load of the file, with random algorythm if randomPercentage!=1. " alt="" coords="363,1044,523,1071"/><area shape="rect" id="node36" href="classOculus.html#a6c6c91e785d71aff217462ec3e7480e6" title="Renders the OpenGL scene with the Oculus effects. " alt="" coords="389,1683,496,1709"/><area shape="rect" id="node42" href="classScene.html#ab81ad242d6c35a24cfffb693b343cd20" title="The main loop of the application. " alt="" coords="381,1429,504,1456"/><area shape="rect" id="node43" href="classScene.html#ae0a213f3b0461622c7a5124362975603" title="The main loop to test the application. " alt="" coords="368,1379,517,1405"/><area shape="rect" id="node46" href="classShader.html#a2676488e17d2c7adde4caa1b76c2d8f7" title="Shader::Shader" alt="" coords="599,1987,711,2013"/><area shape="rect" id="node47" href="classShader.html#a04809b02b4cd13ca28baeb911c1924c4" title="Shader::operator=" alt="" coords="591,1936,718,1963"/><area shape="rect" id="node51" href="classTexture.html#a1c6655d1e07186cb84e30528a8a5e4e6" title="Copy constructor. " alt="" coords="383,2088,502,2115"/><area shape="rect" id="node52" href="classTexture.html#ab67757726d23554fc006316b2643dd6a" title="operator = " alt="" coords="378,2037,507,2064"/><area shape="rect" id="node54" href="classPlane.html#a63651155afec5a2c904a80ec9b87335c" title="Plane::Plane" alt="" coords="395,2139,491,2165"/><area shape="rect" id="node56" href="classOculus.html#a8c20ccdb5b05a138bf7ec4e5efd0c890" title="Creates the OpenGL texture required for the Oculus rendering. " alt="" coords="377,1784,509,1811"/><area shape="rect" id="node57" href="classOculus.html#ae48819d5aca05cf175bbc78327d512cf" title="Creates the Frame Buffer Object needed for the Oculus rendering. " alt="" coords="385,1835,500,1861"/><area shape="rect" id="node58" href="classOculus.html#a774504de4fd7d8b6304d4a1ca7471d28" title="Creates the depth buffer needed for the Oculus rendering. " alt="" coords="363,1733,522,1760"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ad71d19d19e94ad02de3aa7e6f225fc77"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double norm2xyz </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>z</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="Scene_8cpp_ad71d19d19e94ad02de3aa7e6f225fc77_icgraph.png" border="0" usemap="#Scene_8cpp_ad71d19d19e94ad02de3aa7e6f225fc77_icgraph" alt=""/></div>
+<map name="Scene_8cpp_ad71d19d19e94ad02de3aa7e6f225fc77_icgraph" id="Scene_8cpp_ad71d19d19e94ad02de3aa7e6f225fc77_icgraph">
+<area shape="rect" id="node2" href="classScene.html#a693d39c8c9c53dfd6307fcd3293506da" title="The graphical rendering. " alt="" coords="132,5,235,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a8192f47983ba927b085c524c6d404dca"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="classNullOculus.html">NullOculus</a>&gt; nullOculus </td>
+          <td>(</td>
+          <td class="paramtype">new&#160;</td>
+          <td class="paramname"><em>NullOculus</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Mardi 13 Janvier 2015 14:18:07 pour Simulation en vue Oculus par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.9.1
+</small></address>
+</body>
+</html>

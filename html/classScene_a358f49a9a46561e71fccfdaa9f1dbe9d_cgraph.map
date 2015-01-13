@@ -1,0 +1,8 @@
+<map id="Scene::updateOctree" name="Scene::updateOctree">
+<area shape="rect" id="node2" href="$classFile.html#a9af2773d1dd86d3e95e830563a51e3b5" title="File::convert. " alt="" coords="237,5,332,32"/>
+<area shape="rect" id="node4" href="$classScene.html#ab193a1fadf55a1308ad1b33c3d1aae3f" title="addPointToOctree Add a point to the Octree " alt="" coords="199,56,371,83"/>
+<area shape="rect" id="node3" href="$classFile.html#ab59ff015aacc745232543dfde488a98e" title="File::getSizeScene. " alt="" coords="419,5,551,32"/>
+<area shape="rect" id="node5" href="$classFile.html#abf8e0e8e4e7d8a4ff99e327a8d30c394" title="File::getMaxMass. " alt="" coords="421,56,548,83"/>
+<area shape="rect" id="node7" href="$classFile.html#ab9f463bb8afd01c69d323872e2f3d275" title="File::getMaxAge. " alt="" coords="426,107,543,133"/>
+<area shape="rect" id="node6" href="$classFile.html#ad1024f9c4c3c48083f024aefaf45b9b8" title="File::getTotalLines. " alt="" coords="599,81,728,108"/>
+</map>

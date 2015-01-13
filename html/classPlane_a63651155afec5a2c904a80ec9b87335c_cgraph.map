@@ -1,0 +1,7 @@
+<map id="Plane::Plane" name="Plane::Plane">
+<area shape="rect" id="node2" href="$classTextureFactory.html#a3326fe1ffdcb4c3660ca127f3d87aee2" title="Gives a pointer to the texture queried by a textured graphical object. " alt="" coords="149,9,348,36"/>
+<area shape="rect" id="node4" href="$classPlane.html#a6dc72a0c50fad122fabfbd0bd73e6b75" title="Plane::load" alt="" coords="205,64,292,91"/>
+<area shape="rect" id="node3" href="$Scene_8cpp.html#a33bb9dd6236cf80e87339343a8be3f4e" title="logger" alt="" coords="455,5,512,32"/>
+<area shape="rect" id="node5" href="$classGraphicObject.html#a8e43dbd70ae6a48bc53cf1b509791af0" title="Gives the memory size of the vertices coordinates in bytes. " alt="" coords="396,57,571,98"/>
+<area shape="rect" id="node6" href="$classPlane.html#a678ea174d88d8615e89d2b5e03f9b537" title="Plane::nbTextureBytes" alt="" coords="406,123,561,149"/>
+</map>

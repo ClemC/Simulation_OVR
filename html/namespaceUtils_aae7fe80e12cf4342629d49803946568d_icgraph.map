@@ -1,0 +1,12 @@
+<map id="Utils::toString" name="Utils::toString">
+<area shape="rect" id="node2" href="$classCamera.html#a856ab6b929b48aca124e05f4c4cf32fd" title="Changes the camera orientation depending on the user inputs. " alt="" coords="759,32,929,59"/>
+<area shape="rect" id="node4" href="$classCamera.html#aee126011d76a1f867c35ad2fa54e73d7" title="Moves the camera position depending on the user inputs. " alt="" coords="767,159,921,186"/>
+<area shape="rect" id="node5" href="$classCamera.html#ac086b3a16c50dfd4accfc3a76b1db719" title="Makes the camera look at a given point described by the modelview matrix. " alt="" coords="187,260,300,287"/>
+<area shape="rect" id="node6" href="$classCamera.html#afff594534eab1614a3045e6dbf030323" title="Updates the point the camera is looking at from its position and rotation. " alt="" coords="156,108,331,135"/>
+<area shape="rect" id="node11" href="$namespaceUtils.html#ae94cdc204dc2970d2c0cd1680e9d8801" title="Clamps a 3D vector to a value Clamps (i.e limits) a 3 dimensional vector to a given maximum vector an..." alt="" coords="197,311,289,338"/>
+<area shape="rect" id="node3" href="$classCamera.html#a631854f3063e6ddf8f7c2697c34c2bc0" title="Moves the camera depending on the user inputs and clamps the position. " alt="" coords="977,108,1085,135"/>
+<area shape="rect" id="node7" href="$classCamera.html#af9647ba1a19c27928b56630a3164d54e" title="Orientates the camera depending on the mouse movements. " alt="" coords="584,32,711,59"/>
+<area shape="rect" id="node8" href="$classCamera.html#abe8633adb8475cb7c62e1a12743a1025" title="Camera::setPosition" alt="" coords="387,159,528,186"/>
+<area shape="rect" id="node10" href="$classCamera.html#a015160787796d34df98db2e23cb3387e" title="Camera::setOrientation" alt="" coords="379,58,536,84"/>
+<area shape="rect" id="node9" href="$classCamera.html#a0dc77df7121855934ca107be392c9bd7" title="teleport to a point. " alt="" coords="588,159,707,186"/>
+</map>

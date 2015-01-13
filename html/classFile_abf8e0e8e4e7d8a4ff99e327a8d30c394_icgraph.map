@@ -1,0 +1,8 @@
+<map id="File::getMaxMass" name="File::getMaxMass">
+<area shape="rect" id="node2" href="$classScene.html#ab193a1fadf55a1308ad1b33c3d1aae3f" title="addPointToOctree Add a point to the Octree " alt="" coords="180,31,352,57"/>
+<area shape="rect" id="node3" href="$classScene.html#a96c0932a87a2e4bdae8752b1d4deca20" title="initGObjectsFile Simple load of the file, with random algorythm if randomPercentage!=1. " alt="" coords="400,5,560,32"/>
+<area shape="rect" id="node5" href="$classScene.html#a358f49a9a46561e71fccfdaa9f1dbe9d" title="update octree in an other thread " alt="" coords="407,56,553,83"/>
+<area shape="rect" id="node4" href="$classScene.html#a6bca5b828c5be195b28899ccbda22ead" title="Generates graphical objects generator. " alt="" coords="622,5,761,32"/>
+<area shape="rect" id="node6" href="$classScene.html#a5d8a784dae122a4bbb1c74bc3dc550fc" title="startThreadEvent In a new Thread, detect position and inject data in Octree if needed. " alt="" coords="608,56,775,83"/>
+<area shape="rect" id="node7" href="$classScene.html#a4e0d849508a5e8a3e0a627a7e367dfef" title="getThread " alt="" coords="823,56,948,83"/>
+</map>

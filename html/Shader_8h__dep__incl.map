@@ -1,0 +1,18 @@
+<map id="Shader.h" name="Shader.h">
+<area shape="rect" id="node2" href="$GraphicObject_8h.html" title="Graphic object management. " alt="" coords="324,80,440,107"/>
+<area shape="rect" id="node13" href="$Scene_8h.html" title="OpenGL scene. " alt="" coords="660,80,731,107"/>
+<area shape="rect" id="node17" href="$Shader_8cpp.html" title="Shader.cpp" alt="" coords="755,80,843,107"/>
+<area shape="rect" id="node3" href="$Camera_8h.html" title="Camera management. " alt="" coords="455,155,533,181"/>
+<area shape="rect" id="node5" href="$Scene_8cpp.html" title="Scene.cpp" alt="" coords="349,304,433,331"/>
+<area shape="rect" id="node6" href="$Cube_8h.html" title="Cube management. " alt="" coords="70,155,134,181"/>
+<area shape="rect" id="node10" href="$GraphicObject_8cpp.html" title="GraphicObject.cpp" alt="" coords="158,155,289,181"/>
+<area shape="rect" id="node11" href="$Plane_8h.html" title="Plane management. " alt="" coords="313,155,379,181"/>
+<area shape="rect" id="node4" href="$Camera_8cpp.html" title="Camera.cpp" alt="" coords="505,229,598,256"/>
+<area shape="rect" id="node7" href="$Crate_8h.html" title="Crate (i.e textured Cube) management. " alt="" coords="108,229,173,256"/>
+<area shape="rect" id="node9" href="$Cube_8cpp.html" title="Cube.cpp" alt="" coords="5,229,84,256"/>
+<area shape="rect" id="node8" href="$Crate_8cpp.html" title="Crate.cpp" alt="" coords="101,304,180,331"/>
+<area shape="rect" id="node12" href="$Plane_8cpp.html" title="Plane.cpp" alt="" coords="249,229,329,256"/>
+<area shape="rect" id="node14" href="$Input_8cpp.html" title="Input.cpp" alt="" coords="557,155,633,181"/>
+<area shape="rect" id="node15" href="$main_8cpp.html" title="main.cpp" alt="" coords="658,155,733,181"/>
+<area shape="rect" id="node16" href="$Scene__unittest_8cpp.html" title="Scene_unittest.cpp" alt="" coords="757,155,892,181"/>
+</map>

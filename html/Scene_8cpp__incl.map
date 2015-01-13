@@ -1,0 +1,14 @@
+<map id="Scene.cpp" name="Scene.cpp">
+<area shape="rect" id="node2" href="$Scene_8h.html" title="OpenGL scene. " alt="" coords="1106,155,1177,181"/>
+<area shape="rect" id="node14" href="$File_8h.html" title="File.h" alt="" coords="2352,237,2406,263"/>
+<area shape="rect" id="node27" href="$Utils_8h.html" title="Gathers utility functions. " alt="" coords="1569,326,1629,353"/>
+<area shape="rect" id="node32" href="$Cube_8h.html" title="Cube management. " alt="" coords="344,155,408,181"/>
+<area shape="rect" id="node33" href="$GraphicObject_8h.html" title="Graphic object management. " alt="" coords="414,237,530,263"/>
+<area shape="rect" id="node34" href="$Input_8h.html" title="Input management. " alt="" coords="2052,155,2114,181"/>
+<area shape="rect" id="node36" href="$Crate_8h.html" title="Crate (i.e textured Cube) management. " alt="" coords="414,80,480,107"/>
+<area shape="rect" id="node37" href="$Texture_8h.html" title="Texture management. " alt="" coords="312,237,390,263"/>
+<area shape="rect" id="node39" href="$Camera_8h.html" title="Camera management. " alt="" coords="1970,80,2049,107"/>
+<area shape="rect" id="node40" href="$Plane_8h.html" title="Plane management. " alt="" coords="807,155,874,181"/>
+<area shape="rect" id="node8" href="$Shader_8h.html" title="Shader management. " alt="" coords="566,326,640,353"/>
+<area shape="rect" id="node21" href="$Oculus_8h.html" title="All Oculus related features live in here. " alt="" coords="2046,237,2120,263"/>
+</map>

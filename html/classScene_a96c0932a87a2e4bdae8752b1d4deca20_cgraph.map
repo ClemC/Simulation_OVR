@@ -1,0 +1,17 @@
+<map id="Scene::initGObjectsFile" name="Scene::initGObjectsFile">
+<area shape="rect" id="node2" href="$classFile.html#ad1024f9c4c3c48083f024aefaf45b9b8" title="File::getTotalLines. " alt="" coords="616,215,745,242"/>
+<area shape="rect" id="node3" href="$classFile.html#a982f88fed4bf555b9f3ba69c37b5f0a7" title="File::getData. " alt="" coords="251,63,348,90"/>
+<area shape="rect" id="node4" href="$classFile.html#a4714786d79812c9aa720403af5a43210" title="File::cah. " alt="" coords="263,114,335,140"/>
+<area shape="rect" id="node8" href="$classFile.html#a311c46b95241183e414757bb52f79f7a" title="File::registerCluster. " alt="" coords="228,164,371,191"/>
+<area shape="rect" id="node9" href="$classFile.html#ab18dbfe80270e02ebb5e11754c30baa2" title="File::getTotalLinesCah. " alt="" coords="223,215,376,242"/>
+<area shape="rect" id="node10" href="$classFile.html#a8f59da39256bf141404043e3a93f9654" title="File::getDataCah. " alt="" coords="239,266,360,292"/>
+<area shape="rect" id="node11" href="$classScene.html#aec8cd9d85f671a8c2c1f45b373fc90b7" title="isRandomPoint " alt="" coords="221,316,377,343"/>
+<area shape="rect" id="node12" href="$classFile.html#a9af2773d1dd86d3e95e830563a51e3b5" title="File::convert. " alt="" coords="252,367,347,394"/>
+<area shape="rect" id="node14" href="$classScene.html#ab193a1fadf55a1308ad1b33c3d1aae3f" title="addPointToOctree Add a point to the Octree " alt="" coords="213,418,385,444"/>
+<area shape="rect" id="node5" href="$Scene_8cpp.html#a33bb9dd6236cf80e87339343a8be3f4e" title="logger" alt="" coords="472,114,529,140"/>
+<area shape="rect" id="node6" href="$classFile.html#a0db1da2014c0f1ac9253efe86c0a57d8" title="File::dissimG. " alt="" coords="451,164,550,191"/>
+<area shape="rect" id="node7" href="$classFile.html#a2fb2437e094b917b7d5d9836a75e5d4f" title="File::minMatDissim. " alt="" coords="433,215,568,242"/>
+<area shape="rect" id="node13" href="$classFile.html#ab59ff015aacc745232543dfde488a98e" title="File::getSizeScene. " alt="" coords="435,316,567,343"/>
+<area shape="rect" id="node15" href="$classFile.html#abf8e0e8e4e7d8a4ff99e327a8d30c394" title="File::getMaxMass. " alt="" coords="437,367,564,394"/>
+<area shape="rect" id="node16" href="$classFile.html#ab9f463bb8afd01c69d323872e2f3d275" title="File::getMaxAge. " alt="" coords="442,418,559,444"/>
+</map>

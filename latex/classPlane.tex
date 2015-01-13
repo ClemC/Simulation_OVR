@@ -1,0 +1,77 @@
+\hypertarget{classPlane}{}\section{Plane Class Reference}
+\label{classPlane}\index{Plane@{Plane}}
+
+
+The \hyperlink{classPlane}{Plane} class.  
+
+
+
+
+{\ttfamily \#include $<$Plane.\+h$>$}
+
+Inheritance diagram for Plane\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPlane}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classPlane_a63651155afec5a2c904a80ec9b87335c}{}{\bfseries Plane} (float x, float y, float z, float width, float height, float repeat\+Width, float repeat\+Height, std\+::string const \&vertex\+Shader, std\+::string const \&frag\+Shader, std\+::string const \&texture)\label{classPlane_a63651155afec5a2c904a80ec9b87335c}
+
+\item 
+void \hyperlink{classPlane_ac046dce6b4226e86fbcaf850fa7e30fd}{draw} (glm\+::mat4 \&projection, glm\+::mat4 \&modelview)
+\begin{DoxyCompactList}\small\item\em Displays the graphic object. \end{DoxyCompactList}\item 
+\hypertarget{classPlane_a6dc72a0c50fad122fabfbd0bd73e6b75}{}virtual void {\bfseries load} ()\label{classPlane_a6dc72a0c50fad122fabfbd0bd73e6b75}
+
+\item 
+\hypertarget{classPlane_a678ea174d88d8615e89d2b5e03f9b537}{}int {\bfseries nb\+Texture\+Bytes} ()\label{classPlane_a678ea174d88d8615e89d2b5e03f9b537}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classPlane_a876de2b83e6c8c6d3b36c8bccee28bd0}{}std\+::vector$<$ float $>$ {\bfseries texture\+Coord\+\_\+}\label{classPlane_a876de2b83e6c8c6d3b36c8bccee28bd0}
+
+\item 
+\hypertarget{classPlane_ae18aab7f950602d3d1ee3d30405dfe11}{}std\+::shared\+\_\+ptr$<$ \hyperlink{classTexture}{Texture} $>$ {\bfseries texture\+\_\+}\label{classPlane_ae18aab7f950602d3d1ee3d30405dfe11}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classPlane}{Plane} class. 
+
+A plane is a simple flat 2 dimensional surface. Uses the Flyweight pattern with a shared texture pool 
+
+\subsection{Member Function Documentation}
+\hypertarget{classPlane_ac046dce6b4226e86fbcaf850fa7e30fd}{}\index{Plane@{Plane}!draw@{draw}}
+\index{draw@{draw}!Plane@{Plane}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void Plane\+::draw (
+\begin{DoxyParamCaption}
+\item[{glm\+::mat4 \&}]{projection, }
+\item[{glm\+::mat4 \&}]{modelview}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classPlane_ac046dce6b4226e86fbcaf850fa7e30fd}
+
+
+Displays the graphic object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em projection} & The Open\+G\+L projection matrix \\
+\hline
+{\em modelview} & The Open\+G\+L modelview matrix, which is the product of the model matrix and the view matrix, in this order \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classGraphicObject_aacdc39f9e0b36ebb5c815e8bba717d7e}{Graphic\+Object}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Plane_8h}{Plane.\+h}\item 
+Plane.\+cpp\end{DoxyCompactItemize}

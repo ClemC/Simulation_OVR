@@ -1,0 +1,9 @@
+<map id="Camera::updateEyeTarget" name="Camera::updateEyeTarget">
+<area shape="rect" id="node2" href="$classCamera.html#af9647ba1a19c27928b56630a3164d54e" title="Orientates the camera depending on the mouse movements. " alt="" coords="433,25,560,52"/>
+<area shape="rect" id="node4" href="$classCamera.html#a631854f3063e6ddf8f7c2697c34c2bc0" title="Moves the camera depending on the user inputs and clamps the position. " alt="" coords="827,76,935,103"/>
+<area shape="rect" id="node5" href="$classCamera.html#abe8633adb8475cb7c62e1a12743a1025" title="Camera::setPosition" alt="" coords="236,127,377,153"/>
+<area shape="rect" id="node8" href="$classCamera.html#a015160787796d34df98db2e23cb3387e" title="Camera::setOrientation" alt="" coords="228,25,385,52"/>
+<area shape="rect" id="node3" href="$classCamera.html#a856ab6b929b48aca124e05f4c4cf32fd" title="Changes the camera orientation depending on the user inputs. " alt="" coords="608,25,779,52"/>
+<area shape="rect" id="node6" href="$classCamera.html#a0dc77df7121855934ca107be392c9bd7" title="teleport to a point. " alt="" coords="437,127,556,153"/>
+<area shape="rect" id="node7" href="$classCamera.html#aee126011d76a1f867c35ad2fa54e73d7" title="Moves the camera position depending on the user inputs. " alt="" coords="616,127,771,153"/>
+</map>

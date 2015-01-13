@@ -1,0 +1,5 @@
+<map id="Texture::Texture" name="Texture::Texture">
+<area shape="rect" id="node2" href="$classTexture.html#ae432f108267f5e56b0104ddd91dd2f6b" title="Reads the image file. " alt="" coords="172,31,271,57"/>
+<area shape="rect" id="node3" href="$Scene_8cpp.html#a33bb9dd6236cf80e87339343a8be3f4e" title="logger" alt="" coords="361,5,419,32"/>
+<area shape="rect" id="node4" href="$classTexture.html#a7ebd087e2501ecae2b37d8d6d69b47cf" title="Inverts the pixels of the texture image to comply to the OpenGL format. " alt="" coords="319,56,461,83"/>
+</map>

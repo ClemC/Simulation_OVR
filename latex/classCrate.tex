@@ -1,0 +1,108 @@
+\hypertarget{classCrate}{}\section{Crate Class Reference}
+\label{classCrate}\index{Crate@{Crate}}
+
+
+The \hyperlink{classCrate}{Crate} class.  
+
+
+
+
+{\ttfamily \#include $<$Crate.\+h$>$}
+
+Inheritance diagram for Crate\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classCrate}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classCrate_ae8b4fbf45d678c405bfadb1d632ac98d}{}{\bfseries Crate} (float x, float y, float z, glm\+::vec4 dimensions, float size, std\+::string const \&vertex\+Shader, std\+::string const \&fragment\+Shader, std\+::string const \&texture)\label{classCrate_ae8b4fbf45d678c405bfadb1d632ac98d}
+
+\item 
+\hypertarget{classCrate_a0ea206abfee83e8114ae8bf3ab5acd59}{}{\bfseries Crate} (int x, int y, int z, glm\+::vec4 dimensions, float size, std\+::string const \&texture)\label{classCrate_a0ea206abfee83e8114ae8bf3ab5acd59}
+
+\item 
+void \hyperlink{classCrate_a0ef280ead61384d18817071ef85041d3}{draw} (glm\+::mat4 \&projection, glm\+::mat4 \&modelview)
+\begin{DoxyCompactList}\small\item\em Displays the graphic object. \end{DoxyCompactList}\item 
+\hypertarget{classCrate_a5a1c16623dae0656d9cc13260d1d227b}{}void \hyperlink{classCrate_a5a1c16623dae0656d9cc13260d1d227b}{load} ()\label{classCrate_a5a1c16623dae0656d9cc13260d1d227b}
+
+\begin{DoxyCompactList}\small\item\em Creates the Open\+G\+L resources (V\+B\+O \& V\+A\+O) and sends the data to the graphic card. \end{DoxyCompactList}\item 
+int \hyperlink{classCrate_a29df7675912f47eddd3a32010a8611fd}{nb\+Texture\+Bytes} ()
+\begin{DoxyCompactList}\small\item\em Gives the memory size of the texture coordinates in bytes. \end{DoxyCompactList}\item 
+\hypertarget{classCrate_aa52ebd20025131701e8b41986f318057}{}void {\bfseries print} ()\label{classCrate_aa52ebd20025131701e8b41986f318057}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \hyperlink{classTexture}{Texture} $>$ \hyperlink{classCrate_aabfd1507281c170c5f21e40fa59db5d5}{texture\+\_\+}
+\begin{DoxyCompactList}\small\item\em The texture manager. \end{DoxyCompactList}\item 
+\hypertarget{classCrate_a05ac7fcd76d14fe4c21413ef041b4011}{}std\+::vector$<$ float $>$ \hyperlink{classCrate_a05ac7fcd76d14fe4c21413ef041b4011}{texture\+Coord\+\_\+}\label{classCrate_a05ac7fcd76d14fe4c21413ef041b4011}
+
+\begin{DoxyCompactList}\small\item\em The texture coordinates stored in a 1\+D array for Open\+G\+L conviniency. \end{DoxyCompactList}\item 
+\hypertarget{classCrate_a3235c603f229deb8091b53b19b70d0c0}{}glm\+::vec4 \hyperlink{classCrate_a3235c603f229deb8091b53b19b70d0c0}{dimensions\+\_\+}\label{classCrate_a3235c603f229deb8091b53b19b70d0c0}
+
+\begin{DoxyCompactList}\small\item\em Other dimensions which will be managed in shaders. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classCrate}{Crate} class. 
+
+Textured cube. Uses the Flyweight pattern with a shared texture pool 
+
+\subsection{Member Function Documentation}
+\hypertarget{classCrate_a0ef280ead61384d18817071ef85041d3}{}\index{Crate@{Crate}!draw@{draw}}
+\index{draw@{draw}!Crate@{Crate}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void Crate\+::draw (
+\begin{DoxyParamCaption}
+\item[{glm\+::mat4 \&}]{projection, }
+\item[{glm\+::mat4 \&}]{modelview}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classCrate_a0ef280ead61384d18817071ef85041d3}
+
+
+Displays the graphic object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em projection} & The Open\+G\+L projection matrix \\
+\hline
+{\em modelview} & The Open\+G\+L modelview matrix, which is the product of the model matrix and the view matrix, in this order \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classGraphicObject_aacdc39f9e0b36ebb5c815e8bba717d7e}{Graphic\+Object}.
+
+\hypertarget{classCrate_a29df7675912f47eddd3a32010a8611fd}{}\index{Crate@{Crate}!nb\+Texture\+Bytes@{nb\+Texture\+Bytes}}
+\index{nb\+Texture\+Bytes@{nb\+Texture\+Bytes}!Crate@{Crate}}
+\subsubsection[{nb\+Texture\+Bytes}]{\setlength{\rightskip}{0pt plus 5cm}int Crate\+::nb\+Texture\+Bytes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classCrate_a29df7675912f47eddd3a32010a8611fd}
+
+
+Gives the memory size of the texture coordinates in bytes. 
+
+\begin{DoxyReturn}{Returns}
+The memory size of the texture coordinates in bytes 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCrate_aabfd1507281c170c5f21e40fa59db5d5}{}\index{Crate@{Crate}!texture\+\_\+@{texture\+\_\+}}
+\index{texture\+\_\+@{texture\+\_\+}!Crate@{Crate}}
+\subsubsection[{texture\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<${\bf Texture}$>$ Crate\+::texture\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}\label{classCrate_aabfd1507281c170c5f21e40fa59db5d5}
+
+
+The texture manager. 
+
+A crate only has 1 texture which is repeated on all 6 faces 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Crate_8h}{Crate.\+h}\item 
+Crate.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,10 @@
+<map id="Scene::parseFile" name="Scene::parseFile">
+<area shape="rect" id="node2" href="$classFile.html#a152b94a16617a9df570352696bfea31a" title="File::exists_test. " alt="" coords="388,5,503,32"/>
+<area shape="rect" id="node4" href="$classFile.html#a986cac1668c92bf580eb20244fefab02" title="File::parseText. " alt="" coords="185,81,294,108"/>
+<area shape="rect" id="node9" href="$classFile.html#a4843f3a7a5bfaa86d11dbbf0adac7f0d" title="File::setSizeScene. " alt="" coords="173,132,305,159"/>
+<area shape="rect" id="node3" href="$Scene_8cpp.html#a33bb9dd6236cf80e87339343a8be3f4e" title="logger" alt="" coords="618,56,675,83"/>
+<area shape="rect" id="node5" href="$classFile.html#acdb459909f2c43d3a4d84426276b41c3" title="File::getCount. " alt="" coords="393,107,497,133"/>
+<area shape="rect" id="node6" href="$classFile.html#a6a8d457f6b0ef7e8cf7d672381ad054a" title="File::checkIfExceptionInFile. " alt="" coords="353,157,537,184"/>
+<area shape="rect" id="node7" href="$classFile.html#ac1dfd9873063fc9d40847e2df6a5f457" title="File::registerData. " alt="" coords="585,157,708,184"/>
+<area shape="rect" id="node8" href="$classFile.html#aa75c53588959985b64fa8e2f83ce1723" title="updateMax " alt="" coords="756,157,871,184"/>
+</map>

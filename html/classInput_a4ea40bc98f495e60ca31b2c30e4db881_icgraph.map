@@ -1,0 +1,4 @@
+<map id="Input::mouseXRel" name="Input::mouseXRel">
+<area shape="rect" id="node2" href="$classCamera.html#a856ab6b929b48aca124e05f4c4cf32fd" title="Changes the camera orientation depending on the user inputs. " alt="" coords="180,5,351,32"/>
+<area shape="rect" id="node3" href="$classCamera.html#a631854f3063e6ddf8f7c2697c34c2bc0" title="Moves the camera depending on the user inputs and clamps the position. " alt="" coords="399,5,507,32"/>
+</map>

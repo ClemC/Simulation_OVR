@@ -1,0 +1,11 @@
+<map id="Scene::getThread" name="Scene::getThread">
+<area shape="rect" id="node2" href="$classScene.html#a5d8a784dae122a4bbb1c74bc3dc550fc" title="startThreadEvent In a new Thread, detect position and inject data in Octree if needed. " alt="" coords="179,31,345,57"/>
+<area shape="rect" id="node3" href="$classFile.html#a9ba7a94c8022986138d194a02b9f3396" title="File::convertToFile" alt="" coords="401,5,531,32"/>
+<area shape="rect" id="node5" href="$classScene.html#a358f49a9a46561e71fccfdaa9f1dbe9d" title="update octree in an other thread " alt="" coords="393,56,539,83"/>
+<area shape="rect" id="node4" href="$classFile.html#ab59ff015aacc745232543dfde488a98e" title="File::getSizeScene. " alt="" coords="807,5,939,32"/>
+<area shape="rect" id="node6" href="$classFile.html#a9af2773d1dd86d3e95e830563a51e3b5" title="File::convert. " alt="" coords="625,56,720,83"/>
+<area shape="rect" id="node7" href="$classScene.html#ab193a1fadf55a1308ad1b33c3d1aae3f" title="addPointToOctree Add a point to the Octree " alt="" coords="587,107,759,133"/>
+<area shape="rect" id="node8" href="$classFile.html#abf8e0e8e4e7d8a4ff99e327a8d30c394" title="File::getMaxMass. " alt="" coords="809,81,936,108"/>
+<area shape="rect" id="node10" href="$classFile.html#ab9f463bb8afd01c69d323872e2f3d275" title="File::getMaxAge. " alt="" coords="814,132,931,159"/>
+<area shape="rect" id="node9" href="$classFile.html#ad1024f9c4c3c48083f024aefaf45b9b8" title="File::getTotalLines. " alt="" coords="987,107,1116,133"/>
+</map>

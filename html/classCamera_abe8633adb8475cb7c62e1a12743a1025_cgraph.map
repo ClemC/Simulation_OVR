@@ -1,0 +1,6 @@
+<map id="Camera::setPosition" name="Camera::setPosition">
+<area shape="rect" id="node2" href="$classCamera.html#a34977bb92f9318343d8b706faa64b399" title="Camera::position" alt="" coords="221,5,343,32"/>
+<area shape="rect" id="node3" href="$classCamera.html#afff594534eab1614a3045e6dbf030323" title="Updates the point the camera is looking at from its position and rotation. " alt="" coords="195,56,369,83"/>
+<area shape="rect" id="node4" href="$Scene_8cpp.html#a33bb9dd6236cf80e87339343a8be3f4e" title="logger" alt="" coords="440,31,497,57"/>
+<area shape="rect" id="node5" href="$namespaceUtils.html#aae7fe80e12cf4342629d49803946568d" title="Converts a 3 dimensional vector to a pretty string ready to be printed. " alt="" coords="417,81,520,108"/>
+</map>

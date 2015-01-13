@@ -1,0 +1,18 @@
+<map id="Camera::moveOrientation" name="Camera::moveOrientation">
+<area shape="rect" id="node2" href="$classInput.html#a3b6c9efa09e69765fd65d1a33bccc8d2" title="Tells if the mouse is moving by watching its differential position. " alt="" coords="262,5,413,32"/>
+<area shape="rect" id="node3" href="$classCamera.html#af9647ba1a19c27928b56630a3164d54e" title="Orientates the camera depending on the mouse movements. " alt="" coords="274,233,401,260"/>
+<area shape="rect" id="node4" href="$Scene_8cpp.html#a33bb9dd6236cf80e87339343a8be3f4e" title="logger" alt="" coords="960,309,1017,336"/>
+<area shape="rect" id="node10" href="$namespaceUtils.html#aae7fe80e12cf4342629d49803946568d" title="Converts a 3 dimensional vector to a pretty string ready to be printed. " alt="" coords="937,132,1040,159"/>
+<area shape="rect" id="node11" href="$classInput.html#a4ea40bc98f495e60ca31b2c30e4db881" title="Input::mouseXRel" alt="" coords="274,385,401,412"/>
+<area shape="rect" id="node12" href="$classInput.html#af2bd0c0f5e6b02225e6e433274cf733b" title="Input::mouseYRel" alt="" coords="274,436,401,463"/>
+<area shape="rect" id="node13" href="$classInput.html#a02286400f531ce70242e74835494877f" title="Input::oculus" alt="" coords="289,487,386,513"/>
+<area shape="rect" id="node14" href="$classGenericOculus.html#a074b05f3be2cb859b00c49e779685276" title="GenericOculus::isMoving" alt="" coords="499,436,667,463"/>
+<area shape="rect" id="node15" href="$classGenericOculus.html#a5d62cc682f918c2cfad7d139b1ff3299" title="GenericOculus::isUsingDebugHmd" alt="" coords="224,588,451,615"/>
+<area shape="rect" id="node16" href="$classGenericOculus.html#ad679f6563497fa5b79f32d2295a32e6e" title="GenericOculus::dAngles" alt="" coords="256,639,419,665"/>
+<area shape="rect" id="node17" href="$namespaceUtils.html#aa9b1255584f0bb41fa3795c7d79eff9f" title="Converts an angle from radians to degrees. " alt="" coords="271,689,403,716"/>
+<area shape="rect" id="node5" href="$namespaceUtils.html#ac77440fa22cefff120355abc5e6f6de8" title="Clamps an angle to a value Clamps (i.e limits) an angle to a given value which is both a minimum and ..." alt="" coords="756,309,848,336"/>
+<area shape="rect" id="node6" href="$namespaceUtils.html#aa1bf98827f90b3843660995e4efb4c84" title="Converts an angle from degrees to radians. " alt="" coords="515,107,650,133"/>
+<area shape="rect" id="node7" href="$classCamera.html#a015160787796d34df98db2e23cb3387e" title="Camera::setOrientation" alt="" coords="504,157,661,184"/>
+<area shape="rect" id="node9" href="$classCamera.html#afff594534eab1614a3045e6dbf030323" title="Updates the point the camera is looking at from its position and rotation. " alt="" coords="715,208,889,235"/>
+<area shape="rect" id="node8" href="$classCamera.html#af6b0d4052d268bc0674ed5dd53068fc9" title="Camera::orientation" alt="" coords="734,157,870,184"/>
+</map>

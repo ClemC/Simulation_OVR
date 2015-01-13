@@ -1,0 +1,6 @@
+<map id="Cube::Cube" name="Cube::Cube">
+<area shape="rect" id="node2" href="$Scene_8cpp.html#a33bb9dd6236cf80e87339343a8be3f4e" title="logger" alt="" coords="159,5,217,32"/>
+<area shape="rect" id="node3" href="$classCube.html#aa1326a13ad32a031f8c8f9bcf8f63b2a" title="Creates the OpenGL resources (VBO &amp; VAO) and sends the data to the graphic card. " alt="" coords="145,56,231,83"/>
+<area shape="rect" id="node4" href="$classGraphicObject.html#a8e43dbd70ae6a48bc53cf1b509791af0" title="Gives the memory size of the vertices coordinates in bytes. " alt="" coords="291,19,465,61"/>
+<area shape="rect" id="node5" href="$classGraphicObject.html#a9f4d774f94d51ebf0c44829898dbe012" title="Gives the memory size of the colors coordinates in bytes. " alt="" coords="279,85,477,112"/>
+</map>

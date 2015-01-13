@@ -1,0 +1,7 @@
+<map id="main" name="main">
+<area shape="rect" id="node2" href="$Scene_8cpp.html#a33bb9dd6236cf80e87339343a8be3f4e" title="logger" alt="" coords="455,97,512,123"/>
+<area shape="rect" id="node3" href="$classScene.html#ab81ad242d6c35a24cfffb693b343cd20" title="The main loop of the application. " alt="" coords="104,71,227,98"/>
+<area shape="rect" id="node4" href="$classScene.html#a4ddf2d16f371ee9533b3faf1dd5ddfb1" title="The graphical rendering. " alt="" coords="289,46,392,73"/>
+<area shape="rect" id="node5" href="$classScene.html#a29e8b971167ae548057c32726fd1c8de" title="Update the current FPS. " alt="" coords="275,97,407,123"/>
+<area shape="rect" id="node6" href="$classScene.html#a5e1b168b0556eb00479d50deda0e4081" title="Perform final actions at the end of the scene/program. " alt="" coords="289,147,393,174"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="GraphicObject::nbVerticesBytes" name="GraphicObject::nbVerticesBytes">
+<area shape="rect" id="node2" href="$classCrate.html#a5a1c16623dae0656d9cc13260d1d227b" title="Creates the OpenGL resources (VBO &amp; VAO) and sends the data to the graphic card. " alt="" coords="228,5,315,32"/>
+<area shape="rect" id="node3" href="$classCube.html#aa1326a13ad32a031f8c8f9bcf8f63b2a" title="Creates the OpenGL resources (VBO &amp; VAO) and sends the data to the graphic card. " alt="" coords="229,56,314,83"/>
+<area shape="rect" id="node5" href="$classPlane.html#a6dc72a0c50fad122fabfbd0bd73e6b75" title="Plane::load" alt="" coords="228,107,315,133"/>
+<area shape="rect" id="node4" href="$classCube.html#ab8c70b8c650e3beaf14e4cbc21fec119" title="Cube::Cube" alt="" coords="365,56,457,83"/>
+<area shape="rect" id="node6" href="$classPlane.html#a63651155afec5a2c904a80ec9b87335c" title="Plane::Plane" alt="" coords="363,107,459,133"/>
+</map>

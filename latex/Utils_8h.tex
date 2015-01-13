@@ -1,0 +1,54 @@
+\hypertarget{Utils_8h}{}\section{Utils.\+h File Reference}
+\label{Utils_8h}\index{Utils.\+h@{Utils.\+h}}
+
+
+Gathers utility functions.  
+
+
+{\ttfamily \#include \char`\"{}Include/glm/glm.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Include/\+O\+V\+R/\+Lib\+O\+V\+R/\+Src/\+Kernel/\+O\+V\+R\+\_\+\+Math.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$ostream$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceUtils}{Utils}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{namespaceUtils_acc1e31ef959e7b254cb43b47be238af6}{Utils\+::resize\+Window} (int w, int h)
+\begin{DoxyCompactList}\small\item\em Resizes the Open\+G\+L viewport when the window is resized. \end{DoxyCompactList}\item 
+\hypertarget{namespaceUtils_a8f7c7c4fbf51f5d7aa6ee6fc6dd249b9}{}void \hyperlink{namespaceUtils_a8f7c7c4fbf51f5d7aa6ee6fc6dd249b9}{Utils\+::\+G\+L\+Get\+Error} ()\label{namespaceUtils_a8f7c7c4fbf51f5d7aa6ee6fc6dd249b9}
+
+\begin{DoxyCompactList}\small\item\em Retrieves all the errors from Open\+G\+L. \end{DoxyCompactList}\item 
+float \hyperlink{namespaceUtils_aa9b1255584f0bb41fa3795c7d79eff9f}{Utils\+::rad\+To\+Degree} (float value)
+\begin{DoxyCompactList}\small\item\em Converts an angle from radians to degrees. \end{DoxyCompactList}\item 
+float \hyperlink{namespaceUtils_aa1bf98827f90b3843660995e4efb4c84}{Utils\+::degree\+To\+Rad} (float value)
+\begin{DoxyCompactList}\small\item\em Converts an angle from degrees to radians. \end{DoxyCompactList}\item 
+float \hyperlink{namespaceUtils_ac77440fa22cefff120355abc5e6f6de8}{Utils\+::clamp} (float phi, float limit=89.\+0f)
+\begin{DoxyCompactList}\small\item\em Clamps an angle to a value Clamps (i.\+e limits) an angle to a given value which is both a minimum and a maximum in absolute value. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceUtils_ae94cdc204dc2970d2c0cd1680e9d8801}{Utils\+::clamp} (glm\+::vec3 \&vec\+To\+Clamp, glm\+::vec3 const \&clamp\+Min, glm\+::vec3 const \&clamp\+Max)
+\begin{DoxyCompactList}\small\item\em Clamps a 3\+D vector to a value Clamps (i.\+e limits) a 3 dimensional vector to a given maximum vector and a minimum vector. \end{DoxyCompactList}\item 
+float \hyperlink{namespaceUtils_ae1843c4bace4f7ae8cae0fe9e3e560c2}{Utils\+::is\+Equal} (float a, float b)
+\begin{DoxyCompactList}\small\item\em Compares two floats and tells if they are equal The two floats are equal only if their difference is lower than the machine epsilon, which is the lowest value existing between two float values. \end{DoxyCompactList}\item 
+glm\+::mat4 \hyperlink{namespaceUtils_a21c9fd68d394fd4148a5a4e7064b7b5a}{Utils\+::ovr2glm\+Mat} (O\+V\+R\+::\+Matrix4f const \&mat)
+\begin{DoxyCompactList}\small\item\em Converts a 4 dimensional matrix in \hyperlink{classOculus}{Oculus} S\+D\+K format to a 4 dimensional matrix in G\+L\+M format. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{namespaceUtils_aae7fe80e12cf4342629d49803946568d}{Utils\+::to\+String} (glm\+::vec3 const \&vec)
+\begin{DoxyCompactList}\small\item\em Converts a 3 dimensional vector to a pretty string ready to be printed. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{namespaceUtils_acdcb94896addb3653a7a02721bf93efe}{Utils\+::to\+String} (glm\+::mat4 const \&mat)
+\begin{DoxyCompactList}\small\item\em Converts a 4 dimensional matrix to a pretty string ready to be printed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Gathers utility functions. 
+
+\begin{DoxyAuthor}{Author}
+Philippe Gaultier 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+24/07/14 
+\end{DoxyDate}

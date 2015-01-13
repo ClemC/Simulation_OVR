@@ -1,0 +1,340 @@
+\hypertarget{classOculus}{}\section{Oculus$<$ T $>$ Class Template Reference}
+\label{classOculus}\index{Oculus$<$ T $>$@{Oculus$<$ T $>$}}
+
+
+The \hyperlink{classOculus}{Oculus} templated class.  
+
+
+
+
+{\ttfamily \#include $<$Oculus.\+h$>$}
+
+Inheritance diagram for Oculus$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classOculus}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOculus_a4991461c1a276365ffc8ac9ea8a14451}{Oculus} (T \&scene)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classOculus_a042717ce733876a9c2979576d6002107}{$\sim$\+Oculus} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hypertarget{classOculus_a6c6c91e785d71aff217462ec3e7480e6}{}void \hyperlink{classOculus_a6c6c91e785d71aff217462ec3e7480e6}{render} ()\label{classOculus_a6c6c91e785d71aff217462ec3e7480e6}
+
+\begin{DoxyCompactList}\small\item\em Renders the Open\+G\+L scene with the \hyperlink{classOculus}{Oculus} effects. \end{DoxyCompactList}\item 
+bool \hyperlink{classOculus_a35064b5bb6690b448069cb5f632cb29a}{is\+Using\+Debug\+Hmd} ()
+\begin{DoxyCompactList}\small\item\em Tells if we are using a debug \hyperlink{classOculus}{Oculus} Rift. \end{DoxyCompactList}\item 
+bool \hyperlink{classOculus_a78996f68a93fce8d5b01f6915e1072f2}{is\+Moving} () const 
+\begin{DoxyCompactList}\small\item\em Tells if the \hyperlink{classOculus}{Oculus} Rift the moving. \end{DoxyCompactList}\item 
+\hypertarget{classOculus_adf5026a36325cfa4e4d2994238586574}{}glm\+::vec3 {\bfseries angles} () const \label{classOculus_adf5026a36325cfa4e4d2994238586574}
+
+\item 
+\hypertarget{classOculus_a829fa3c712d6367a5f662942f73adc21}{}void {\bfseries set\+Angles} (const glm\+::vec3 \&angles)\label{classOculus_a829fa3c712d6367a5f662942f73adc21}
+
+\item 
+void \hyperlink{classOculus_a60f6bd046dfba11f0d9f3e7277b4a0bb}{get\+Input} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the values from the \hyperlink{classOculus}{Oculus} Rift sensors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classOculus_a8c20ccdb5b05a138bf7ec4e5efd0c890}{init\+Texture} ()
+\begin{DoxyCompactList}\small\item\em Creates the Open\+G\+L texture required for the \hyperlink{classOculus}{Oculus} rendering. \end{DoxyCompactList}\item 
+void \hyperlink{classOculus_ae48819d5aca05cf175bbc78327d512cf}{init\+F\+B\+O} ()
+\begin{DoxyCompactList}\small\item\em Creates the Frame Buffer Object needed for the \hyperlink{classOculus}{Oculus} rendering. \end{DoxyCompactList}\item 
+\hypertarget{classOculus_a774504de4fd7d8b6304d4a1ca7471d28}{}void \hyperlink{classOculus_a774504de4fd7d8b6304d4a1ca7471d28}{init\+Depth\+Buffer} ()\label{classOculus_a774504de4fd7d8b6304d4a1ca7471d28}
+
+\begin{DoxyCompactList}\small\item\em Creates the depth buffer needed for the \hyperlink{classOculus}{Oculus} rendering. \end{DoxyCompactList}\item 
+void \hyperlink{classOculus_ae5337c60b8b89c50cfc0ce90d6db2d8f}{set\+Open\+G\+L\+State} ()
+\begin{DoxyCompactList}\small\item\em Sets some Open\+G\+L states to adequate values for the \hyperlink{classOculus}{Oculus} rendering. \end{DoxyCompactList}\item 
+void \hyperlink{classOculus_add30e49061a9ec8a5676f9be24e8eec7}{set\+Cfg} ()
+\begin{DoxyCompactList}\small\item\em Sets the \hyperlink{classOculus}{Oculus} S\+D\+K configuration to adequate values for the \hyperlink{classOculus}{Oculus} rendering. \end{DoxyCompactList}\item 
+\hypertarget{classOculus_a5e1def14eace52ef4f62c263888c5fd2}{}void \hyperlink{classOculus_a5e1def14eace52ef4f62c263888c5fd2}{set\+Eye\+Texture} ()\label{classOculus_a5e1def14eace52ef4f62c263888c5fd2}
+
+\begin{DoxyCompactList}\small\item\em Sets the \hyperlink{classOculus}{Oculus} S\+D\+K texture configuration to adequate values for the \hyperlink{classOculus}{Oculus} rendering. \end{DoxyCompactList}\item 
+void \hyperlink{classOculus_a21273c2c3dd1e2d4b9d113cac0d72ec3}{compute\+Sizes} ()
+\begin{DoxyCompactList}\small\item\em Computes the texture size. \end{DoxyCompactList}\item 
+\hypertarget{classOculus_a4a26271c5d8d4f7350bb7b85c829dd97}{}glm\+::vec3 {\bfseries d\+Angles} () const \label{classOculus_a4a26271c5d8d4f7350bb7b85c829dd97}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+T \& \hyperlink{classOculus_a8a88e3b8bb25831c6fb001fbdac6b45b}{scene\+\_\+}
+\begin{DoxyCompactList}\small\item\em The generic Open\+G\+L scene. \end{DoxyCompactList}\item 
+\hypertarget{classOculus_a5e97a6716ef4b94b87eb2a0452e32eb4}{}G\+Luint \hyperlink{classOculus_a5e97a6716ef4b94b87eb2a0452e32eb4}{texture\+Id\+\_\+}\label{classOculus_a5e97a6716ef4b94b87eb2a0452e32eb4}
+
+\begin{DoxyCompactList}\small\item\em The id of the Open\+G\+L texture used in the \hyperlink{classOculus}{Oculus} rendering. \end{DoxyCompactList}\item 
+\hypertarget{classOculus_a3918541266c72f1bb3f84225edc37e95}{}G\+Luint \hyperlink{classOculus_a3918541266c72f1bb3f84225edc37e95}{F\+B\+O\+Id\+\_\+}\label{classOculus_a3918541266c72f1bb3f84225edc37e95}
+
+\begin{DoxyCompactList}\small\item\em The id of the Open\+G\+L Frame Buffer Object used in the \hyperlink{classOculus}{Oculus} rendering. \end{DoxyCompactList}\item 
+\hypertarget{classOculus_a420de1ed9815712680893b1a61d90dfc}{}G\+Luint \hyperlink{classOculus_a420de1ed9815712680893b1a61d90dfc}{depth\+Buffer\+Id\+\_\+}\label{classOculus_a420de1ed9815712680893b1a61d90dfc}
+
+\begin{DoxyCompactList}\small\item\em The id of the Open\+G\+L depth buffer used in the \hyperlink{classOculus}{Oculus} rendering. \end{DoxyCompactList}\item 
+ovr\+Hmd \hyperlink{classOculus_a27b4553058255871d50e941d67de5374}{hmd\+\_\+}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classOculus}{Oculus} Rift. \end{DoxyCompactList}\item 
+ovr\+Hmd\+Desc \hyperlink{classOculus_aaca119fa80d400cb78ce54b69bc39081}{hmd\+Desc\+\_\+}
+\begin{DoxyCompactList}\small\item\em The description of the \hyperlink{classOculus}{Oculus} Rift. \end{DoxyCompactList}\item 
+ovr\+Eye\+Render\+Desc \hyperlink{classOculus_a6697ef38f95623320ff9e78cc2474567}{eye\+Render\+Desc\+\_\+} \mbox{[}2\mbox{]}
+\begin{DoxyCompactList}\small\item\em The description of each eye. \end{DoxyCompactList}\item 
+\hypertarget{classOculus_ac041c19b742d76349275583e75dd651a}{}ovr\+G\+L\+Texture \hyperlink{classOculus_ac041c19b742d76349275583e75dd651a}{eye\+Texture\+\_\+} \mbox{[}2\mbox{]}\label{classOculus_ac041c19b742d76349275583e75dd651a}
+
+\begin{DoxyCompactList}\small\item\em The texture of each eye. \end{DoxyCompactList}\item 
+\hypertarget{classOculus_a13e8cb827b31c4e96472117488bc04a2}{}ovr\+Fov\+Port \hyperlink{classOculus_a13e8cb827b31c4e96472117488bc04a2}{eye\+Fov\+\_\+} \mbox{[}2\mbox{]}\label{classOculus_a13e8cb827b31c4e96472117488bc04a2}
+
+\begin{DoxyCompactList}\small\item\em The Field of View of each eye. \end{DoxyCompactList}\item 
+\hypertarget{classOculus_ab1c10f5b1431c8c13507938e6de46f44}{}ovr\+G\+L\+Config \hyperlink{classOculus_ab1c10f5b1431c8c13507938e6de46f44}{cfg\+\_\+}\label{classOculus_ab1c10f5b1431c8c13507938e6de46f44}
+
+\begin{DoxyCompactList}\small\item\em The configuration for the Open\+G\+L \hyperlink{classOculus}{Oculus} rendering. \end{DoxyCompactList}\item 
+\hypertarget{classOculus_a944e263e7aee6b568b69211896e05365}{}ovr\+Sizei \hyperlink{classOculus_a944e263e7aee6b568b69211896e05365}{window\+Size\+\_\+}\label{classOculus_a944e263e7aee6b568b69211896e05365}
+
+\begin{DoxyCompactList}\small\item\em The dimensions of the window. \end{DoxyCompactList}\item 
+\hypertarget{classOculus_a33ff393c9f149ea6e559629c6de3fb9c}{}ovr\+Sizei \hyperlink{classOculus_a33ff393c9f149ea6e559629c6de3fb9c}{texture\+Size\+Left\+\_\+}\label{classOculus_a33ff393c9f149ea6e559629c6de3fb9c}
+
+\begin{DoxyCompactList}\small\item\em The dimensions of the texture that the left eye can see. \end{DoxyCompactList}\item 
+\hypertarget{classOculus_a742ac672ac7679c1d6b03a5fe2595f96}{}ovr\+Sizei \hyperlink{classOculus_a742ac672ac7679c1d6b03a5fe2595f96}{texture\+Size\+Right\+\_\+}\label{classOculus_a742ac672ac7679c1d6b03a5fe2595f96}
+
+\begin{DoxyCompactList}\small\item\em The dimensions of the texture that the right eye can see. \end{DoxyCompactList}\item 
+\hypertarget{classOculus_a079b9f2a9887330a4001e42cac663a18}{}ovr\+Sizei \hyperlink{classOculus_a079b9f2a9887330a4001e42cac663a18}{texture\+Size\+\_\+}\label{classOculus_a079b9f2a9887330a4001e42cac663a18}
+
+\begin{DoxyCompactList}\small\item\em The dimensions of the texture overall. \end{DoxyCompactList}\item 
+\hypertarget{classOculus_a3dc18febcca74ef3ed83276945bb6395}{}ovr\+Frame\+Timing \hyperlink{classOculus_a3dc18febcca74ef3ed83276945bb6395}{frame\+Timing\+\_\+}\label{classOculus_a3dc18febcca74ef3ed83276945bb6395}
+
+\begin{DoxyCompactList}\small\item\em Time variable used by the sensor and the predication tool. \end{DoxyCompactList}\item 
+\hypertarget{classOculus_a37a433aa3b8444d0a5438073a7d7b5b4}{}ovr\+Sensor\+State \hyperlink{classOculus_a37a433aa3b8444d0a5438073a7d7b5b4}{sensor\+State\+\_\+}\label{classOculus_a37a433aa3b8444d0a5438073a7d7b5b4}
+
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classOculus}{Oculus} Rift sensors. \end{DoxyCompactList}\item 
+\hypertarget{classOculus_a99c5e2751f5e1aaf42d177b0d36ac62d}{}glm\+::vec3 \hyperlink{classOculus_a99c5e2751f5e1aaf42d177b0d36ac62d}{angles\+\_\+}\label{classOculus_a99c5e2751f5e1aaf42d177b0d36ac62d}
+
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classOculus}{Oculus} Rift angular position. \end{DoxyCompactList}\item 
+\hypertarget{classOculus_a3065d87c9d010aaf83822c8414b680c4}{}glm\+::vec3 \hyperlink{classOculus_a3065d87c9d010aaf83822c8414b680c4}{d\+Angles\+\_\+}\label{classOculus_a3065d87c9d010aaf83822c8414b680c4}
+
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classOculus}{Oculus} Rift angular position variation. \end{DoxyCompactList}\item 
+\hypertarget{classOculus_ae5ae5f7bf69f57f9d40a6792843fed87}{}int \hyperlink{classOculus_ae5ae5f7bf69f57f9d40a6792843fed87}{distortion\+Caps\+\_\+}\label{classOculus_ae5ae5f7bf69f57f9d40a6792843fed87}
+
+\begin{DoxyCompactList}\small\item\em Flag used for the \hyperlink{classOculus}{Oculus} rendering configuration. \end{DoxyCompactList}\item 
+\hypertarget{classOculus_aeef8b424f3fc4d181b18f01c15809e25}{}bool \hyperlink{classOculus_aeef8b424f3fc4d181b18f01c15809e25}{using\+Debug\+Hmd\+\_\+}\label{classOculus_aeef8b424f3fc4d181b18f01c15809e25}
+
+\begin{DoxyCompactList}\small\item\em Boolean indicating if we are using a debug \hyperlink{classOculus}{Oculus} Rift. \end{DoxyCompactList}\item 
+bool \hyperlink{classOculus_a526eb65105ddf30005f1a14fd9325e6c}{multisample\+Enabled\+\_\+}
+\begin{DoxyCompactList}\small\item\em Boolean indicating if the \hyperlink{classOculus}{Oculus} rendering is multisampled. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classOculus_a56f59153d62ca8802b7573abd6059967}{already\+Created} = false
+\begin{DoxyCompactList}\small\item\em Boolean that shows whether or not an instance has already been created. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$class Oculus$<$ T $>$}
+
+The \hyperlink{classOculus}{Oculus} templated class. 
+
+It is a singleton to avoid initializing/releasing the \hyperlink{classOculus}{Oculus} S\+D\+K multiple times. The template argument is the type of the Ope\+G\+L scene we render. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOculus_a4991461c1a276365ffc8ac9ea8a14451}{}\index{Oculus@{Oculus}!Oculus@{Oculus}}
+\index{Oculus@{Oculus}!Oculus@{Oculus}}
+\subsubsection[{Oculus}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf Oculus}$<$ T $>$\+::{\bf Oculus} (
+\begin{DoxyParamCaption}
+\item[{T \&}]{scene}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classOculus_a4991461c1a276365ffc8ac9ea8a14451}
+
+
+Constructor. 
+
+Initializes the \hyperlink{classOculus}{Oculus} S\+D\+K, creates a debug \hyperlink{classOculus}{Oculus} Rift if none is connected, and starts the sensors. 
+\begin{DoxyParams}{Parameters}
+{\em scene} & The Open\+G\+L scene that contains the objects render \\
+\hline
+\end{DoxyParams}
+\hypertarget{classOculus_a042717ce733876a9c2979576d6002107}{}\index{Oculus@{Oculus}!````~Oculus@{$\sim$\+Oculus}}
+\index{````~Oculus@{$\sim$\+Oculus}!Oculus@{Oculus}}
+\subsubsection[{$\sim$\+Oculus}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf Oculus}$<$ T $>$\+::$\sim${\bf Oculus} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classOculus_a042717ce733876a9c2979576d6002107}
+
+
+Destructor. 
+
+Releases the \hyperlink{classOculus}{Oculus} S\+D\+K and the Open\+G\+L resources required for the \hyperlink{classOculus}{Oculus} rendering 
+
+\subsection{Member Function Documentation}
+\hypertarget{classOculus_a21273c2c3dd1e2d4b9d113cac0d72ec3}{}\index{Oculus@{Oculus}!compute\+Sizes@{compute\+Sizes}}
+\index{compute\+Sizes@{compute\+Sizes}!Oculus@{Oculus}}
+\subsubsection[{compute\+Sizes}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf Oculus}$<$ T $>$\+::compute\+Sizes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classOculus_a21273c2c3dd1e2d4b9d113cac0d72ec3}
+
+
+Computes the texture size. 
+
+This computation depends on the window dimensions. The optimal dimensions are 1280$\ast$800, which is the \hyperlink{classOculus}{Oculus} resolution \begin{DoxyWarning}{Warning}
+Other resolutions and window resizing have not been tested but should work just fine 
+\end{DoxyWarning}
+\hypertarget{classOculus_a60f6bd046dfba11f0d9f3e7277b4a0bb}{}\index{Oculus@{Oculus}!get\+Input@{get\+Input}}
+\index{get\+Input@{get\+Input}!Oculus@{Oculus}}
+\subsubsection[{get\+Input}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf Oculus}$<$ T $>$\+::get\+Input (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classOculus_a60f6bd046dfba11f0d9f3e7277b4a0bb}
+
+
+Retrieves the values from the \hyperlink{classOculus}{Oculus} Rift sensors. 
+
+It gets the current angular position from the sensors and the prediction tool, and stores the old angular position. \begin{DoxyWarning}{Warning}
+The angles from the sensors are in radians and Open\+G\+L expects angles in degrees, hence the required conversion 
+
+If no \hyperlink{classOculus}{Oculus} Rift is connected and we had to create a debug one, there are no values to be retrieved\+: We use the mouse position. 
+\end{DoxyWarning}
+
+
+Reimplemented from \hyperlink{classGenericOculus}{Generic\+Oculus}.
+
+\hypertarget{classOculus_ae48819d5aca05cf175bbc78327d512cf}{}\index{Oculus@{Oculus}!init\+F\+B\+O@{init\+F\+B\+O}}
+\index{init\+F\+B\+O@{init\+F\+B\+O}!Oculus@{Oculus}}
+\subsubsection[{init\+F\+B\+O}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf Oculus}$<$ T $>$\+::init\+F\+B\+O (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classOculus_ae48819d5aca05cf175bbc78327d512cf}
+
+
+Creates the Frame Buffer Object needed for the \hyperlink{classOculus}{Oculus} rendering. 
+
+The \hyperlink{classOculus}{Oculus} rendering uses this F\+B\+O to send the texture to the graphic card \hypertarget{classOculus_a8c20ccdb5b05a138bf7ec4e5efd0c890}{}\index{Oculus@{Oculus}!init\+Texture@{init\+Texture}}
+\index{init\+Texture@{init\+Texture}!Oculus@{Oculus}}
+\subsubsection[{init\+Texture}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf Oculus}$<$ T $>$\+::init\+Texture (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classOculus_a8c20ccdb5b05a138bf7ec4e5efd0c890}
+
+
+Creates the Open\+G\+L texture required for the \hyperlink{classOculus}{Oculus} rendering. 
+
+The \hyperlink{classOculus}{Oculus} rendering makes under the hood a double (for each eye) render to texture of the scene and then displays this texture to the screen, hence the big size of the texture. \hypertarget{classOculus_a78996f68a93fce8d5b01f6915e1072f2}{}\index{Oculus@{Oculus}!is\+Moving@{is\+Moving}}
+\index{is\+Moving@{is\+Moving}!Oculus@{Oculus}}
+\subsubsection[{is\+Moving}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ bool {\bf Oculus}$<$ T $>$\+::is\+Moving (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classOculus_a78996f68a93fce8d5b01f6915e1072f2}
+
+
+Tells if the \hyperlink{classOculus}{Oculus} Rift the moving. 
+
+It compares the current angular position with the previous angular position \begin{DoxyReturn}{Returns}
+true if the \hyperlink{classOculus}{Oculus} Rift if moving, else false 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classGenericOculus}{Generic\+Oculus}.
+
+\hypertarget{classOculus_a35064b5bb6690b448069cb5f632cb29a}{}\index{Oculus@{Oculus}!is\+Using\+Debug\+Hmd@{is\+Using\+Debug\+Hmd}}
+\index{is\+Using\+Debug\+Hmd@{is\+Using\+Debug\+Hmd}!Oculus@{Oculus}}
+\subsubsection[{is\+Using\+Debug\+Hmd}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ bool {\bf Oculus}$<$ T $>$\+::is\+Using\+Debug\+Hmd (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classOculus_a35064b5bb6690b448069cb5f632cb29a}
+
+
+Tells if we are using a debug \hyperlink{classOculus}{Oculus} Rift. 
+
+\begin{DoxyReturn}{Returns}
+true if no \hyperlink{classOculus}{Oculus} Rift is connected and we had to create a debug one, else false 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classGenericOculus}{Generic\+Oculus}.
+
+\hypertarget{classOculus_add30e49061a9ec8a5676f9be24e8eec7}{}\index{Oculus@{Oculus}!set\+Cfg@{set\+Cfg}}
+\index{set\+Cfg@{set\+Cfg}!Oculus@{Oculus}}
+\subsubsection[{set\+Cfg}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf Oculus}$<$ T $>$\+::set\+Cfg (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classOculus_add30e49061a9ec8a5676f9be24e8eec7}
+
+
+Sets the \hyperlink{classOculus}{Oculus} S\+D\+K configuration to adequate values for the \hyperlink{classOculus}{Oculus} rendering. 
+
+\begin{DoxyWarning}{Warning}
+The Windows and O\+S\+X modes have not been tested but should work just fine 
+\end{DoxyWarning}
+\hypertarget{classOculus_ae5337c60b8b89c50cfc0ce90d6db2d8f}{}\index{Oculus@{Oculus}!set\+Open\+G\+L\+State@{set\+Open\+G\+L\+State}}
+\index{set\+Open\+G\+L\+State@{set\+Open\+G\+L\+State}!Oculus@{Oculus}}
+\subsubsection[{set\+Open\+G\+L\+State}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf Oculus}$<$ T $>$\+::set\+Open\+G\+L\+State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classOculus_ae5337c60b8b89c50cfc0ce90d6db2d8f}
+
+
+Sets some Open\+G\+L states to adequate values for the \hyperlink{classOculus}{Oculus} rendering. 
+
+\begin{DoxyWarning}{Warning}
+The multisample value does not seem the be taken into account by the \hyperlink{classOculus}{Oculus} S\+D\+K as of yet and the \hyperlink{classOculus}{Oculus} rendering seems unchanged 
+\end{DoxyWarning}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classOculus_a56f59153d62ca8802b7573abd6059967}{}\index{Oculus@{Oculus}!already\+Created@{already\+Created}}
+\index{already\+Created@{already\+Created}!Oculus@{Oculus}}
+\subsubsection[{already\+Created}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ bool {\bf Oculus}$<$ T $>$\+::already\+Created = false\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{classOculus_a56f59153d62ca8802b7573abd6059967}
+
+
+Boolean that shows whether or not an instance has already been created. 
+
+Part of the Singleton Pattern \hypertarget{classOculus_a6697ef38f95623320ff9e78cc2474567}{}\index{Oculus@{Oculus}!eye\+Render\+Desc\+\_\+@{eye\+Render\+Desc\+\_\+}}
+\index{eye\+Render\+Desc\+\_\+@{eye\+Render\+Desc\+\_\+}!Oculus@{Oculus}}
+\subsubsection[{eye\+Render\+Desc\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ ovr\+Eye\+Render\+Desc {\bf Oculus}$<$ T $>$\+::eye\+Render\+Desc\+\_\+\mbox{[}2\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}\label{classOculus_a6697ef38f95623320ff9e78cc2474567}
+
+
+The description of each eye. 
+
+Contains lots of values like dimensions, wether it is the left or right eye, etc. \hypertarget{classOculus_a27b4553058255871d50e941d67de5374}{}\index{Oculus@{Oculus}!hmd\+\_\+@{hmd\+\_\+}}
+\index{hmd\+\_\+@{hmd\+\_\+}!Oculus@{Oculus}}
+\subsubsection[{hmd\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ ovr\+Hmd {\bf Oculus}$<$ T $>$\+::hmd\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}\label{classOculus_a27b4553058255871d50e941d67de5374}
+
+
+The \hyperlink{classOculus}{Oculus} Rift. 
+
+If no \hyperlink{classOculus}{Oculus} Rift is connected, a debug one is created. The last does not have proper sensors. \hypertarget{classOculus_aaca119fa80d400cb78ce54b69bc39081}{}\index{Oculus@{Oculus}!hmd\+Desc\+\_\+@{hmd\+Desc\+\_\+}}
+\index{hmd\+Desc\+\_\+@{hmd\+Desc\+\_\+}!Oculus@{Oculus}}
+\subsubsection[{hmd\+Desc\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ ovr\+Hmd\+Desc {\bf Oculus}$<$ T $>$\+::hmd\+Desc\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}\label{classOculus_aaca119fa80d400cb78ce54b69bc39081}
+
+
+The description of the \hyperlink{classOculus}{Oculus} Rift. 
+
+Contains lots of values like inter-\/pupillary distance, resolution, etc \hypertarget{classOculus_a526eb65105ddf30005f1a14fd9325e6c}{}\index{Oculus@{Oculus}!multisample\+Enabled\+\_\+@{multisample\+Enabled\+\_\+}}
+\index{multisample\+Enabled\+\_\+@{multisample\+Enabled\+\_\+}!Oculus@{Oculus}}
+\subsubsection[{multisample\+Enabled\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ bool {\bf Oculus}$<$ T $>$\+::multisample\+Enabled\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}\label{classOculus_a526eb65105ddf30005f1a14fd9325e6c}
+
+
+Boolean indicating if the \hyperlink{classOculus}{Oculus} rendering is multisampled. 
+
+\begin{DoxyWarning}{Warning}
+The \hyperlink{classOculus}{Oculus} S\+D\+K does not seem to take this variable into account as of yet 
+\end{DoxyWarning}
+\hypertarget{classOculus_a8a88e3b8bb25831c6fb001fbdac6b45b}{}\index{Oculus@{Oculus}!scene\+\_\+@{scene\+\_\+}}
+\index{scene\+\_\+@{scene\+\_\+}!Oculus@{Oculus}}
+\subsubsection[{scene\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ T\& {\bf Oculus}$<$ T $>$\+::scene\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}\label{classOculus_a8a88e3b8bb25831c6fb001fbdac6b45b}
+
+
+The generic Open\+G\+L scene. 
+
+\hyperlink{classOculus}{Oculus} is a templated class and its only argument is the type of {\itshape scene}. The only requirement is that scene has a method {\itshape render}, wich takes as argument the modelview matrix and the projection matrix. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Oculus_8h}{Oculus.\+h}\end{DoxyCompactItemize}
