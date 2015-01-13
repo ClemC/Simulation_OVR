@@ -41,7 +41,8 @@ Installation :
 - 11. Dans qtCreator -> Edit -> Selectionner "Simulation.pro" du projet de Philippe.
 - 12. Dans qtCreator -> Flèche verte en bas
 
-# Gestion des erreurs dans QtCreator: Si Erreur :
+# Gestion des erreurs dans QtCreator :
+Liste des erreurs :
 -  "SDL2/SDL.h not found" Alors Lancer Synaptic -> Rechercher "sdl2" et "sdl2 image library" -> Tout Cocher
 -  "GL/glew.h file not found" Alors Lancer Synaptic -> Rechercher "glew" -> Cocher "libglew-dev"
 -  "LogCpp/Log.h File not found" Alors Utiliser le fichier "CLEAN.zip" qui contient le fichier "LogCpp/Log.h"
