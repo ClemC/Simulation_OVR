@@ -76,6 +76,12 @@ Error list :
                                       to only draw the octant the camera is
                                       currently in, 2 to draw the immediate
                                       neighbors, ...
+-r [ --read ] arg (="./File/star.txt")Set the file to read
+-a [ --randomPercentage ] arg (=100)  Set the percentage of points to display with the random algorithm. If 100, do not use random method
+-c [ --clusteringPercentage ] arg (=100)         
+				      Set the percentage of points to display with the hierarchical clustering algorithm. If 100, do not use clustering method
+-m [ --isMultiThread ] arg (=false)    Enable multithreading
+-- renderTypeSimplified arg (=false)   True for half plane loading, and false for vision cone loading
 
 ```
 
