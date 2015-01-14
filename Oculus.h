@@ -423,9 +423,8 @@ protected:
      */
     void computeSizes()
     {
-        windowSize_.w = scene_.windowWidth();
-        windowSize_.h = scene_.windowHeight();
 
+        WindowSize = hmdDesc_.Resolution;
         logger->debug(logger->get() << "Fov: " << Utils::radToDegree(2 * atan(hmdDesc_.DefaultEyeFov[0].UpTan)));
 
         textureSizeLeft_ = ovrHmd_GetFovTextureSize(hmd_, ovrEye_Left, hmdDesc_.DefaultEyeFov[0], 1.0f);
